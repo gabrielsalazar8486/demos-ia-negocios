@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitácora Oriental · Excursiones y aventuras en el oriente de Venezuela</title>
+<meta name="description" content="Rutas full day a playas, ríos, pozos naturales, aguas termales y montañas desde Carúpano. Reserva tu aventura por WhatsApp.">
+</head>
+<body>
+<style>
+  :root{
+    --paper:#F3F1E9; --ink:#0F2A2E; --muted:#5B6E6B; --card:#FFFFFF;
+    --mar:#0E5C6B; --mar-2:#0A4450; --selva:#2E7D5B; --arena:#E7C489; --arena-2:#D8A85E; --cielo:#4FB6C4;
+    --line:rgba(15,42,46,.12); --shadow:24px 40px 80px -48px rgba(10,68,80,.5);
+    --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --wrap:1140px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --paper:#0A1A1D; --ink:#E9F0EE; --muted:#9BB0AC; --card:#102528;
+      --line:rgba(233,240,238,.13); --mar:#159AB0; --mar-2:#0E7183; --arena:#E7C489; --arena-2:#EBC77E; --cielo:#5CC7D6;
+      --shadow:24px 40px 80px -50px rgba(0,0,0,.72); }
+  }
+  :root[data-theme="light"]{ --paper:#F3F1E9;--ink:#0F2A2E;--muted:#5B6E6B;--card:#FFFFFF;--mar:#0E5C6B;--mar-2:#0A4450;--selva:#2E7D5B;--arena:#E7C489;--arena-2:#D8A85E;--cielo:#4FB6C4;--line:rgba(15,42,46,.12);--shadow:24px 40px 80px -48px rgba(10,68,80,.5);}
+  :root[data-theme="dark"]{ --paper:#0A1A1D;--ink:#E9F0EE;--muted:#9BB0AC;--card:#102528;--mar:#159AB0;--mar-2:#0E7183;--selva:#2E7D5B;--arena:#E7C489;--arena-2:#EBC77E;--cielo:#5CC7D6;--line:rgba(233,240,238,.13);--shadow:24px 40px 80px -50px rgba(0,0,0,.72);}
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;text-wrap:balance;margin:0}
+  p{margin:0}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--mar)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.85rem 1.6rem;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+  .btn-mar{background:var(--mar);color:#fff}
+  .btn-mar:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(14,92,107,.6)}
+  .btn-arena{background:var(--arena-2);color:#3a2a08}
+  .btn-arena:hover{transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border-color:currentColor}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  :focus-visible{outline:2px solid var(--arena-2);outline-offset:3px;border-radius:6px}
+
+  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 86%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.34rem;font-weight:600;letter-spacing:-.01em}
+  .brand .mark{width:34px;height:34px;flex:none;color:var(--mar)}
+  .nav-links{display:flex;gap:1.9rem;font-size:.92rem;color:var(--muted)}
+  .nav-links a:hover{color:var(--ink)}
+  @media (max-width:860px){.nav-links{display:none}}
+
+  .hero{background:radial-gradient(120% 130% at 80% 0%,var(--mar),var(--mar-2) 70%,#08343d);color:#F3F1E9;border-radius:0 0 34px 34px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(50% 40% at 15% 90%,rgba(46,125,91,.34),transparent 70%),
+    radial-gradient(40% 40% at 90% 85%,rgba(231,196,137,.2),transparent 70%);pointer-events:none}
+  .hero .waves{position:absolute;left:0;right:0;bottom:0;height:70px;opacity:.5;pointer-events:none}
+  .hero-inner{position:relative;padding:74px 0 96px;max-width:44ch}
+  .hero .kick{display:flex;align-items:center;gap:.7rem;margin-bottom:1.4rem}
+  .hero .kick span{height:1px;width:40px;background:var(--arena)}
+  .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);letter-spacing:-.02em;color:#fff;font-style:italic}
+  .hero p.lead{margin:1.5rem 0 2.2rem;color:rgba(243,241,233,.86);font-size:1.12rem;max-width:38ch}
+  .hero .actions{display:flex;gap:.9rem;flex-wrap:wrap}
+  .hero .info{display:flex;gap:2.2rem;margin-top:2.8rem;flex-wrap:wrap;font-size:.86rem;color:rgba(243,241,233,.66)}
+  .hero .info b{color:#fff;display:block;font-family:var(--serif);font-size:1.2rem}
+
+  .routes{padding:88px 0}
+  .head{max-width:54ch;margin-bottom:44px}
+  .head h2{font-size:clamp(1.9rem,3.8vw,2.7rem);letter-spacing:-.01em;margin:.6rem 0 .8rem}
+  .head p{color:var(--muted);font-size:1.05rem}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media (max-width:900px){.rgrid{grid-template-columns:1fr 1fr}}
+  @media (max-width:600px){.rgrid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+  .rcard{position:relative;border-radius:20px;overflow:hidden;min-height:260px;display:flex;align-items:flex-end;color:#fff;transition:transform .3s ease,box-shadow .3s ease}
+  .rcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .rcard .bg{position:absolute;inset:0}
+  .rcard svg.scene{position:absolute;right:14px;top:16px;width:64px;height:64px;opacity:.9}
+  .r1 .bg{background:linear-gradient(160deg,#1f9bb0,#0a4450)}
+  .r2 .bg{background:linear-gradient(160deg,#2E7D5B,#123a2c)}
+  .r3 .bg{background:linear-gradient(160deg,#3a86a8,#123246)}
+  .r4 .bg{background:linear-gradient(160deg,#c98a3c,#5c3410)}
+  .r5 .bg{background:linear-gradient(160deg,#4a7d4f,#1a3a24)}
+  .rcard .cont{position:relative;z-index:2;padding:22px;width:100%;background:linear-gradient(transparent,rgba(6,26,29,.72))}
+  .rcard h3{font-size:1.32rem;color:#fff}
+  .rcard p{font-size:.86rem;color:rgba(255,255,255,.82);margin-top:.2rem}
+  .rcard .go{margin-top:.8rem;font-size:.84rem;font-weight:600;color:#fff;display:inline-flex;gap:.35rem;font-family:var(--sans)}
+  .rcard.wide{grid-column:span 1}
+
+  .process{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:56px 44px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:10px}
+  .step .num{font-family:var(--serif);font-size:2.3rem;color:var(--arena-2);line-height:1}
+  .step h3{font-size:1.2rem;margin:.5rem 0 .4rem}
+  .step p{color:var(--muted);font-size:.95rem}
+  @media (max-width:820px){.process{padding:40px 24px}.steps{grid-template-columns:1fr;gap:24px}}
+
+  .quote{max-width:760px;margin:0 auto;text-align:center}
+  .quote .mark{font-family:var(--serif);font-size:4rem;color:var(--arena-2);line-height:.6}
+  .quote p{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-style:italic;line-height:1.35;margin:.4rem 0 1rem}
+  .quote .who{font-size:.9rem;color:var(--muted)}
+
+  .cta{background:radial-gradient(120% 140% at 15% 0%,var(--mar),var(--mar-2));color:#F3F1E9;border-radius:30px;padding:66px 40px;text-align:center;position:relative;overflow:hidden}
+  .cta::after{content:"";position:absolute;right:-4%;bottom:-40%;width:40%;height:180%;background:radial-gradient(closest-side,rgba(231,196,137,.24),transparent);pointer-events:none}
+  .cta h2{color:#fff;font-size:clamp(2rem,4vw,2.9rem);margin-bottom:1rem;position:relative}
+  .cta p{color:rgba(243,241,233,.82);max-width:44ch;margin:0 auto 2rem;position:relative}
+
+  footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:20px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+  .foot .muted{color:var(--muted);font-size:.9rem;max-width:32ch}
+  .demo-note{margin-top:26px;font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:18px}
+  .demo-note b{color:var(--mar)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--arena-2);color:#3a2a08;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 34px -10px rgba(216,168,94,.7);transition:transform .25s ease}
+  .chat-fab:hover{transform:scale(1.06)}
+  .chat-fab .dot{position:absolute;top:-3px;right:-3px;width:22px;height:22px;border-radius:50%;background:var(--mar);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--paper)}
+  .chat-panel{position:fixed;right:22px;bottom:96px;z-index:61;width:min(374px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 40px 80px -30px rgba(10,68,80,.5);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+  .chat-panel.open{opacity:1;transform:none;pointer-events:auto}
+  .chat-head{background:var(--mar);color:#F3F1E9;padding:16px 18px;display:flex;align-items:center;gap:12px}
+  .chat-head .av{width:40px;height:40px;border-radius:50%;background:var(--arena-2);flex:none;display:flex;align-items:center;justify-content:center;color:#3a2a08;font-weight:700;font-family:var(--serif)}
+  .chat-head .nm{font-weight:600;font-size:.98rem}
+  .chat-head .st{font-size:.75rem;color:#bfe9d0;display:flex;align-items:center;gap:.35rem}
+  .chat-head .st::before{content:"";width:7px;height:7px;border-radius:50%;background:#3ad07f;display:inline-block}
+  .chat-head .x{margin-left:auto;background:none;border:none;color:rgba(243,241,233,.7);cursor:pointer;font-size:1.3rem;line-height:1}
+  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--paper)}
+  .msg{max-width:84%;padding:.62rem .85rem;border-radius:14px;font-size:.9rem;line-height:1.45;white-space:pre-line}
+  .msg.bot{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .msg.me{background:var(--mar);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:.7rem .9rem;background:var(--card);border:1px solid var(--line);border-radius:14px}
+  .typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite both}
+  .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+  .quicks{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:var(--paper);border-top:1px solid var(--line)}
+  .quick{font-size:.8rem;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--mar);color:var(--mar);background:transparent;cursor:pointer}
+  .quick:hover{background:color-mix(in srgb,var(--mar) 12%,transparent)}
+  .chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--card)}
+  .chat-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-family:var(--sans);font-size:.9rem;background:var(--paper);color:var(--ink)}
+  .chat-input input:focus{outline:none;border-color:var(--mar)}
+  .chat-input button{background:var(--mar);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;flex:none}
+  .chat-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:6px;background:var(--card)}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="15"/><path d="M20 8v3M20 29v3M8 20h3M29 20h3"/><path d="M26 14l-4 8-8 4 4-8z"/></svg>
+      Bitácora Oriental
+    </a>
+    <nav class="nav-links">
+      <a href="#rutas">Rutas</a>
+      <a href="#como">Cómo reservar</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-mar" href="https://wa.me/584122918427?text=Hola%20Bit%C3%A1cora%20Oriental,%20quiero%20info%20de%20una%20excursi%C3%B3n" target="_blank" rel="noopener">Reservar aventura</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="kick"><span></span><span class="eyebrow" style="color:var(--arena)">Excursiones · Oriente de Venezuela</span></div>
+    <h1>“En cualquier parte del mundo hay un rincón esperando ser explorado. ¿Te atreves a vivir la aventura?”</h1>
+    <p class="lead">Rutas de un día a playas, ríos, pozos naturales, aguas termales y montañas. Nosotros ponemos el plan; tú, las ganas.</p>
+    <div class="actions">
+      <a class="btn btn-arena" href="#rutas">Ver las rutas</a>
+      <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)" href="#" data-open-chat>Planear mi salida</a>
+    </div>
+    <div class="info">
+      <div><b>Full day</b>salidas de un día</div>
+      <div><b>Paria</b>puerta a la península</div>
+      <div><b>Carúpano</b>punto de partida</div>
+    </div>
+  </div>
+  <svg class="waves" viewBox="0 0 1440 70" preserveAspectRatio="none" fill="none" stroke="#F3F1E9" stroke-width="2"><path d="M0 40 Q120 20 240 40 T480 40 T720 40 T960 40 T1200 40 T1440 40"/><path d="M0 55 Q120 38 240 55 T480 55 T720 55 T960 55 T1200 55 T1440 55" opacity=".6"/></svg>
+</section>
+
+<section class="routes" id="rutas">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Nuestras rutas</span>
+      <h2>Elige tu próxima aventura</h2>
+      <p>Cinco formas de reconectar con la naturaleza del oriente. Cada salida es guiada — tú solo disfrutas.</p>
+    </div>
+    <div class="rgrid">
+      <article class="rcard r1 reveal"><div class="bg"></div>
+        <svg class="scene" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34c6-4 12 4 18 0s12-4 18 0"/><path d="M6 40c6-4 12 4 18 0s12-4 18 0"/><circle cx="34" cy="14" r="5"/><path d="M10 28l6-10 6 6 5-8 6 12"/></svg>
+        <div class="cont"><h3>Playas</h3><p>Arena, mar y sol en las costas de Paria.</p><span class="go" data-open-chat>Consultar salida →</span></div>
+      </article>
+      <article class="rcard r2 reveal"><div class="bg"></div>
+        <svg class="scene" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c4 6 4 10 0 14M20 20c-6 2-10 8-10 16h28c0-8-4-14-10-16"/><path d="M18 30c4-2 8-2 12 0"/></svg>
+        <div class="cont"><h3>Pozos y piscinas naturales</h3><p>Agua cristalina para nadar en plena selva.</p><span class="go" data-open-chat>Consultar salida →</span></div>
+      </article>
+      <article class="rcard r3 reveal"><div class="bg"></div>
+        <svg class="scene" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14c4 4 8 4 12 0s8-4 12 0 8 4 8 4"/><path d="M8 24c4 4 8 4 12 0s8-4 12 0 8 4 8 4"/><path d="M8 34c4 4 8 4 12 0s8-4 12 0 8 4 8 4"/></svg>
+        <div class="cont"><h3>Ríos</h3><p>Un día de agua dulce, sombra y naturaleza.</p><span class="go" data-open-chat>Consultar salida →</span></div>
+      </article>
+      <article class="rcard r4 reveal"><div class="bg"></div>
+        <svg class="scene" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 34c0-6 4-8 4-8M20 34c0-8 4-10 4-14M28 34c0-6 4-8 4-8"/><path d="M8 40h32"/><circle cx="16" cy="20" r="2"/><circle cx="24" cy="14" r="2"/><circle cx="32" cy="20" r="2"/></svg>
+        <div class="cont"><h3>Aguas termales</h3><p>Relájate en aguas cálidas naturales.</p><span class="go" data-open-chat>Consultar salida →</span></div>
+      </article>
+      <article class="rcard r5 reveal"><div class="bg"></div>
+        <svg class="scene" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 38l12-22 8 12 4-6 12 16z"/><path d="M14 26l4 4 4-4"/></svg>
+        <div class="cont"><h3>Montaña</h3><p>Senderos, miradores y aire puro del oriente.</p><span class="go" data-open-chat>Consultar salida →</span></div>
+      </article>
+      <article class="rcard reveal" style="background:linear-gradient(160deg,var(--arena-2),#a06d1e)"><div class="bg" style="background:transparent"></div>
+        <svg class="scene" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8h20v32l-10-6-10 6z"/><path d="M20 16h8M20 22h8"/></svg>
+        <div class="cont"><h3>¿Grupo o empresa?</h3><p>Armamos una salida a tu medida para tu grupo.</p><span class="go" data-open-chat>Cotizar grupo →</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="routes" id="como" style="padding-top:0">
+  <div class="wrap">
+    <div class="process reveal">
+      <div class="head" style="margin-bottom:20px">
+        <span class="eyebrow">Sin complicaciones</span>
+        <h2>Reservar es así de fácil</h2>
+        <p>Nuestro asistente te responde al instante, te dice qué rutas hay disponibles y aparta tu cupo.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Nos escribes</h3><p>Cuéntanos qué buscas: playa, río, montaña… y para cuántas personas.</p></div>
+        <div class="step"><div class="num">2</div><h3>Eliges tu ruta y fecha</h3><p>Te mostramos las salidas disponibles y apartas tu cupo al instante.</p></div>
+        <div class="step"><div class="num">3</div><h3>Vives la aventura</h3><p>Nosotros nos encargamos del resto. Tú solo llegas con ganas de disfrutar.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="routes" style="padding-top:0">
+  <div class="wrap">
+    <div class="quote reveal">
+      <div class="mark">“</div>
+      <p>El oriente venezolano está lleno de rincones que pocos conocen. Nosotros te llevamos a ellos.</p>
+      <div class="who">— Bitácora Oriental</div>
+    </div>
+  </div>
+</section>
+
+<section class="routes" id="contacto" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow" style="color:var(--arena)">¿Listo para salir?</span>
+      <h2>Tu próxima aventura empieza con un mensaje</h2>
+      <p>Escríbenos por WhatsApp, cuéntanos qué te provoca y te armamos el plan. Consulta disponibilidad y precios sin compromiso.</p>
+      <a class="btn btn-arena" href="https://wa.me/584122918427?text=Hola%20Bit%C3%A1cora%20Oriental,%20quiero%20reservar%20una%20excursi%C3%B3n" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#" style="margin-bottom:.6rem">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="15"/><path d="M26 14l-4 8-8 4 4-8z"/></svg>
+          Bitácora Oriental
+        </a>
+        <p class="muted">Excursiones y turismo de aventura en el oriente de Venezuela. Rutas guiadas a playas, ríos, pozos, aguas termales y montañas.</p>
+      </div>
+      <div class="muted">◍ Guayacán de las Flores, Carúpano, Sucre<br>✆ 0412-291.84.27<br>✉ bitacoraoriental1@gmail.com</div>
+    </div>
+    <p class="demo-note"><b>Sitio de demostración</b> creado para Bitácora Oriental como propuesta. ¿Quieres una web así —con asistente que reserva solo— para tu negocio? Escríbeme: <b>+58 424 000 0000</b></p>
+  </div>
+</footer>
+
+<button class="chat-fab" id="fab" aria-label="Abrir chat">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+  <span class="dot">1</span>
+</button>
+
+<div class="chat-panel" id="panel" role="dialog" aria-label="Asistente Bitácora Oriental">
+  <div class="chat-head">
+    <div class="av">B</div>
+    <div><div class="nm">Asistente Bitácora</div><div class="st">en línea · responde al instante</div></div>
+    <button class="x" id="closeChat" aria-label="Cerrar">×</button>
+  </div>
+  <div class="chat-body" id="body"></div>
+  <div class="quicks" id="quicks"></div>
+  <div class="chat-input">
+    <input id="inp" placeholder="Escribe un mensaje…" autocomplete="off">
+    <button id="send" aria-label="Enviar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+  </div>
+  <div class="chat-foot">Demo de asistente IA · Reserva tu aventura 24/7</div>
+</div>
+
+<script>
+(function(){
+  var CONFIG={
+    welcome:"¡Hola, aventurero! 🌿 Soy el asistente de Bitácora Oriental. Te ayudo a elegir tu ruta y aparto tu cupo al instante. ¿Qué te provoca: playa, río, pozos, aguas termales o montaña?",
+    quicks:["🏖️ Playas","💦 Pozos y ríos","⛰️ Montaña"],
+    rules:[
+      {k:["playa","mar","costa","arena","paria"],r:"🏖️ ¡Buena elección! Tenemos rutas a las playas del oriente, en la zona de la Península de Paria. Dime para cuántas personas y qué fecha tienes en mente, y te digo disponibilidad y precio."},
+      {k:["pozo","piscina natural","poza","nadar","cristalina"],r:"💦 Nuestras rutas a pozos y piscinas naturales son de las favoritas: agua cristalina en plena naturaleza. ¿Para cuántos y qué fecha? Te confirmo el cupo."},
+      {k:["rio","río","agua dulce"],r:"🏞️ Las salidas a ríos son ideales para un día en familia o con amigos. Dime cuántas personas y cuándo, y te paso disponibilidad y precio."},
+      {k:["termal","termales","aguas calientes","relajar"],r:"♨️ Las aguas termales son perfectas para relajarse. Cuéntame para cuántas personas y qué día quieres ir, y te reservo."},
+      {k:["montana","montaña","sendero","caminar","mirador","cerro"],r:"⛰️ Nuestras rutas de montaña tienen senderos y miradores con vistas espectaculares del oriente. ¿Para cuántos y qué fecha? Te digo si hay cupo."},
+      {k:["grupo","empresa","evento","cumple","cuantos","curso","promocion","promoción"],r:"👥 ¡Armamos salidas para grupos! Cuéntame cuántas personas serían y qué tipo de ruta les gusta, y te preparo una propuesta a la medida."},
+      {k:["precio","cuesta","vale","cuanto","tarifa","incluye"],r:"El precio depende de la ruta, la fecha y cuántas personas van 😊 Cuéntame esos datos y te doy disponibilidad y precio al instante, sin compromiso."},
+      {k:["fecha","cuando","dia","día","disponible","salida","proxima","próxima"],r:"📅 Programamos salidas según la temporada y el grupo. Dime qué ruta te interesa y para cuándo, y te confirmo la próxima disponible."},
+      {k:["donde","salida","punto","carupano","carúpano","reunir"],r:"📍 Salimos desde Carúpano, puerta de entrada a la Península de Paria. Al reservar te confirmamos hora y punto de encuentro exacto."},
+      {k:["reservar","apartar","cupo","quiero ir","anotar"],r:"🎒 ¡Vamos! Para apartar tu cupo dime la ruta, la fecha y cuántas personas. Te confirmo disponibilidad de una vez."},
+      {k:["gracias","ok","listo","perfecto"],r:"¡A la orden! 🌅 Cuando quieras vivir la aventura, aquí estoy. El oriente te espera."}
+    ],
+    fallback:"¡Con gusto te ayudo a planear! 🌿 ¿Prefieres playa, río, pozos naturales, aguas termales o montaña? Dime y te doy disponibilidad."
+  };
+  var panel=document.getElementById('panel'),fab=document.getElementById('fab'),body=document.getElementById('body'),
+      quicks=document.getElementById('quicks'),inp=document.getElementById('inp'),started=false;
+  function scroll(){body.scrollTop=body.scrollHeight}
+  function add(text,who){var d=document.createElement('div');d.className='msg '+who;d.textContent=text;body.appendChild(d);scroll()}
+  function typing(){var t=document.createElement('div');t.className='typing';t.innerHTML='<span></span><span></span><span></span>';body.appendChild(t);scroll();return t}
+  function reply(text){var t=typing();setTimeout(function(){t.remove();add(text,'bot')},900+Math.min(text.length*7,1400))}
+  function answer(q){q=q.toLowerCase();for(var i=0;i<CONFIG.rules.length;i++){for(var j=0;j<CONFIG.rules[i].k.length;j++){if(q.indexOf(CONFIG.rules[i].k[j])>=0)return CONFIG.rules[i].r}}return CONFIG.fallback}
+  function renderQuicks(){quicks.innerHTML='';CONFIG.quicks.forEach(function(q){var b=document.createElement('button');b.className='quick';b.textContent=q;b.onclick=function(){handle(q)};quicks.appendChild(b)})}
+  function handle(text){add(text,'me');reply(answer(text))}
+  function start(){if(started)return;started=true;reply(CONFIG.welcome);renderQuicks()}
+  function open(){panel.classList.add('open');fab.style.display='none';start();setTimeout(function(){inp.focus()},300)}
+  function close(){panel.classList.remove('open');fab.style.display='flex'}
+  fab.onclick=open;document.getElementById('closeChat').onclick=close;
+  document.getElementById('send').onclick=function(){var v=inp.value.trim();if(v){handle(v);inp.value=''}};
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=inp.value.trim();if(v){handle(v);inp.value=''}}});
+  document.querySelectorAll('[data-open-chat]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();setTimeout(function(){handle('Quiero planear una salida')},400)})});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
