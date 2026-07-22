@@ -3,247 +3,582 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nolita Bistró Bar · Hamburguesas, pizza y bar en Carúpano</title>
-<meta name="description" content="Hamburguesas, pizzas artesanales y bar en Carúpano. El bistró donde el buen sabor se encuentra con el buen ambiente.">
+<title>Nolita Bistro + Bar · Hamburguesas, pizza y barra estilo capital en Carúpano</title>
+<meta name="description" content="Bistró-bar estilo capital en el casco central de Carúpano: hamburguesas de autor —la Manhattan es la insignia—, pizza de miércoles a domingo, Tex-Mex, wraps, ensaladas y barra de tragos. Pide o reserva por WhatsApp.">
 </head>
 <body>
 <style>
   :root{
     color-scheme:dark;
-    --char:#171009; --char-2:#20160D; --char-3:#2A1D11; --cream:#F5E9D6;
-    --dorado:#E8A22C; --dorado-2:#F5B94A; --rojo:#C0342B; --rojo-2:#E0473A;
-    --noche:#7B5CD6; --noche-2:#9B7CF0; --oliva:#9AA65B;
-    --muted:rgba(245,233,214,.62); --line:rgba(245,233,214,.14);
-    --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+    --bg:#0A0A0C; --surface:#131318; --surface-2:#1B1B22; --surface-3:#232330;
+    --ink:#F6F5F8; --ink-soft:#D6D4DC; --muted:rgba(246,245,248,.60); --line:rgba(246,245,248,.13);
+    --pink:#FF4D8D; --cyan:#57E0D0; --violet:#8E7BFF;
+    --holo:linear-gradient(102deg,#FF4D8D 4%,#FF8A45 28%,#FFE15C 50%,#57E0D0 74%,#6C9BFF 100%);
+    --holo-soft:linear-gradient(102deg,rgba(255,77,141,.16),rgba(255,225,92,.10) 50%,rgba(87,224,208,.16));
+    --shadow:0 34px 70px -34px rgba(0,0,0,.82);
+    --glow:0 18px 46px -16px rgba(255,90,150,.42);
     --sans:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --wrap:1120px;
   }
+
   *{box-sizing:border-box}
-  body{margin:0;background:var(--char);color:var(--cream);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  h1,h2,h3{margin:0;font-family:var(--serif);font-weight:600;line-height:1.02;text-wrap:balance}
+  h1,h2,h3{margin:0;font-weight:800;line-height:1.03;letter-spacing:-.025em;text-wrap:balance}
   p{margin:0}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-  .eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--dorado-2)}
-  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.85rem 1.6rem;border-radius:3px;border:1px solid transparent;cursor:pointer;letter-spacing:.02em;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
-  .btn-dorado{background:var(--dorado);color:#1e1305}
-  .btn-dorado:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(232,162,44,.6)}
-  .btn-rojo{background:var(--rojo);color:#fff}
-  .btn-rojo:hover{transform:translateY(-2px)}
-  .btn-ghost{background:transparent;border-color:var(--line);color:var(--cream)}
-  .btn-ghost:hover{border-color:var(--dorado);color:var(--dorado-2)}
-  :focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+  .svg-defs{position:absolute;width:0;height:0;overflow:hidden}
 
-  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--char) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:12px}
-  .brand{display:flex;align-items:center;gap:.55rem;font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.01em}
-  .brand .mark{width:26px;height:26px;flex:none;color:var(--dorado)}
-  .nav-links{display:flex;gap:1.9rem;font-size:.9rem;color:var(--muted)}
-  .nav-links a:hover{color:var(--cream)}
-  @media (max-width:860px){.nav-links{display:none}}
+  .holo{background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:800;display:inline-block;background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 
-  .hero{position:relative;min-height:84vh;display:flex;align-items:center;overflow:hidden;
-    background:radial-gradient(85% 75% at 80% 15%,#4a2810,transparent 60%),radial-gradient(70% 70% at 20% 90%,#3a1410,transparent 60%),linear-gradient(180deg,var(--char),#120b06)}
-  .hero .glow{position:absolute;right:-8%;top:-10%;width:56vw;height:56vw;max-width:680px;max-height:680px;border-radius:50%;background:radial-gradient(circle,rgba(245,185,74,.24),rgba(232,162,44,.06) 45%,transparent 66%);filter:blur(6px);animation:glow 6.5s ease-in-out infinite alternate;pointer-events:none}
-  @keyframes glow{from{opacity:.6;transform:scale(.95)}to{opacity:1;transform:scale(1.06)}}
-  .hero-inner{position:relative;padding:64px 0;max-width:40ch}
-  .hero .kick{display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem}
-  .hero .kick span:not(.eyebrow){height:1px;width:42px;background:var(--dorado)}
-  .hero h1{font-size:clamp(2.8rem,8vw,5.4rem);letter-spacing:-.01em;color:#fff}
-  .hero h1 em{font-style:italic;color:var(--dorado-2)}
-  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--dorado);margin-top:.4rem}
-  .hero p.lead{color:rgba(245,233,214,.82);font-size:1.08rem;max-width:38ch;margin:1.5rem 0 2.1rem}
-  .hero .actions{display:flex;gap:.9rem;flex-wrap:wrap}
-  .hero .info{display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
-  .hero .info b{color:var(--cream);display:block;font-family:var(--serif);font-size:1.05rem}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:700;font-size:.94rem;padding:.85rem 1.55rem;border-radius:999px;border:1px solid transparent;cursor:pointer;letter-spacing:.01em;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+  .btn-holo{background:var(--holo);color:#0A0A0C}
+  .btn-holo:hover{transform:translateY(-2px);box-shadow:var(--glow)}
+  .btn-line{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-line:hover{border-color:var(--pink);color:#fff;transform:translateY(-2px)}
+  .link-chat{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.9rem;color:var(--cyan);cursor:pointer;border-bottom:1px solid transparent}
+  .link-chat:hover{border-bottom-color:var(--cyan)}
+  :focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:6px}
+
+  .topbar{background:var(--holo);color:#0A0A0C;font-size:.78rem;font-weight:700;text-align:center;padding:.5rem 16px;letter-spacing:.01em}
+
+  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .brand{display:flex;align-items:center;gap:.7rem}
+  .mark{width:44px;height:44px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background-image:linear-gradient(#000,#000),var(--holo);background-origin:border-box;background-clip:padding-box,border-box;border:2px solid transparent;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;color:#fff}
+  .brand .txt{display:flex;flex-direction:column;line-height:1;gap:.2rem}
+  .brand .bn{font-size:1.18rem;font-weight:800;letter-spacing:-.01em}
+  .brand .bs{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .brand .bs .plus{font-size:1.2em;vertical-align:-.05em;margin:0 .1em}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .nav-links{display:flex;gap:1.8rem;font-size:.9rem;color:var(--muted);letter-spacing:.01em}
+  .nav-links a:hover{color:var(--ink)}
+  @media (max-width:900px){.nav-links{display:none}}
+  @media (max-width:520px){.nav .btn{display:none}}
+
+  .hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden}
+  .hero .aura{position:absolute;border-radius:50%;filter:blur(10px);pointer-events:none}
+  .hero .a1{right:-8%;top:-14%;width:60vw;height:60vw;max-width:640px;max-height:640px;background:radial-gradient(circle,rgba(255,77,141,.30),rgba(255,138,69,.10) 44%,transparent 66%);animation:float 9s ease-in-out infinite alternate}
+  .hero .a2{left:-12%;bottom:-18%;width:58vw;height:58vw;max-width:620px;max-height:620px;background:radial-gradient(circle,rgba(87,224,208,.24),rgba(108,155,255,.10) 46%,transparent 66%);animation:float 11s ease-in-out infinite alternate-reverse}
+  @keyframes float{from{transform:translateY(0) scale(.97)}to{transform:translateY(-18px) scale(1.04)}}
+  .hero-inner{position:relative;padding:72px 0;max-width:46ch}
+  .kick{display:flex;align-items:center;gap:.85rem;margin-bottom:1.5rem}
+  .kick .rule{height:2px;width:44px;background:var(--holo);border-radius:2px}
+  .wm{display:flex;flex-direction:column;gap:.38rem;margin:0}
+  .wm .l1{font-size:clamp(3.4rem,11vw,6.8rem);letter-spacing:-.045em;line-height:.88;color:#fff}
+  .wm .l1 .bang{margin-left:.01em}
+  .wm .l2{font-weight:800;text-transform:uppercase;letter-spacing:.42em;font-size:clamp(.82rem,2.4vw,1.15rem);color:var(--ink-soft);padding-left:.16em}
+  .wm .l2 .plus{font-size:1.5em;letter-spacing:0;vertical-align:-.08em;margin:0 .06em}
+  .hero .sub{font-size:clamp(1.15rem,2.7vw,1.6rem);font-weight:700;letter-spacing:-.01em;margin-top:1.3rem;color:#fff}
+  .hero .sub .em{color:var(--cyan)}
+  .hero p.lead{color:var(--ink-soft);font-size:1.08rem;max-width:44ch;margin:1.3rem 0 2.1rem}
+  .hero .actions{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+  .hero .chips{display:flex;gap:.6rem;margin-top:2.4rem;flex-wrap:wrap}
+  .hero .chips span{font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.42rem .9rem;display:inline-flex;align-items:center;gap:.4rem;background:color-mix(in srgb,var(--surface) 60%,transparent)}
+  .hero .chips b{color:var(--ink);font-weight:700}
 
   .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .strip .cell{background:var(--char);padding:24px;display:flex;gap:14px;align-items:center}
-  .strip .ic{color:var(--dorado);flex:none}
-  .strip b{display:block;font-family:var(--serif);font-size:1.02rem;color:var(--cream)}
-  .strip small{color:var(--muted);font-size:.84rem}
+  .strip .cell{background:var(--bg);padding:28px 24px;display:flex;gap:16px;align-items:center}
+  .strip .ic{width:44px;height:44px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--holo-soft);border:1px solid var(--line);color:var(--cyan)}
+  .strip b{display:block;font-size:1.04rem;color:var(--ink);font-weight:800;letter-spacing:-.01em}
+  .strip small{color:var(--muted);font-size:.85rem}
   @media (max-width:760px){.strip{grid-template-columns:1fr}}
 
-  section.block{padding:88px 0}
-  .head{text-align:center;max-width:54ch;margin:0 auto 46px}
-  .head h2{font-size:clamp(2rem,4.4vw,3rem);margin:.6rem 0 .6rem;color:#fff}
+  section.block{padding:92px 0}
+  .head{text-align:center;max-width:58ch;margin:0 auto 50px}
+  .head h2{font-size:clamp(2.1rem,4.8vw,3.2rem);margin:.7rem 0 .6rem;color:#fff}
   .head p{color:var(--muted)}
 
-  .menu{display:grid;grid-template-columns:1fr 1fr;gap:16px 60px}
+  .star{display:grid;grid-template-columns:1fr 1.04fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+  .star .art{position:relative;min-height:330px;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .star .art::before{content:"";position:absolute;width:120%;height:120%;background:radial-gradient(circle at 50% 46%,rgba(255,77,141,.28),transparent 58%);animation:float 10s ease-in-out infinite alternate}
+  .star .art svg{position:relative;width:56%;max-width:250px}
+  .star .art .badge{position:absolute;top:18px;left:18px;z-index:2;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:#0A0A0C;background:var(--holo);padding:.38rem .85rem;border-radius:999px}
+  .star .txt{padding:46px 44px}
+  .star .txt h3{font-size:clamp(2rem,4vw,2.7rem);color:#fff;margin-top:.3rem}
+  .star .txt p{color:var(--ink-soft);margin:1rem 0 1.5rem}
+  .star .combo{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.8rem}
+  .star .combo span{font-size:.78rem;color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--line);padding:.4rem .85rem;border-radius:999px}
+  @media (max-width:820px){.star{grid-template-columns:1fr}.star .art{min-height:240px}.star .txt{padding:34px 26px}}
+
+  .menu{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:14px 60px}
   @media (max-width:820px){.menu{grid-template-columns:1fr;gap:12px}}
-  .menu-cat{grid-column:1/-1;font-family:var(--serif);font-style:italic;color:var(--dorado-2);font-size:1.24rem;margin-top:24px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .menu-cat{grid-column:1/-1;display:flex;align-items:center;gap:.7rem;font-size:1.02rem;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin-top:28px;padding-bottom:10px;border-bottom:1px solid var(--line)}
   .menu-cat:first-child{margin-top:0}
-  .mi{display:flex;align-items:baseline;gap:.6rem}
-  .mi .nm{font-weight:600}
+  .menu-cat .dot{width:8px;height:8px;border-radius:50%;background:var(--holo);flex:none}
+  .menu-cat .flag{margin-left:auto;font-size:.62rem;letter-spacing:.14em;font-weight:800;text-transform:uppercase;color:#0A0A0C;background:var(--holo);padding:.24rem .6rem;border-radius:999px}
+  .mi{display:flex;align-items:baseline;gap:.7rem}
+  .mi .nm{font-weight:700}
   .mi .nm small{display:block;font-weight:400;font-size:.82rem;color:var(--muted);letter-spacing:0}
-  .mi .dots{flex:1;border-bottom:1px dotted rgba(245,233,214,.3);transform:translateY(-.28rem)}
-  .mi .pr{font-family:var(--sans);font-size:.82rem;color:var(--dorado-2);font-weight:600;white-space:nowrap}
+  .mi .dots{flex:1;border-bottom:1px dotted color-mix(in srgb,var(--ink) 30%,transparent);transform:translateY(-.28rem)}
+  .mi .pr{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:800;white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:.28rem .7rem}
+  .menu-cta{margin-top:46px;display:flex;gap:.9rem;flex-wrap:wrap;align-items:center;justify-content:center}
 
-  .star{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center;background:linear-gradient(150deg,var(--char-3),var(--char-2));border-radius:10px;padding:8px;border:1px solid var(--line);overflow:hidden}
-  .star .art{aspect-ratio:4/3;background:radial-gradient(120% 120% at 65% 25%,#e8a22c,#8a3d15 60%,#3a1608);border-radius:8px;display:flex;align-items:center;justify-content:center}
-  .star .art svg{width:52%;color:#fff2d9}
-  .star .txt{padding:20px 34px 20px 10px}
-  .star h2{font-size:clamp(1.8rem,3.6vw,2.5rem);color:#fff}
-  .star p{color:rgba(245,233,214,.82);margin:1rem 0 1.4rem}
-  .star .combo{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
-  .star .combo span{font-size:.8rem;background:rgba(245,233,214,.08);border:1px solid var(--line);padding:.35rem .7rem;border-radius:999px}
-  @media (max-width:820px){.star{grid-template-columns:1fr}.star .txt{padding:8px 22px 26px}}
+  .capital{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:56px 48px;position:relative;overflow:hidden}
+  .capital h2{font-size:clamp(1.9rem,4vw,2.7rem);color:#fff}
+  .capital p{color:var(--ink-soft);margin:1.1rem 0 1.4rem}
+  .capital .feats{list-style:none;padding:0;margin:0 0 1.8rem;display:flex;flex-direction:column;gap:.7rem}
+  .capital .feats li{display:flex;gap:.6rem;align-items:center;font-size:.96rem;color:var(--ink-soft)}
+  .capital .feats .b{width:7px;height:7px;border-radius:50%;background:var(--holo);flex:none}
+  .capital .art2{aspect-ratio:1/1;border-radius:16px;background:radial-gradient(120% 120% at 30% 20%,rgba(255,77,141,.16),transparent 55%),#000;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .capital .art2 .big-plus{font-size:clamp(9rem,24vw,16rem);font-weight:800;line-height:1;background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .capital .art2 .skyline{position:absolute;bottom:0;left:0;width:100%}
+  @media (max-width:820px){.capital{grid-template-columns:1fr;padding:38px 26px;gap:32px}}
 
-  .daynight{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  @media (max-width:760px){.daynight{grid-template-columns:1fr}}
-  .dn{border-radius:14px;padding:34px;border:1px solid var(--line);position:relative;overflow:hidden}
-  .dn.day{background:linear-gradient(160deg,#3a2610,#20160D)}
-  .dn.night{background:linear-gradient(160deg,#2a2150,#171029)}
-  .dn .tag{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
-  .dn.day .tag{color:var(--dorado-2)}
-  .dn.night .tag{color:var(--noche-2)}
-  .dn h3{font-size:1.6rem;color:#fff;margin:.5rem 0 .6rem}
-  .dn p{color:rgba(245,233,214,.78);font-size:.95rem;margin-bottom:1.2rem}
-  .dn ul{list-style:none;padding:0;margin:0 0 1.4rem;display:flex;flex-direction:column;gap:.5rem;font-size:.92rem}
-  .dn li{display:flex;gap:.55rem;align-items:center}
-  .dn li svg{flex:none}
-  .dn.day li svg{color:var(--dorado)}
-  .dn.night li svg{color:var(--noche-2)}
-  .dn .hours{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.9rem}
+  .hours{background:linear-gradient(160deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:18px;padding:52px 48px}
+  .hours .grid{display:grid;grid-template-columns:1.3fr .7fr;gap:44px;align-items:center}
+  @media (max-width:820px){.hours{padding:36px 26px}.hours .grid{grid-template-columns:1fr;gap:30px}}
+  .hours h2{font-size:clamp(1.9rem,4vw,2.6rem);color:#fff;margin:.6rem 0 .3rem}
+  .hours .rows{margin-top:1.7rem;display:flex;flex-direction:column;gap:.2rem}
+  .hours .hr{display:flex;align-items:baseline;gap:.8rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+  .hours .hr:last-child{border-bottom:none}
+  .hours .hr .d{font-weight:700;color:var(--ink)}
+  .hours .hr .fill{flex:1;border-bottom:1px dotted color-mix(in srgb,var(--ink) 24%,transparent);transform:translateY(-.28rem)}
+  .hours .hr .t{font-weight:800;color:var(--cyan);white-space:nowrap;font-size:.94rem}
+  .hours .hr.off .t{color:var(--muted)}
+  .hours .note{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--ink-soft);background:var(--holo-soft);border:1px solid var(--line);border-radius:999px;padding:.5rem 1rem}
+  .hours .side{background:#000;border:1px solid var(--line);border-radius:16px;padding:34px 28px;text-align:center;position:relative;overflow:hidden}
+  .hours .side::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%,rgba(108,155,255,.20),transparent 60%)}
+  .hours .side .lbl{position:relative;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800}
+  .hours .side .big{position:relative;font-size:2rem;font-weight:800;color:#fff;margin:.5rem 0 .2rem;letter-spacing:-.02em}
+  .hours .side .txt{position:relative;font-size:.86rem;color:var(--muted)}
 
-  .sedes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  @media (max-width:760px){.sedes{grid-template-columns:1fr}}
-  .sede{background:var(--char-2);border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;gap:16px;align-items:flex-start}
-  .sede .n{font-family:var(--serif);font-size:2rem;color:var(--dorado);line-height:1;flex:none}
-  .sede h3{font-size:1.2rem;color:#fff}
-  .sede p{color:var(--muted);font-size:.9rem;margin-top:.2rem}
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media (max-width:760px){.quotes{grid-template-columns:1fr;max-width:560px;margin:0 auto}}
+  .q{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:36px;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden}
+  .q::after{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--holo)}
+  .q .mark{font-size:3rem;line-height:.4;height:1.2rem;font-weight:800;background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .q p{font-size:1.22rem;line-height:1.5;color:var(--ink);font-weight:600}
+  .q .who{font-size:.84rem;color:var(--muted);margin-top:auto;letter-spacing:.04em}
 
-  .quote{text-align:center;max-width:780px;margin:0 auto}
-  .quote p{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-style:italic;line-height:1.4;color:#fff;margin:0 0 1rem}
-  .quote .who{color:var(--muted);font-size:.9rem}
+  .social{background:linear-gradient(150deg,var(--surface),var(--surface-2));border:1px solid var(--line);border-radius:18px;padding:52px 48px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;overflow:hidden}
+  @media (max-width:860px){.social{grid-template-columns:1fr;padding:38px 26px;gap:34px}}
+  .social h2{font-size:clamp(1.9rem,4vw,2.6rem);color:#fff;margin:.5rem 0 .3rem}
+  .social .handle{font-weight:800;color:var(--cyan);letter-spacing:.01em}
+  .social p{color:var(--ink-soft);margin:1rem 0 1.6rem}
+  .social .stats{display:flex;gap:2.2rem;flex-wrap:wrap;margin-bottom:1.7rem}
+  .social .stats .n{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;background:var(--holo);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .social .stats .l{font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-radius:14px;overflow:hidden}
+  .ig-grid .cellimg{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center}
+  .ig-grid .cellimg svg{width:40%;opacity:.9;color:#0A0A0C}
+  .ig1{background:linear-gradient(150deg,#FF4D8D,#B3245C)}
+  .ig2{background:linear-gradient(150deg,#FF8A45,#B34E12)}
+  .ig3{background:linear-gradient(150deg,#FFE15C,#B39A1D)}
+  .ig4{background:linear-gradient(150deg,#57E0D0,#12897C)}
+  .ig5{background:linear-gradient(150deg,#6C9BFF,#2544B3)}
+  .ig6{background:linear-gradient(150deg,#8E7BFF,#4A2FB3)}
 
-  footer{padding:60px 0 40px;border-top:1px solid var(--line)}
-  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
-  .foot h4{font-family:var(--serif);font-size:1.05rem;margin:0 0 .6rem;color:var(--cream)}
-  .foot p,.foot a{color:var(--muted);font-size:.9rem}
-  .foot a:hover{color:var(--dorado-2)}
-  @media (max-width:720px){.foot{grid-template-columns:1fr}}
-  .demo-note{margin-top:30px;font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:20px;text-align:center}
-  .demo-note b{color:var(--dorado-2)}
+  .visit{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  @media (max-width:820px){.visit{grid-template-columns:1fr;gap:30px}}
+  .visit .rows{display:flex;flex-direction:column;gap:1.1rem;margin:1.6rem 0}
+  .visit .row{display:flex;gap:.9rem;align-items:flex-start}
+  .visit .row .ic{width:42px;height:42px;border-radius:11px;background:var(--holo-soft);color:var(--cyan);flex:none;display:flex;align-items:center;justify-content:center;border:1px solid var(--line)}
+  .visit .row b{display:block;font-size:.98rem;color:var(--ink)}
+  .visit .row span{font-size:.88rem;color:var(--muted)}
+  .visit .actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.4rem}
+  .mapbox{background:radial-gradient(130% 120% at 68% 18%,rgba(255,77,141,.16),transparent 56%),#000;border:1px solid var(--line);border-radius:16px;aspect-ratio:5/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;text-align:center;padding:30px}
+  .mapbox .pin{color:var(--pink)}
+  .mapbox b{font-size:1.15rem;color:#fff;font-weight:800;letter-spacing:-.01em}
+  .mapbox span{font-size:.85rem;color:var(--muted)}
+
+  footer{padding:62px 0 40px;border-top:1px solid var(--line);margin-top:20px}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1.1fr;gap:30px}
+  .foot .fbrand{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+  .foot .fbrand .bn{font-size:1.35rem;font-weight:800}
+  .foot .fbrand .bs{font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .foot h4{font-size:1rem;margin:0 0 .7rem;color:var(--ink);font-weight:800}
+  .foot p,.foot a{color:var(--muted);font-size:.9rem;line-height:1.9}
+  .foot a:hover{color:var(--cyan)}
+  .foot .about{max-width:34ch;line-height:1.7}
+  @media (max-width:720px){.foot{grid-template-columns:1fr;gap:26px}}
+  .demo-note{margin-top:34px;font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:22px;text-align:center;line-height:1.8}
+  .demo-note b{color:var(--cyan)}
 
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
   .reveal.in{opacity:1;transform:none}
 
-  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--dorado);color:#1e1305;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 34px -10px rgba(232,162,44,.7);transition:transform .25s ease}
+  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--holo);color:#0A0A0C;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--glow);transition:transform .25s ease}
   .chat-fab:hover{transform:scale(1.06)}
-  .chat-fab .dot{position:absolute;top:-3px;right:-3px;width:22px;height:22px;border-radius:50%;background:var(--rojo);color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--char)}
-  .chat-panel{position:fixed;right:22px;bottom:96px;z-index:61;width:min(374px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:var(--char-2);border:1px solid var(--line);border-radius:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.75);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+  .chat-fab .dot{position:absolute;top:-3px;right:-3px;width:22px;height:22px;border-radius:50%;background:#fff;color:#0A0A0C;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg)}
+  .chat-panel{position:fixed;right:22px;bottom:96px;z-index:61;width:min(374px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
   .chat-panel.open{opacity:1;transform:none;pointer-events:auto}
-  .chat-head{background:linear-gradient(120deg,#8a3d15,#3a1608);color:var(--cream);padding:16px 18px;display:flex;align-items:center;gap:12px}
-  .chat-head .av{width:40px;height:40px;border-radius:50%;background:var(--dorado);flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;color:#1e1305}
-  .chat-head .nm{font-weight:600;font-size:.98rem;font-family:var(--serif)}
-  .chat-head .st{font-size:.75rem;color:#ffcf9e;display:flex;align-items:center;gap:.35rem}
-  .chat-head .st::before{content:"";width:7px;height:7px;border-radius:50%;background:#ffb26b;display:inline-block}
-  .chat-head .x{margin-left:auto;background:none;border:none;color:rgba(245,233,214,.7);cursor:pointer;font-size:1.3rem;line-height:1}
-  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--char)}
-  .msg{max-width:84%;padding:.62rem .85rem;border-radius:13px;font-size:.9rem;line-height:1.45;white-space:pre-line}
-  .msg.bot{background:var(--char-3);border-bottom-left-radius:4px;align-self:flex-start}
-  .msg.me{background:var(--dorado);color:#1e1305;border-bottom-right-radius:4px;align-self:flex-end}
-  .typing{align-self:flex-start;display:flex;gap:4px;padding:.7rem .9rem;background:var(--char-3);border-radius:13px}
+  .chat-head{background:var(--holo);color:#0A0A0C;padding:15px 18px;display:flex;align-items:center;gap:12px}
+  .chat-head .av{width:40px;height:40px;border-radius:50%;background:#0A0A0C;color:#fff;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800}
+  .chat-head .nm{font-weight:800;font-size:.96rem}
+  .chat-head .st{font-size:.75rem;color:#1A1A1F;display:flex;align-items:center;gap:.35rem;font-weight:600}
+  .chat-head .st::before{content:"";width:7px;height:7px;border-radius:50%;background:#0A0A0C;display:inline-block}
+  .chat-head .x{margin-left:auto;background:none;border:none;color:#0A0A0C;cursor:pointer;font-size:1.35rem;line-height:1}
+  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+  .msg{max-width:84%;padding:.62rem .85rem;border-radius:14px;font-size:.9rem;line-height:1.45;white-space:pre-line}
+  .msg.bot{background:var(--surface-2);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .msg.me{background:var(--holo);color:#0A0A0C;font-weight:600;border-bottom-right-radius:4px;align-self:flex-end}
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:.7rem .9rem;background:var(--surface-2);border:1px solid var(--line);border-radius:14px}
   .typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite both}
   .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
   @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
-  .quicks{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:var(--char);border-top:1px solid var(--line)}
-  .quick{font-size:.8rem;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--dorado);color:var(--dorado-2);background:transparent;cursor:pointer}
-  .quick:hover{background:rgba(232,162,44,.14)}
-  .chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--char-2)}
-  .chat-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-family:var(--sans);font-size:.9rem;background:var(--char);color:var(--cream)}
-  .chat-input input:focus{outline:none;border-color:var(--dorado)}
-  .chat-input button{background:var(--dorado);border:none;color:#1e1305;width:40px;height:40px;border-radius:50%;cursor:pointer;flex:none}
-  .chat-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:6px;background:var(--char-2)}
+  .quicks{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:var(--bg);border-top:1px solid var(--line)}
+  .quick{font-size:.8rem;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--pink);color:var(--pink);background:transparent;cursor:pointer}
+  .quick:hover{background:color-mix(in srgb,var(--pink) 14%,transparent)}
+  .chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--surface)}
+  .chat-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-family:var(--sans);font-size:.9rem;background:var(--bg);color:var(--ink)}
+  .chat-input input:focus{outline:none;border-color:var(--pink)}
+  .chat-input button{background:var(--holo);border:none;color:#0A0A0C;width:40px;height:40px;border-radius:50%;cursor:pointer;flex:none;display:flex;align-items:center;justify-content:center}
+  .chat-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:6px;background:var(--surface)}
 
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero .glow{animation:none}}
-
-  .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media (max-width:820px){.svc{grid-template-columns:1fr}}
-  .svc .it{background:var(--char-2);border:1px solid var(--line);border-radius:12px;padding:28px;transition:transform .25s ease,border-color .25s ease}
-  .svc .it:hover{transform:translateY(-4px);border-color:var(--dorado)}
-  .svc .it .ic{color:var(--dorado);font-size:1.7rem;margin-bottom:.5rem}
-  .svc .it h3{font-size:1.18rem;color:#fff;margin-bottom:.35rem}
-  .svc .it p{color:var(--muted);font-size:.92rem}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero .aura{animation:none}.star .art::before{animation:none}}
 </style>
 
+<svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="holo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF4D8D"/>
+      <stop offset=".3" stop-color="#FF8A45"/>
+      <stop offset=".5" stop-color="#FFE15C"/>
+      <stop offset=".75" stop-color="#57E0D0"/>
+      <stop offset="1" stop-color="#6C9BFF"/>
+    </linearGradient>
+  </defs>
+</svg>
 
-<header>
+<div class="topbar">🍕 Pizzería de miércoles a domingo · 🍸 Barra &amp; tragos · estilo capital en Carúpano</div>
+
+<header id="top">
   <div class="wrap nav">
-    <a class="brand" href="#"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6M8 3v6M4 3v6a3 3 0 0 0 4 0V3M6 9v12"/><path d="M17 3c-2 2-3 5-3 8h5c0-3-1-6-2-8zM17 11v10"/></svg>Nolita Bistró Bar</a>
-    <nav class="nav-links"><a href="#carta">La carta</a><a href="#visitanos">Visítanos</a></nav>
-    <a class="btn btn-dorado" href="https://wa.me/584121199213?text=Hola%20Nolita,%20quiero%20hacer%20un%20pedido%20o%20reservar" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    <a class="brand" href="#top" aria-label="Nolita Bistro más Bar">
+      <span class="mark" aria-hidden="true">N!</span>
+      <span class="txt">
+        <span class="bn">Nolita</span>
+        <span class="bs">Bistro <span class="plus" aria-hidden="true">+</span> Bar</span>
+      </span>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#carta">La carta</a>
+        <a href="#capital">Estilo capital</a>
+        <a href="#horario">Horario</a>
+        <a href="#instagram">Instagram</a>
+      </nav>
+      <a class="btn btn-holo" href="https://wa.me/584121199213?text=Hola%20Nolita%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="glow"></div>
+  <div class="aura a1"></div>
+  <div class="aura a2"></div>
   <div class="wrap hero-inner">
-    <div class="kick"><span></span><span class="eyebrow">Hamburguesería · Pizzería · Bar</span></div>
-    <h1>Bistró, pizza <em>y bar.</em></h1>
-    <div class="sub">buen sabor y buen ambiente en Carúpano</div>
-    <p class="lead">Hamburguesas y pizzas artesanales hechas al momento, en un ambiente bistró para disfrutar sin apuros.</p>
+    <div class="kick"><span class="rule"></span><span class="eyebrow">Burger Restaurant · Pizza · Bar</span></div>
+    <h1 class="wm">
+      <span class="l1">Nolita<span class="holo bang">!</span></span>
+      <span class="l2">Bistro <span class="holo plus" aria-hidden="true">+</span> Bar</span>
+    </h1>
+    <div class="sub">Estilo capital, en pleno <span class="em">Carúpano</span>.</div>
+    <p class="lead">Hamburguesas de autor —la Manhattan es la insignia—, pizza de miércoles a domingo, sabor Tex-Mex y una barra para quedarse. El bistró-bar que trajo la estética de la capital al oriente.</p>
     <div class="actions">
-      <a class="btn btn-dorado" href="https://wa.me/584121199213?text=Hola%20Nolita,%20quiero%20hacer%20un%20pedido%20o%20reservar" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      <a class="btn btn-ghost" href="#carta">Ver la carta</a>
+      <a class="btn btn-holo" href="https://wa.me/584121199213?text=Hola%20Nolita%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      <a class="btn btn-line" href="#carta">Ver la carta</a>
+      <span class="link-chat" data-open-chat>o pregúntale a nuestro asistente
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
     </div>
-    <div class="info"><div><b>9 mil</b>seguidores</div><div><b>Pizza</b>Mié a Dom</div><div><b>Bistró &amp; Bar</b>ambiente único</div></div>
+    <div class="chips">
+      <span><b>Casco central</b> · Carúpano</span>
+      <span>Hamburguesas <b>&amp;</b> Tex-Mex</span>
+      <span>Pizzería <b>miér–dom</b></span>
+      <span><b>+8 mil</b> en Instagram</span>
+    </div>
   </div>
 </section>
 
-<div class="strip"><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 1-3 1.5-3.5C10 9 12 6 12 3z"/></svg></span><div><b>Al momento</b><small>Hamburguesas y pizzas frescas</small></div></div><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg></span><div><b>Pide por WhatsApp</b><small>Pedidos y reservas</small></div></div><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6.5L21 10l-5 4.5L17.5 21 12 17.3 6.5 21 8 14.5 3 10l6.5-.5z"/></svg></span><div><b>Ambiente bistró</b><small>Ideal para salir</small></div></div></div>
+<div class="strip">
+  <div class="cell">
+    <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0z"/><path d="M4 13.5c1.2 0 1.6 1 2.8 1s1.6-1 2.8-1 1.6 1 2.8 1 1.6-1 2.8-1 1.6 1 2.8 1"/><path d="M5 17h14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/></svg></span>
+    <div><b>Hamburguesas &amp; Tex-Mex</b><small>De autor, con sazón propio</small></div>
+  </div>
+  <div class="cell">
+    <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-3 9 3-9 15z"/><path d="M9.5 8.5h.01M13 10h.01M11 13h.01"/></svg></span>
+    <div><b>Pizzería</b><small>De miércoles a domingo</small></div>
+  </div>
+  <div class="cell">
+    <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14l-6 7v6M13 17H9m4 0h2M5 4l7 7"/></svg></span>
+    <div><b>Barra &amp; drinks</b><small>Cócteles y ambiente nocturno</small></div>
+  </div>
+</div>
 
 <section class="block" id="carta">
   <div class="wrap">
-    <div class="head reveal"><span class="eyebrow">Nuestra carta</span><h2>Del bistró para ti</h2><p>Precios del día por WhatsApp.</p></div>
-    <div class="menu reveal"><div class="menu-cat">Hamburguesería</div><div class="mi"><span class="nm">Hamburguesas Nolita <small>recetas propias</small></span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Acompañantes</span><span class="dots"></span><span class="pr">consultar</span></div><div class="menu-cat">Pizzería (Mié a Dom)</div><div class="mi"><span class="nm">Pizzas artesanales <small>masa fresca</small></span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Por porción o entera</span><span class="dots"></span><span class="pr">consultar</span></div><div class="menu-cat">Bar</div><div class="mi"><span class="nm">Cócteles</span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Bebidas</span><span class="dots"></span><span class="pr">consultar</span></div></div>
+    <div class="head reveal">
+      <span class="eyebrow">La carta</span>
+      <h2>Del bistró para ti</h2>
+      <p>Hamburguesas de autor, pizza, wraps, Tex-Mex, ensaladas y barra. Los precios los manejamos al día —consúltalos por WhatsApp y te respondemos al momento.</p>
+    </div>
+
+    <div class="star reveal">
+      <div class="art">
+        <span class="badge">Nuestra insignia</span>
+        <svg viewBox="0 0 100 82" fill="none" stroke="url(#holo)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 40a32 32 0 0 1 64 0z"/>
+          <path d="M18 44c2.6 0 3.4 2.2 6 2.2s3.4-2.2 6-2.2 3.4 2.2 6 2.2 3.4-2.2 6-2.2 3.4 2.2 6 2.2 3.4-2.2 6-2.2 3.4 2.2 6 2.2 3.4-2.2 6-2.2 3.4 2.2 6 2.2"/>
+          <path d="M22 52h56"/>
+          <path d="M20 58h60a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4z"/>
+          <path d="M34 33h2M46 30h2M60 33h2"/>
+        </svg>
+      </div>
+      <div class="txt">
+        <span class="eyebrow">La hamburguesa que nos hizo Nolita</span>
+        <h3>La <span class="holo">Manhattan</span></h3>
+        <p>La hamburguesa que nos puso en el mapa de Carúpano: carne bien montada, sello propio y ese aire de ciudad grande. Es la que todos vuelven a pedir.</p>
+        <div class="combo">
+          <span>🍔 De autor</span>
+          <span>🥇 Insignia de la casa</span>
+          <span>🌆 Estilo capital</span>
+        </div>
+        <a class="btn btn-holo" href="https://wa.me/584121199213?text=Hola%20Nolita%2C%20quiero%20pedir%20la%20hamburguesa%20Manhattan" target="_blank" rel="noopener">Pedir la Manhattan</a>
+      </div>
+    </div>
+
+    <div class="menu reveal">
+      <div class="menu-cat"><span class="dot"></span>Hamburguesas</div>
+      <div class="mi"><span class="nm">Hamburguesa Manhattan <small>nuestra insignia</small></span><span class="dots"></span><span class="pr">consulta</span></div>
+      <div class="mi"><span class="nm">Hamburguesas de la casa <small>de autor, al momento</small></span><span class="dots"></span><span class="pr">consulta</span></div>
+
+      <div class="menu-cat"><span class="dot"></span>Pizzas <span class="flag">Miér–Dom</span></div>
+      <div class="mi"><span class="nm">Pizzas artesanales <small>de miércoles a domingo</small></span><span class="dots"></span><span class="pr">consulta</span></div>
+
+      <div class="menu-cat"><span class="dot"></span>Wraps de pollo</div>
+      <div class="mi"><span class="nm">Wrap de pollo <small>para comer rico y ligero</small></span><span class="dots"></span><span class="pr">consulta</span></div>
+
+      <div class="menu-cat"><span class="dot"></span>Tex-Mex</div>
+      <div class="mi"><span class="nm">Especialidades Tex-Mex <small>el sabor Tex-Mex, a la manera Nolita</small></span><span class="dots"></span><span class="pr">consulta</span></div>
+
+      <div class="menu-cat"><span class="dot"></span>Ensaladas</div>
+      <div class="mi"><span class="nm">Ensaladas frescas <small>como plato o para acompañar</small></span><span class="dots"></span><span class="pr">consulta</span></div>
+
+      <div class="menu-cat"><span class="dot"></span>Barra &amp; tragos</div>
+      <div class="mi"><span class="nm">Coctelería de autor <small>incluido un trago con Puerto de Indias</small></span><span class="dots"></span><span class="pr">consulta</span></div>
+      <div class="mi"><span class="nm">Bebidas y tragos <small>para acompañar la mesa</small></span><span class="dots"></span><span class="pr">consulta</span></div>
+    </div>
+
+    <div class="menu-cta reveal">
+      <a class="btn btn-holo" href="https://wa.me/584121199213?text=Hola%20Nolita%2C%20quiero%20ver%20la%20carta%20y%20los%20precios" target="_blank" rel="noopener">Consultar carta por WhatsApp</a>
+      <span class="link-chat" data-open-chat>Probar el asistente
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
   </div>
 </section>
-<section class="block" style="padding-top:0"><div class="wrap">
-  <div class="star reveal">
-    <div class="art"><svg viewBox="0 0 100 80" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 44a28 28 0 0 1 56 0v4H22z"/><path d="M22 48v6a6 6 0 0 0 6 6h44a6 6 0 0 0 6-6v-6"/><path d="M34 40l4-6M50 38v-8M66 40l-4-6"/></svg></div>
-    <div class="txt"><span class="eyebrow">Plan bistró</span><h2>Cena + Bar en Nolita</h2><p>Hamburguesa o pizza artesanal y un buen cóctel, en el ambiente perfecto.</p>
-      <div class="combo"><span>🍔 Burgers</span><span>🍕 Pizza</span><span>🍹 Cócteles</span><span>🌃 Ambiente</span></div>
-      <a class="btn btn-dorado" href="#" data-open-chat>Reservar mesa →</a></div>
-  </div>
-</div></section>
-<section class="block" id="visitanos" style="padding-top:0"><div class="wrap">
-  <div class="head reveal"><span class="eyebrow">Visítanos</span><h2>En Carúpano</h2></div>
-  <div class="sedes">
-    <div class="sede reveal"><div class="n">🕒</div><div><h3>Horario</h3><p>Mar, Mié, Jue y Dom · 6:00 pm – 10:30 pm<br>Vie y Sáb · 6:00 pm – 12:00 am</p></div></div>
-    <div class="sede reveal"><div class="n">📍</div><div><h3>Ubicación</h3><p>Carúpano, Estado Sucre</p></div></div>
-  </div>
-</div></section>
 
-<section class="block" style="padding-top:0"><div class="wrap">
-  <div class="quote reveal"><p>“Un ambiente acogedor, buena comida y el mejor plan para salir en Carúpano.”</p><div class="who">— Nuestros comensales</div></div>
-</div></section>
-
-<footer><div class="wrap">
-  <div class="foot">
-    <div><a class="brand" href="#" style="margin-bottom:.8rem"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6M8 3v6M4 3v6a3 3 0 0 0 4 0V3M6 9v12"/><path d="M17 3c-2 2-3 5-3 8h5c0-3-1-6-2-8zM17 11v10"/></svg>Nolita Bistró Bar</a>
-      <p>Hamburguesas, pizza artesanal y bar. El bistró de Carúpano.</p></div>
-    <div><h4>Horario</h4><p>Mar, Mié, Jue y Dom · 6:00 pm – 10:30 pm<br>Vie y Sáb · 6:00 pm – 12:00 am</p></div>
-    <div><h4>Contacto</h4><p>Carúpano, Estado Sucre<br>✆ 0412-119-9213<br>📲 @nolita_bistrobar</p></div>
+<section class="block" id="capital" style="padding-top:0">
+  <div class="wrap">
+    <div class="capital reveal">
+      <div>
+        <span class="eyebrow">Estilo capital</span>
+        <h2>La estética de la capital, en Carúpano</h2>
+        <p>Nolita nació para traer al oriente un ambiente distinto: el de un bistró-bar de ciudad grande. Estética cuidada, buena mano en la cocina y una barra para quedarse hasta tarde.</p>
+        <ul class="feats">
+          <li><span class="b"></span> Ambiente nocturno, para pasar el rato con amigos</li>
+          <li><span class="b"></span> Transmitimos el fútbol en pantalla</li>
+          <li><span class="b"></span> Un lugar por encima del promedio de la ciudad</li>
+        </ul>
+        <a class="btn btn-holo" href="https://wa.me/584121199213?text=Hola%20Nolita%2C%20quiero%20reservar%20para%20la%20noche" target="_blank" rel="noopener">Reservar la noche</a>
+      </div>
+      <div class="art2">
+        <span class="big-plus" aria-hidden="true">+</span>
+        <svg class="skyline" viewBox="0 0 200 70" fill="none" stroke="url(#holo)" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+          <path d="M0 70 V44 h10 V54 h8 V30 h12 V54 h9 V38 h7 V22 h10 V38 h8 V50 h11 V26 h9 V50 h10 V40 h8 V16 h9 V40 h9 V52 h10 V34 h8 V52 h11 V44 h9 V58 h10 V44 h8 V70 Z"/>
+        </svg>
+      </div>
+    </div>
   </div>
-  <p class="demo-note"><b>Sitio de demostración</b> creado para Nolita Bistró Bar como propuesta. ¿Quieres una web así —con asistente que atiende solo— para tu negocio? Escríbeme.</p>
-</div></footer>
+</section>
 
-<button class="chat-fab" id="fab" aria-label="Abrir chat"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg><span class="dot">1</span></button>
-<div class="chat-panel" id="panel" role="dialog" aria-label="Asistente Nolita Bistró Bar">
-  <div class="chat-head"><div class="av">N</div>
-    <div><div class="nm">Asistente Nolita Bistró Bar</div><div class="st">en línea · responde al instante</div></div>
-    <button class="x" id="closeChat" aria-label="Cerrar">×</button></div>
+<section class="block" id="horario" style="padding-top:0">
+  <div class="wrap">
+    <div class="hours reveal">
+      <div class="grid">
+        <div>
+          <span class="eyebrow">Horario</span>
+          <h2>Cuándo abrimos</h2>
+          <div class="rows">
+            <div class="hr"><span class="d">Martes, miércoles, jueves y domingo</span><span class="fill"></span><span class="t">6:00 pm – 10:30 pm</span></div>
+            <div class="hr"><span class="d">Viernes y sábado</span><span class="fill"></span><span class="t">6:00 pm – 12:00 am</span></div>
+            <div class="hr off"><span class="d">Lunes</span><span class="fill"></span><span class="t">Cerrado</span></div>
+          </div>
+          <span class="note">🍕 La pizzería trabaja de miércoles a domingo</span>
+        </div>
+        <div class="side">
+          <span class="lbl holo">Solo de noche</span>
+          <div class="big">6:00 pm</div>
+          <div class="txt">Abrimos al caer la tarde, cuando empieza el buen ambiente.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="opiniones" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Lo que dicen</span>
+      <h2>Comensales de Carúpano</h2>
+    </div>
+    <div class="quotes">
+      <div class="q reveal">
+        <div class="mark">&ldquo;</div>
+        <p>El mejor lugar de Carúpano para pasar un rato con amigos y comer insuperablemente bien.</p>
+        <div class="who">— Cliente de Nolita</div>
+      </div>
+      <div class="q reveal">
+        <div class="mark">&ldquo;</div>
+        <p>Tiene estilo capital: una estética muy por encima del promedio local.</p>
+        <div class="who">— Comensal en Carúpano</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="instagram" style="padding-top:0">
+  <div class="wrap">
+    <div class="social reveal">
+      <div>
+        <span class="eyebrow">+8 mil en Instagram</span>
+        <h2>Nos sigue medio Carúpano</h2>
+        <p class="handle">@nolita_bistrobar · Burger Restaurant</p>
+        <p>Ahí publicamos las hamburguesas, las noches de barra y el ambiente. Échale un ojo antes de venir.</p>
+        <div class="stats">
+          <div><div class="n">8.967</div><div class="l">Seguidores</div></div>
+          <div><div class="n">182</div><div class="l">Publicaciones</div></div>
+        </div>
+        <a class="btn btn-holo" href="https://instagram.com/nolita_bistrobar" target="_blank" rel="noopener">Seguir en Instagram</a>
+      </div>
+      <div class="ig-grid" aria-hidden="true">
+        <div class="cellimg ig1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0z"/><path d="M5 15h14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/></svg></div>
+        <div class="cellimg ig2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-3 9 3-9 15z"/></svg></div>
+        <div class="cellimg ig3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14l-6 7v6M9 17h6"/></svg></div>
+        <div class="cellimg ig4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10h12l-1 9H7z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg></div>
+        <div class="cellimg ig5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 13c1 2 7 2 8 0"/><path d="M9 9h.01M15 9h.01"/></svg></div>
+        <div class="cellimg ig6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 16 0z"/><path d="M5 15h14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="visitanos" style="padding-top:0">
+  <div class="wrap">
+    <div class="visit reveal">
+      <div>
+        <span class="eyebrow">Visítanos</span>
+        <h2>En el casco central</h2>
+        <div class="rows">
+          <div class="row">
+            <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg></span>
+            <div><b>Casco central, zona Av. Independencia</b><span>Carúpano, Estado Sucre</span></div>
+          </div>
+          <div class="row">
+            <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <div><b>Abrimos de noche, de martes a domingo</b><span>Escríbenos y te confirmamos disponibilidad al momento</span></div>
+          </div>
+          <div class="row">
+            <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+            <div><b>Síguenos en Instagram</b><span>@nolita_bistrobar · +8 mil seguidores</span></div>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn btn-holo" href="https://wa.me/584121199213?text=Hola%20Nolita%2C%20me%20pasas%20la%20ubicaci%C3%B3n%20y%20el%20horario" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a class="btn btn-line" href="https://instagram.com/nolita_bistrobar" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <span class="pin"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg></span>
+        <b>Casco central de Carúpano</b>
+        <span>Zona Av. Independencia · Estado Sucre</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="fbrand">
+          <span class="mark" aria-hidden="true">N!</span>
+          <span class="txt">
+            <span class="bn">Nolita</span>
+            <span class="bs">Bistro <span class="plus">+</span> Bar</span>
+          </span>
+        </div>
+        <p class="about">Hamburguesas de autor, pizza, cocina Tex-Mex y barra. El bistró-bar estilo capital de Carúpano.</p>
+      </div>
+      <div>
+        <h4>Explora</h4>
+        <p>
+          <a href="#carta">La carta</a><br>
+          <a href="#capital">Estilo capital</a><br>
+          <a href="#horario">Horario</a><br>
+          <a href="#instagram">Instagram</a>
+        </p>
+      </div>
+      <div>
+        <h4>Encuéntranos</h4>
+        <p>
+          Casco central, Av. Independencia<br>
+          Carúpano, Estado Sucre<br>
+          <a href="https://wa.me/584121199213?text=Hola%20Nolita%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a> ·
+          <a href="https://instagram.com/nolita_bistrobar" target="_blank" rel="noopener">@nolita_bistrobar</a>
+        </p>
+      </div>
+    </div>
+    <p class="demo-note"><b>Sitio de demostracion</b> creado para Nolita Bistró Bar como propuesta. ¿Quieres una web asi —con asistente que atiende solo— para tu negocio? Escribeme: <b>+58 424 000 0000</b></p>
+  </div>
+</footer>
+
+<button class="chat-fab" id="fab" aria-label="Abrir chat">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+  <span class="dot">1</span>
+</button>
+
+<div class="chat-panel" id="panel" role="dialog" aria-label="Asistente Nolita Bistro + Bar">
+  <div class="chat-head">
+    <div class="av">N!</div>
+    <div><div class="nm">Asistente Nolita</div><div class="st">en línea · responde al instante</div></div>
+    <button class="x" id="closeChat" aria-label="Cerrar">×</button>
+  </div>
   <div class="chat-body" id="body"></div>
   <div class="quicks" id="quicks"></div>
-  <div class="chat-input"><input id="inp" placeholder="Escribe un mensaje…" autocomplete="off">
-    <button id="send" aria-label="Enviar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div>
-  <div class="chat-foot">Demo de asistente IA · Atiende 24/7</div>
+  <div class="chat-input">
+    <input id="inp" placeholder="Escribe un mensaje…" autocomplete="off">
+    <button id="send" aria-label="Enviar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+  </div>
+  <div class="chat-foot">Demo de asistente IA · Toma pedidos y reservas por WhatsApp</div>
 </div>
+
 <script>
 (function(){
-  var CONFIG={"welcome": "¡Hola! 🍔🍕 Soy el asistente de Nolita Bistró Bar. Te tomo el pedido o te reservo mesa. ¿Qué deseas?", "quicks": ["🍔 Hamburguesas", "🍕 Pizza", "🍽️ Reservar mesa"], "starterq": "Quiero reservar una mesa", "rules": [{"k": ["hamburguesa", "burger"], "r": "🍔 Nuestras hamburguesas son con recetas propias y el toque Nolita. Te paso el precio del día."}, {"k": ["pizza", "artesanal"], "r": "🍕 Las pizzas artesanales van de miércoles a domingo, masa fresca y buenos ingredientes. ¿Entera o por porción?"}, {"k": ["bar", "coctel", "cóctel", "trago", "bebida", "noche"], "r": "🍹 Tenemos bar con cócteles y bebidas para acompañar. ¿Reservamos mesa?"}, {"k": ["reservar", "mesa", "reserva", "grupo"], "r": "🍽️ ¡Con gusto! ¿Para cuántas personas y qué día? Te confirmo enseguida."}, {"k": ["precio", "cuesta", "cuanto", "menu", "carta"], "r": "📋 Dime qué quieres y te doy el precio del día 👍"}, {"k": ["llevar", "delivery", "pedido"], "r": "🛵 Claro, dime tus platos y tu zona y te confirmo total y tiempo."}, {"k": ["horario", "abren", "hora"], "r": "🕒 Mar-Mié-Jue-Dom 6:00-10:30pm y Vie-Sáb 6:00pm-12:00am. Pizza de miércoles a domingo."}, {"k": ["donde", "ubicad", "direccion"], "r": "📍 Estamos en Carúpano, Estado Sucre. Te paso la ubicación exacta."}, {"k": ["gracias", "listo", "ok"], "r": "¡Te esperamos en Nolita! 🍕"}], "fallback": "¡Con gusto! ¿Quieres hamburguesas, pizza, algo del bar o reservar mesa?"};
+  var CONFIG={
+    welcome:"¡Hola! 🍔 Soy el asistente de Nolita Bistro + Bar. Te tomo el pedido o te reservo mesa —la Manhattan es nuestra hamburguesa insignia y los miércoles a domingo también hay pizza. ¿Qué se te antoja?",
+    quicks:["🍔 La Manhattan","🍕 Pizzas","🍽️ Reservar mesa"],
+    starterq:"Quiero reservar una mesa",
+    rules:[
+      {k:["manhattan","insignia","estrella","hamburguesa","burger","burguer"],r:"🍔 Hacemos hamburguesas de autor al momento —y la Manhattan es nuestra insignia, la que todos vuelven a pedir: carne bien montada, sello Nolita y ese aire estilo capital. Dime cuántas quieres y te confirmo todo por WhatsApp."},
+      {k:["pizza","pizzas","pizzeria","pizzería"],r:"🍕 ¡Sí, somos pizzería de miércoles a domingo! Pizzas artesanales para acompañar la noche. Dime para cuándo y te la reservamos por WhatsApp."},
+      {k:["wrap","pollo"],r:"🌯 Tenemos wraps de pollo, ideales para comer rico y ligero. ¿Te preparo uno?"},
+      {k:["tex","mex","texmex","mexicana","nacho","taco"],r:"🌮 Nuestra cocina Tex-Mex tiene el sabor de siempre, a la manera Nolita. Dime qué se te antoja y te paso el detalle por WhatsApp."},
+      {k:["ensalada","fresco","ligero","vegetariano"],r:"🥗 Tenemos ensaladas frescas, como plato o para acompañar. ¿Te la sumo al pedido?"},
+      {k:["bar","trago","bebida","cerveza","copas","coctel","cóctel","puerto","gin"],r:"🍸 Tenemos barra con coctelería de autor —incluido un trago con Puerto de Indias— y bebidas para acompañar la mesa. ¿Reservamos para la noche?"},
+      {k:["futbol","fútbol","partido","juego","transmit","pantalla"],r:"⚽ Sí, transmitimos el fútbol en pantalla. Buen ambiente nocturno para ver el partido con hamburguesa y barra. ¿Te reservo mesa?"},
+      {k:["reservar","mesa","reserva","grupo","cumple","evento","amigos"],r:"🍽️ ¡Con gusto! ¿Para cuántas personas y qué día? Abrimos de noche, de martes a domingo, y te confirmo la mesa al instante por WhatsApp."},
+      {k:["pedir","llevar","delivery","domicilio","pedido","envio","envío"],r:"🛵 Tomamos tu pedido por WhatsApp. Dime qué quieres y tu zona en Carúpano, y te confirmamos total y tiempo de entrega."},
+      {k:["precio","cuesta","cuanto","cuánto","vale","carta","menu","menú"],r:"📋 Los precios los manejamos al día 👍 Dime qué te provoca —la Manhattan, una pizza, un wrap, algo Tex-Mex o de la barra— y te paso el precio del momento por WhatsApp."},
+      {k:["horario","abren","hora","abierto","cuando","cuándo","dia","día","cerrado"],r:"🕒 Abrimos solo de noche:\n• Martes, miércoles, jueves y domingo: 6:00 pm – 10:30 pm\n• Viernes y sábado: 6:00 pm – 12:00 am\n• Lunes cerrado\nLa pizzería trabaja de miércoles a domingo. ¿Te reservo mesa?"},
+      {k:["donde","dónde","ubicad","direccion","dirección","queda","llegar","mapa"],r:"📍 Estamos en el casco central de Carúpano, zona Av. Independencia (Estado Sucre). ¿Te reservo mesa?"},
+      {k:["instagram","ig","redes","fotos","foto","seguidores"],r:"📸 Estamos en Instagram como @nolita_bistrobar, con más de 8 mil seguidores —échale un ojo al ambiente. ¿Te reservo mesa?"},
+      {k:["gracias","listo","ok","perfecto","dale"],r:"¡Te esperamos en Nolita! 🍔 Aquí estoy cuando quieras pedir o reservar."}
+    ],
+    fallback:"¡Con gusto te ayudo! 🍔 ¿Buscas la Manhattan, una pizza, algo Tex-Mex, un wrap, la barra o prefieres reservar mesa?"
+  };
   var panel=document.getElementById('panel'),fab=document.getElementById('fab'),body=document.getElementById('body'),
       quicks=document.getElementById('quicks'),inp=document.getElementById('inp'),started=false;
   function scroll(){body.scrollTop=body.scrollHeight}
@@ -260,10 +595,10 @@
   document.getElementById('send').onclick=function(){var v=inp.value.trim();if(v){handle(v);inp.value=''}};
   inp.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=inp.value.trim();if(v){handle(v);inp.value=''}}});
   document.querySelectorAll('[data-open-chat]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();setTimeout(function(){handle(CONFIG.starterq||'Quiero hacer un pedido')},400)})});
+
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 })();
 </script>
-
 </body>
 </html>

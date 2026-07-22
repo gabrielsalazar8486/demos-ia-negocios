@@ -3,247 +3,502 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tiago · Restaurant, Fast Food &amp; Bar en Carúpano</title>
-<meta name="description" content="El punto de encuentro de Carúpano: comida rápida, bar y buen ambiente. Pide o reserva por WhatsApp.">
+<title>Tiago Fast Food · El mejor ambiente de Carúpano · Fast food, bar y karaoke</title>
+<meta name="description" content="Family Style Restaurant en Carúpano: comida rápida, hamburguesas, almuerzos y heladería de día; bar, música en vivo y karaoke de noche. +10 años. Pide por WhatsApp — delivery US$3.">
 </head>
 <body>
 <style>
   :root{
     color-scheme:dark;
-    --char:#171009; --char-2:#20160D; --char-3:#2A1D11; --cream:#F5E9D6;
-    --dorado:#E8A22C; --dorado-2:#F5B94A; --rojo:#C0342B; --rojo-2:#E0473A;
-    --noche:#7B5CD6; --noche-2:#9B7CF0; --oliva:#9AA65B;
-    --muted:rgba(245,233,214,.62); --line:rgba(245,233,214,.14);
+    --bg:#0A0807; --bg-2:#150F0E; --bg-3:#201615; --surface:#171010;
+    --ink:#FCF6F3; --muted:rgba(252,246,243,.62); --line:rgba(252,246,243,.12);
+    --red:#E4141F; --red-2:#FF524B; --red-3:#FF7A63; --red-deep:#6E0A10;
+    --glow:rgba(228,20,31,.55);
     --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
     --sans:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --wrap:1120px;
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--char);color:var(--cream);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  h1,h2,h3{margin:0;font-family:var(--serif);font-weight:600;line-height:1.02;text-wrap:balance}
+  h1,h2,h3{margin:0;font-family:var(--serif);font-weight:600;line-height:1.04;text-wrap:balance}
   p{margin:0}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-  .eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--dorado-2)}
-  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.85rem 1.6rem;border-radius:3px;border:1px solid transparent;cursor:pointer;letter-spacing:.02em;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
-  .btn-dorado{background:var(--dorado);color:#1e1305}
-  .btn-dorado:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(232,162,44,.6)}
-  .btn-rojo{background:var(--rojo);color:#fff}
-  .btn-rojo:hover{transform:translateY(-2px)}
-  .btn-ghost{background:transparent;border-color:var(--line);color:var(--cream)}
-  .btn-ghost:hover{border-color:var(--dorado);color:var(--dorado-2)}
-  :focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+  .eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--red-2)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:700;font-size:.95rem;padding:.85rem 1.55rem;border-radius:12px;border:1px solid transparent;cursor:pointer;letter-spacing:.01em;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,color .25s ease}
+  .btn-red{background:linear-gradient(94deg,#F0242C,#B90F17);color:#fff;box-shadow:0 12px 30px -12px var(--glow)}
+  .btn-red:hover{transform:translateY(-2px);box-shadow:0 20px 46px -12px var(--glow),0 0 0 1px rgba(255,82,75,.5)}
+  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--red-2);color:var(--red-2)}
+  :focus-visible{outline:2px solid var(--red-2);outline-offset:3px;border-radius:8px}
 
-  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--char) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:12px}
-  .brand{display:flex;align-items:center;gap:.55rem;font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.01em}
-  .brand .mark{width:26px;height:26px;flex:none;color:var(--dorado)}
+  .brand{display:flex;align-items:center;gap:.65rem}
+  .brand .mark{width:42px;height:42px;border-radius:50%;flex:none;background:radial-gradient(circle at 32% 26%,#FF453B,var(--red) 54%,var(--red-deep));display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.9);box-shadow:0 8px 20px -8px var(--glow)}
+  .brand .mark i{font-family:var(--serif);font-style:italic;font-weight:700;color:#fff;font-size:1.2rem;line-height:1;transform:translateY(-1px)}
+  .brand .wm{font-family:var(--serif);font-style:italic;font-size:1.42rem;color:#fff;line-height:1}
+  .brand small{display:block;font-family:var(--sans);font-style:normal;font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:3px}
   .nav-links{display:flex;gap:1.9rem;font-size:.9rem;color:var(--muted)}
-  .nav-links a:hover{color:var(--cream)}
+  .nav-links a:hover{color:var(--ink)}
   @media (max-width:860px){.nav-links{display:none}}
 
-  .hero{position:relative;min-height:84vh;display:flex;align-items:center;overflow:hidden;
-    background:radial-gradient(85% 75% at 80% 15%,#4a2810,transparent 60%),radial-gradient(70% 70% at 20% 90%,#3a1410,transparent 60%),linear-gradient(180deg,var(--char),#120b06)}
-  .hero .glow{position:absolute;right:-8%;top:-10%;width:56vw;height:56vw;max-width:680px;max-height:680px;border-radius:50%;background:radial-gradient(circle,rgba(245,185,74,.24),rgba(232,162,44,.06) 45%,transparent 66%);filter:blur(6px);animation:glow 6.5s ease-in-out infinite alternate;pointer-events:none}
-  @keyframes glow{from{opacity:.6;transform:scale(.95)}to{opacity:1;transform:scale(1.06)}}
-  .hero-inner{position:relative;padding:64px 0;max-width:40ch}
-  .hero .kick{display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem}
-  .hero .kick span:not(.eyebrow){height:1px;width:42px;background:var(--dorado)}
-  .hero h1{font-size:clamp(2.8rem,8vw,5.4rem);letter-spacing:-.01em;color:#fff}
-  .hero h1 em{font-style:italic;color:var(--dorado-2)}
-  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--dorado);margin-top:.4rem}
-  .hero p.lead{color:rgba(245,233,214,.82);font-size:1.08rem;max-width:38ch;margin:1.5rem 0 2.1rem}
+  .hero{position:relative;overflow:hidden;padding:24px 0 8px;
+    background:radial-gradient(64% 56% at 84% 4%,rgba(228,20,31,.24),transparent 60%),radial-gradient(52% 52% at 8% 98%,rgba(228,20,31,.14),transparent 62%),linear-gradient(180deg,var(--bg),#080605)}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.06fr .94fr;gap:44px;align-items:center;padding:52px 0 62px}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:30px;padding:34px 0 44px}}
+  .kick{display:flex;align-items:center;gap:.7rem;margin-bottom:1.25rem}
+  .kick .rule{height:1px;width:42px;background:linear-gradient(90deg,var(--red),transparent)}
+  .hero h1{font-size:clamp(2.7rem,7.4vw,5rem);letter-spacing:-.014em;color:#fff;text-shadow:0 0 30px rgba(228,20,31,.28)}
+  .hero h1 em{font-style:italic;color:var(--red-2)}
+  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.5rem);color:rgba(252,246,243,.9);margin-top:.5rem}
+  .hero p.lead{color:rgba(252,246,243,.82);font-size:1.08rem;max-width:44ch;margin:1.4rem 0 2rem}
   .hero .actions{display:flex;gap:.9rem;flex-wrap:wrap}
-  .hero .info{display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
-  .hero .info b{color:var(--cream);display:block;font-family:var(--serif);font-size:1.05rem}
+  .hero .info{display:flex;gap:2rem;margin-top:2.4rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+  .hero .info b{color:var(--ink);display:block;font-family:var(--serif);font-size:1.05rem}
+
+  .hero-art{position:relative;display:flex;align-items:center;justify-content:center;min-height:340px}
+  .logo-badge{position:relative;width:min(330px,74vw);aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle at 34% 26%,#FF453B,var(--red) 46%,var(--red-deep) 98%);
+    border:4px solid rgba(255,255,255,.92);
+    box-shadow:0 44px 90px -26px var(--glow),inset 0 -34px 60px rgba(0,0,0,.38),inset 0 12px 44px rgba(255,255,255,.16);
+    display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .logo-badge .script{font-family:var(--serif);font-style:italic;font-weight:600;color:#fff;font-size:clamp(2.9rem,9vw,4.6rem);line-height:.9;text-shadow:0 4px 20px rgba(0,0,0,.35)}
+  .logo-badge .ff{font-family:var(--sans);font-weight:800;letter-spacing:.42em;text-transform:uppercase;font-size:clamp(.72rem,1.6vw,.92rem);color:#fff;border-top:1px solid rgba(255,255,255,.55);padding:.55rem 0 0 .42em;margin-top:.55rem}
+  .chip{position:absolute;display:flex;align-items:center;gap:.4rem;background:var(--bg-2);border:1px solid var(--line);border-radius:999px;padding:.5rem .85rem;font-size:1.25rem;box-shadow:0 14px 30px -14px rgba(0,0,0,.8);animation:bob 5.2s ease-in-out infinite}
+  .chip .lbl{font-size:.74rem;font-family:var(--sans);color:var(--ink);font-weight:700}
+  .chip.c1{top:2%;left:-2%}
+  .chip.c2{top:14%;right:-4%;animation-delay:-1.7s}
+  .chip.c3{bottom:14%;left:-6%;animation-delay:-3s}
+  .chip.c4{bottom:1%;right:4%;animation-delay:-2.4s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @media (max-width:560px){.chip .lbl{display:none}.chip{font-size:1.4rem;padding:.5rem}}
 
   .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .strip .cell{background:var(--char);padding:24px;display:flex;gap:14px;align-items:center}
-  .strip .ic{color:var(--dorado);flex:none}
-  .strip b{display:block;font-family:var(--serif);font-size:1.02rem;color:var(--cream)}
+  .strip .cell{background:var(--bg);padding:24px;display:flex;gap:14px;align-items:center}
+  .strip .ic{width:46px;height:46px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(228,20,31,.13);color:var(--red-2)}
+  .strip b{display:block;font-family:var(--serif);font-size:1.04rem;color:var(--ink)}
   .strip small{color:var(--muted);font-size:.84rem}
   @media (max-width:760px){.strip{grid-template-columns:1fr}}
 
-  section.block{padding:88px 0}
-  .head{text-align:center;max-width:54ch;margin:0 auto 46px}
+  section.block{padding:86px 0}
+  .head{text-align:center;max-width:58ch;margin:0 auto 46px}
   .head h2{font-size:clamp(2rem,4.4vw,3rem);margin:.6rem 0 .6rem;color:#fff}
   .head p{color:var(--muted)}
 
-  .menu{display:grid;grid-template-columns:1fr 1fr;gap:16px 60px}
-  @media (max-width:820px){.menu{grid-template-columns:1fr;gap:12px}}
-  .menu-cat{grid-column:1/-1;font-family:var(--serif);font-style:italic;color:var(--dorado-2);font-size:1.24rem;margin-top:24px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-  .menu-cat:first-child{margin-top:0}
-  .mi{display:flex;align-items:baseline;gap:.6rem}
-  .mi .nm{font-weight:600}
-  .mi .nm small{display:block;font-weight:400;font-size:.82rem;color:var(--muted);letter-spacing:0}
-  .mi .dots{flex:1;border-bottom:1px dotted rgba(245,233,214,.3);transform:translateY(-.28rem)}
-  .mi .pr{font-family:var(--sans);font-size:.82rem;color:var(--dorado-2);font-weight:600;white-space:nowrap}
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media (max-width:960px){.cats{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.cats{grid-template-columns:1fr;max-width:400px;margin:0 auto}}
+  .cat{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+  .cat:hover{transform:translateY(-5px);border-color:rgba(255,82,75,.5);box-shadow:0 26px 50px -30px var(--glow)}
+  .cat .media{height:106px;display:flex;align-items:center;justify-content:center}
+  .cat .media svg{width:46px;height:46px}
+  .m1{background:linear-gradient(150deg,#F0242C,#7A0C12)}
+  .m2{background:linear-gradient(150deg,#C7121B,#3A0509)}
+  .m3{background:linear-gradient(150deg,#FF6B5B,#8E1218)}
+  .m4{background:linear-gradient(150deg,#B90F17,#2A0406)}
+  .cat .body{padding:18px;display:flex;flex-direction:column;gap:.4rem;flex:1}
+  .cat h3{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:#fff}
+  .cat p{color:var(--muted);font-size:.87rem}
+  .cat .go{margin-top:auto;padding-top:.9rem;font-weight:700;font-size:.85rem;color:var(--red-2);display:inline-flex;gap:.35rem;align-items:center}
+  .menu-note{text-align:center;margin-top:28px;font-size:.92rem;color:var(--muted)}
+  .menu-note a{color:var(--red-2);font-weight:700;border-bottom:1px solid rgba(255,82,75,.45)}
 
-  .star{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center;background:linear-gradient(150deg,var(--char-3),var(--char-2));border-radius:10px;padding:8px;border:1px solid var(--line);overflow:hidden}
-  .star .art{aspect-ratio:4/3;background:radial-gradient(120% 120% at 65% 25%,#e8a22c,#8a3d15 60%,#3a1608);border-radius:8px;display:flex;align-items:center;justify-content:center}
-  .star .art svg{width:52%;color:#fff2d9}
-  .star .txt{padding:20px 34px 20px 10px}
-  .star h2{font-size:clamp(1.8rem,3.6vw,2.5rem);color:#fff}
-  .star p{color:rgba(245,233,214,.82);margin:1rem 0 1.4rem}
-  .star .combo{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
-  .star .combo span{font-size:.8rem;background:rgba(245,233,214,.08);border:1px solid var(--line);padding:.35rem .7rem;border-radius:999px}
-  @media (max-width:820px){.star{grid-template-columns:1fr}.star .txt{padding:8px 22px 26px}}
+  .assist{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;background:linear-gradient(150deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:20px;padding:52px 46px;position:relative;overflow:hidden}
+  .assist::before{content:"";position:absolute;width:340px;height:340px;right:-90px;top:-120px;border-radius:50%;background:radial-gradient(circle,rgba(228,20,31,.24),transparent 65%);pointer-events:none}
+  .assist h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.5rem)}
+  .assist p{color:var(--muted);margin:1rem 0 1.4rem}
+  .assist ul{list-style:none;padding:0;margin:0 0 1.7rem;display:flex;flex-direction:column;gap:.65rem;font-size:.96rem}
+  .assist li{display:flex;gap:.65rem;align-items:center}
+  .assist li svg{flex:none;color:var(--red-2)}
+  .chat-demo{position:relative;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .cd-msg{max-width:88%;padding:.6rem .85rem;border-radius:13px;font-size:.88rem;margin-bottom:9px;line-height:1.45}
+  .cd-bot{background:var(--bg-3);border-bottom-left-radius:3px;white-space:pre-line}
+  .cd-me{background:linear-gradient(94deg,#F0242C,#B90F17);color:#fff;margin-left:auto;border-bottom-right-radius:3px}
+  @media (max-width:820px){.assist{grid-template-columns:1fr;padding:38px 26px}}
 
   .daynight{display:grid;grid-template-columns:1fr 1fr;gap:22px}
   @media (max-width:760px){.daynight{grid-template-columns:1fr}}
-  .dn{border-radius:14px;padding:34px;border:1px solid var(--line);position:relative;overflow:hidden}
-  .dn.day{background:linear-gradient(160deg,#3a2610,#20160D)}
-  .dn.night{background:linear-gradient(160deg,#2a2150,#171029)}
-  .dn .tag{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
-  .dn.day .tag{color:var(--dorado-2)}
-  .dn.night .tag{color:var(--noche-2)}
-  .dn h3{font-size:1.6rem;color:#fff;margin:.5rem 0 .6rem}
-  .dn p{color:rgba(245,233,214,.78);font-size:.95rem;margin-bottom:1.2rem}
-  .dn ul{list-style:none;padding:0;margin:0 0 1.4rem;display:flex;flex-direction:column;gap:.5rem;font-size:.92rem}
-  .dn li{display:flex;gap:.55rem;align-items:center}
-  .dn li svg{flex:none}
-  .dn.day li svg{color:var(--dorado)}
-  .dn.night li svg{color:var(--noche-2)}
-  .dn .hours{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.9rem}
+  .dn{border-radius:16px;padding:36px;border:1px solid var(--line);position:relative;overflow:hidden}
+  .dn.day{background:linear-gradient(160deg,#241717,#140D0C)}
+  .dn.day::after{content:"";position:absolute;width:220px;height:220px;right:-60px;top:-80px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,99,.16),transparent 66%);pointer-events:none}
+  .dn.night{background:linear-gradient(160deg,#2A0709,#140B0A);border-color:rgba(255,82,75,.32);box-shadow:inset 0 0 66px -20px var(--glow)}
+  .dn .tag{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+  .dn.day .tag{color:var(--red-3)}
+  .dn.night .tag{color:var(--red-2)}
+  .dn h3{font-family:var(--sans);font-size:1.5rem;font-weight:700;color:#fff;margin:.55rem 0 .6rem}
+  .dn p{color:rgba(252,246,243,.78);font-size:.95rem;margin-bottom:1.2rem}
+  .dn ul{list-style:none;padding:0;margin:0 0 1.4rem;display:flex;flex-direction:column;gap:.55rem;font-size:.93rem}
+  .dn li{display:flex;gap:.6rem;align-items:center}
+  .dn li svg{flex:none;color:var(--red-2)}
+  .dn .hours{display:block;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.9rem;margin-bottom:1.3rem}
 
-  .sedes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  @media (max-width:760px){.sedes{grid-template-columns:1fr}}
-  .sede{background:var(--char-2);border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;gap:16px;align-items:flex-start}
-  .sede .n{font-family:var(--serif);font-size:2rem;color:var(--dorado);line-height:1;flex:none}
-  .sede h3{font-size:1.2rem;color:#fff}
-  .sede p{color:var(--muted);font-size:.9rem;margin-top:.2rem}
+  .social{position:relative;overflow:hidden;background:linear-gradient(150deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:20px;padding:46px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+  .social::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 120% at 100% 0,rgba(228,20,31,.18),transparent 60%);pointer-events:none}
+  .social .num{position:relative;text-align:center}
+  .social .num b{display:block;font-family:var(--serif);font-size:clamp(3rem,9vw,4.6rem);color:#fff;line-height:1}
+  .social .num span{color:var(--muted);font-size:.86rem;letter-spacing:.04em}
+  .social .txt{position:relative}
+  .social .txt .handle{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--serif);font-size:1.5rem;color:#fff}
+  .social .txt .handle svg{color:var(--red-2)}
+  .social .txt p{color:var(--muted);margin:.5rem 0 1.3rem;max-width:42ch}
+  .social .txt .bio{color:var(--red-2);font-weight:700;letter-spacing:.02em}
+  @media (max-width:640px){.social{grid-template-columns:1fr;padding:34px 24px;text-align:center;gap:24px}.social .num{border-bottom:1px solid var(--line);padding-bottom:22px}}
 
-  .quote{text-align:center;max-width:780px;margin:0 auto}
-  .quote p{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-style:italic;line-height:1.4;color:#fff;margin:0 0 1rem}
-  .quote .who{color:var(--muted);font-size:.9rem}
+  .visit{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:44px}
+  @media (max-width:820px){.visit{grid-template-columns:1fr;padding:32px 24px}}
+  .visit h2{font-size:clamp(1.7rem,3.6vw,2.4rem);color:#fff}
+  .visit .rows{display:flex;flex-direction:column;gap:1rem;margin-top:1.4rem}
+  .visit .row{display:flex;gap:.9rem;align-items:flex-start}
+  .visit .row .ic{width:42px;height:42px;border-radius:12px;background:rgba(228,20,31,.13);color:var(--red-2);flex:none;display:flex;align-items:center;justify-content:center}
+  .visit .row b{display:block;font-size:.98rem}
+  .visit .row span{font-size:.86rem;color:var(--muted)}
+  .visit .cta{margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap}
+  .mapbox{background:radial-gradient(120% 120% at 62% 18%,rgba(228,20,31,.3),transparent 60%),linear-gradient(160deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:16px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.7rem;text-align:center;padding:24px}
+  .mapbox .pin{width:54px;height:54px;color:var(--red-2)}
+  .mapbox b{font-size:1rem;color:#fff}
+  .mapbox span{font-size:.84rem;color:var(--muted)}
 
   footer{padding:60px 0 40px;border-top:1px solid var(--line)}
-  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
-  .foot h4{font-family:var(--serif);font-size:1.05rem;margin:0 0 .6rem;color:var(--cream)}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1.1fr;gap:28px}
+  .foot h4{font-family:var(--serif);font-size:1.05rem;margin:0 0 .6rem;color:var(--ink)}
   .foot p,.foot a{color:var(--muted);font-size:.9rem}
-  .foot a:hover{color:var(--dorado-2)}
+  .foot a:hover{color:var(--red-2)}
+  .foot .social-ico{display:flex;gap:.6rem;margin-top:.9rem}
+  .foot .social-ico a{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink)}
+  .foot .social-ico a:hover{border-color:var(--red-2);color:var(--red-2)}
   @media (max-width:720px){.foot{grid-template-columns:1fr}}
   .demo-note{margin-top:30px;font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:20px;text-align:center}
-  .demo-note b{color:var(--dorado-2)}
+  .demo-note b{color:var(--red-2)}
 
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
   .reveal.in{opacity:1;transform:none}
 
-  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--dorado);color:#1e1305;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 34px -10px rgba(232,162,44,.7);transition:transform .25s ease}
+  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:18px;background:linear-gradient(135deg,#F0242C,#B90F17);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 34px -10px var(--glow);transition:transform .25s ease}
   .chat-fab:hover{transform:scale(1.06)}
-  .chat-fab .dot{position:absolute;top:-3px;right:-3px;width:22px;height:22px;border-radius:50%;background:var(--rojo);color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--char)}
-  .chat-panel{position:fixed;right:22px;bottom:96px;z-index:61;width:min(374px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:var(--char-2);border:1px solid var(--line);border-radius:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.75);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+  .chat-fab .dot{position:absolute;top:-4px;right:-4px;width:22px;height:22px;border-radius:50%;background:#fff;color:var(--red);font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg)}
+  .chat-panel{position:fixed;right:22px;bottom:96px;z-index:61;width:min(374px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:var(--bg-2);border:1px solid var(--line);border-radius:18px;box-shadow:0 40px 80px -30px rgba(0,0,0,.85);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
   .chat-panel.open{opacity:1;transform:none;pointer-events:auto}
-  .chat-head{background:linear-gradient(120deg,#8a3d15,#3a1608);color:var(--cream);padding:16px 18px;display:flex;align-items:center;gap:12px}
-  .chat-head .av{width:40px;height:40px;border-radius:50%;background:var(--dorado);flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;color:#1e1305}
-  .chat-head .nm{font-weight:600;font-size:.98rem;font-family:var(--serif)}
-  .chat-head .st{font-size:.75rem;color:#ffcf9e;display:flex;align-items:center;gap:.35rem}
-  .chat-head .st::before{content:"";width:7px;height:7px;border-radius:50%;background:#ffb26b;display:inline-block}
-  .chat-head .x{margin-left:auto;background:none;border:none;color:rgba(245,233,214,.7);cursor:pointer;font-size:1.3rem;line-height:1}
-  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--char)}
+  .chat-head{background:linear-gradient(120deg,#C7121B,#7A0C12);color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px}
+  .chat-head .av{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.7);flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-weight:700;color:#fff}
+  .chat-head .nm{font-weight:700;font-size:.98rem}
+  .chat-head .st{font-size:.75rem;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:.35rem}
+  .chat-head .st::before{content:"";width:7px;height:7px;border-radius:50%;background:#7CF0B4;display:inline-block}
+  .chat-head .x{margin-left:auto;background:none;border:none;color:rgba(255,255,255,.85);cursor:pointer;font-size:1.3rem;line-height:1}
+  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
   .msg{max-width:84%;padding:.62rem .85rem;border-radius:13px;font-size:.9rem;line-height:1.45;white-space:pre-line}
-  .msg.bot{background:var(--char-3);border-bottom-left-radius:4px;align-self:flex-start}
-  .msg.me{background:var(--dorado);color:#1e1305;border-bottom-right-radius:4px;align-self:flex-end}
-  .typing{align-self:flex-start;display:flex;gap:4px;padding:.7rem .9rem;background:var(--char-3);border-radius:13px}
+  .msg.bot{background:var(--bg-3);border-bottom-left-radius:4px;align-self:flex-start}
+  .msg.me{background:linear-gradient(94deg,#F0242C,#B90F17);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:.7rem .9rem;background:var(--bg-3);border-radius:13px}
   .typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite both}
   .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
   @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
-  .quicks{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:var(--char);border-top:1px solid var(--line)}
-  .quick{font-size:.8rem;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--dorado);color:var(--dorado-2);background:transparent;cursor:pointer}
-  .quick:hover{background:rgba(232,162,44,.14)}
-  .chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--char-2)}
-  .chat-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-family:var(--sans);font-size:.9rem;background:var(--char);color:var(--cream)}
-  .chat-input input:focus{outline:none;border-color:var(--dorado)}
-  .chat-input button{background:var(--dorado);border:none;color:#1e1305;width:40px;height:40px;border-radius:50%;cursor:pointer;flex:none}
-  .chat-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:6px;background:var(--char-2)}
+  .quicks{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:var(--bg);border-top:1px solid var(--line)}
+  .quick{font-size:.8rem;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--red);color:var(--red-2);background:transparent;cursor:pointer}
+  .quick:hover{background:rgba(228,20,31,.16)}
+  .chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--bg-2)}
+  .chat-input input{flex:1;border:1px solid var(--line);border-radius:12px;padding:.6rem .9rem;font-family:var(--sans);font-size:.9rem;background:var(--bg);color:var(--ink)}
+  .chat-input input:focus{outline:none;border-color:var(--red)}
+  .chat-input button{background:linear-gradient(135deg,#F0242C,#B90F17);border:none;color:#fff;width:40px;height:40px;border-radius:12px;cursor:pointer;flex:none}
+  .chat-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:6px;background:var(--bg-2)}
 
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero .glow{animation:none}}
-
-  .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media (max-width:820px){.svc{grid-template-columns:1fr}}
-  .svc .it{background:var(--char-2);border:1px solid var(--line);border-radius:12px;padding:28px;transition:transform .25s ease,border-color .25s ease}
-  .svc .it:hover{transform:translateY(-4px);border-color:var(--dorado)}
-  .svc .it .ic{color:var(--dorado);font-size:1.7rem;margin-bottom:.5rem}
-  .svc .it h3{font-size:1.18rem;color:#fff;margin-bottom:.35rem}
-  .svc .it p{color:var(--muted);font-size:.92rem}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.chip{animation:none}}
 </style>
-
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6M8 3v6M4 3v6a3 3 0 0 0 4 0V3M6 9v12"/><path d="M17 3c-2 2-3 5-3 8h5c0-3-1-6-2-8zM17 11v10"/></svg>Tiago</a>
-    <nav class="nav-links"><a href="#carta">La carta</a><a href="#visitanos">Visítanos</a></nav>
-    <a class="btn btn-dorado" href="https://wa.me/584121875215?text=Hola%20Tiago,%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    <a class="brand" href="#">
+      <span class="mark"><i>T</i></span>
+      <span class="wm">Tiago<small>Fast Food · Bar · Karaoke</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#carta">La carta</a>
+      <a href="#momentos">Día &amp; Noche</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#visitanos">Visítanos</a>
+    </nav>
+    <a class="btn btn-red" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
   </div>
 </header>
 
 <section class="hero">
-  <div class="glow"></div>
-  <div class="wrap hero-inner">
-    <div class="kick"><span></span><span class="eyebrow">Restaurant · Fast Food · Bar</span></div>
-    <h1>Comida, bar y <em>buena vibra.</em></h1>
-    <div class="sub">el punto de encuentro de Carúpano</div>
-    <p class="lead">Desde una hamburguesa hasta una noche de bar. Comida, tragos y buen ambiente en un solo lugar.</p>
-    <div class="actions">
-      <a class="btn btn-dorado" href="https://wa.me/584121875215?text=Hola%20Tiago,%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      <a class="btn btn-ghost" href="#carta">Ver la carta</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="kick"><span class="rule"></span><span class="eyebrow">Restaurant · Fast Food · Bar · Karaoke</span></div>
+      <h1>El mejor ambiente de <em>Carúpano.</em></h1>
+      <div class="sub">comida rápida, bar y karaoke — family style</div>
+      <p class="lead">De día: almuerzos, hamburguesas y heladería con el fútbol de fondo. De noche: bar, música en vivo y karaoke. Más de 10 años reuniendo a Carúpano.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="btn btn-ghost" href="#carta">Ver la carta</a>
+      </div>
+      <div class="info">
+        <div><b>+10 años</b>en Carúpano</div>
+        <div><b>Mar a Dom</b>11:30 am – 11 pm</div>
+        <div><b>Delivery</b>a domicilio · US$3</div>
+      </div>
     </div>
-    <div class="info"><div><b>14.7 mil</b>seguidores</div><div><b>Comida + Bar</b>todo en uno</div><div><b>Buen ambiente</b>para reunirte</div></div>
+    <div class="hero-art">
+      <div class="logo-badge">
+        <span class="script">Tiago</span>
+        <span class="ff">Fast Food</span>
+      </div>
+      <span class="chip c1">🍔<span class="lbl">Fast food</span></span>
+      <span class="chip c2">🎤<span class="lbl">Karaoke</span></span>
+      <span class="chip c3">🍦<span class="lbl">Heladería</span></span>
+      <span class="chip c4">⚽<span class="lbl">Fútbol</span></span>
+    </div>
   </div>
 </section>
 
-<div class="strip"><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 1-3 1.5-3.5C10 9 12 6 12 3z"/></svg></span><div><b>Fast food</b><small>Listo al momento</small></div></div><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg></span><div><b>Pide por WhatsApp</b><small>Rápido y fácil</small></div></div><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 6.5L21 10l-5 4.5L17.5 21 12 17.3 6.5 21 8 14.5 3 10l6.5-.5z"/></svg></span><div><b>Bar &amp; ambiente</b><small>Para cerrar la noche</small></div></div></div>
+<div class="strip">
+  <div class="cell">
+    <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10c0-3.9 3.6-6 8-6s8 2.1 8 6"/><path d="M3 13.2h18"/><path d="M4.5 16.5h15a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3z"/></svg></span>
+    <div><b>Comida rápida</b><small>Lista al momento</small></div>
+  </div>
+  <div class="cell">
+    <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8"/></svg></span>
+    <div><b>Música en vivo &amp; karaoke</b><small>Para cantar de noche</small></div>
+  </div>
+  <div class="cell">
+    <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.2 12H7.2z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></span>
+    <div><b>Delivery US$3</b><small>A domicilio en Carúpano</small></div>
+  </div>
+</div>
 
 <section class="block" id="carta">
   <div class="wrap">
-    <div class="head reveal"><span class="eyebrow">Nuestra carta</span><h2>Para todos los antojos</h2><p>Precios del día por WhatsApp.</p></div>
-    <div class="menu reveal"><div class="menu-cat">Fast food</div><div class="mi"><span class="nm">Hamburguesas</span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Perros y sándwiches</span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Salchipapas</span><span class="dots"></span><span class="pr">consultar</span></div><div class="menu-cat">Para compartir</div><div class="mi"><span class="nm">Pizzas</span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Picadas y tablas</span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Tequeños</span><span class="dots"></span><span class="pr">consultar</span></div><div class="menu-cat">Bar</div><div class="mi"><span class="nm">Cervezas</span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Cócteles</span><span class="dots"></span><span class="pr">consultar</span></div><div class="mi"><span class="nm">Bebidas</span><span class="dots"></span><span class="pr">consultar</span></div></div>
+    <div class="head reveal">
+      <span class="eyebrow">Nuestra carta</span>
+      <h2>Para todos los antojos</h2>
+      <p>De la hamburguesa al cóctel, de día y de noche. Los precios del día te los pasamos al momento por WhatsApp.</p>
+    </div>
+    <div class="cats">
+      <article class="cat reveal">
+        <div class="media m1"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10c0-3.9 3.6-6 8-6s8 2.1 8 6"/><path d="M3 13.2h18"/><path d="M4.5 16.5h15a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3z"/></svg></div>
+        <div class="body">
+          <h3>Comida rápida &amp; hamburguesas</h3>
+          <p>Hamburguesas, salchipapas y antojos listos al momento.</p>
+          <a class="go" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20pedir%20comida%20r%C3%A1pida%20y%20hamburguesas" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="cat reveal">
+        <div class="media m2"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6M8.5 3v6M6 9v11M8.5 3v6a2.5 2.5 0 0 1-5 0V3M16.5 3c-1.5 1.6-2 4-2 7h4c0-3-.6-5.4-2-7zM16.5 10v10"/></svg></div>
+        <div class="body">
+          <h3>Almuerzos</h3>
+          <p>Menú del mediodía y platos del día, estilo family.</p>
+          <a class="go" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20%C2%BFcu%C3%A1l%20es%20el%20almuerzo%20de%20hoy%3F" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="cat reveal">
+        <div class="media m3"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9a4 4 0 0 1 8 0"/><path d="M7.4 9h9.2L12 21z"/><path d="M9.2 13h5.6"/></svg></div>
+        <div class="body">
+          <h3>Heladería &amp; postres</h3>
+          <p>Helados y postres para cerrar con el dulce.</p>
+          <a class="go" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20ver%20los%20helados%20y%20postres" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="cat reveal">
+        <div class="media m4"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14l-7 7z"/><path d="M12 12v7M8 21h8"/><path d="M16 5l2-2"/></svg></div>
+        <div class="body">
+          <h3>Bar &amp; cócteles</h3>
+          <p>Cócteles, cervezas y bebidas para la noche.</p>
+          <a class="go" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20la%20carta%20del%20bar%20y%20los%20c%C3%B3cteles" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+    </div>
+    <p class="menu-note reveal">Sin precios en la web: <a href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20la%20carta%20y%20los%20precios%20de%20hoy" target="_blank" rel="noopener">escríbenos por WhatsApp</a> y te pasamos la carta y los precios del día al momento.</p>
   </div>
 </section>
-<section class="block" style="padding-top:0"><div class="wrap">
-  <div class="star reveal">
-    <div class="art"><svg viewBox="0 0 100 80" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 44a28 28 0 0 1 56 0v4H22z"/><path d="M22 48v6a6 6 0 0 0 6 6h44a6 6 0 0 0 6-6v-6"/><path d="M34 40l4-6M50 38v-8M66 40l-4-6"/></svg></div>
-    <div class="txt"><span class="eyebrow">Plan perfecto</span><h2>Comida + Bar en un solo lugar</h2><p>Come rico y quédate a disfrutar el ambiente con los tuyos.</p>
-      <div class="combo"><span>🍔 Comida</span><span>🍕 Para compartir</span><span>🍹 Cócteles</span><span>🎶 Ambiente</span></div>
-      <a class="btn btn-dorado" href="#" data-open-chat>Reservar / pedir →</a></div>
-  </div>
-</div></section>
-<section class="block" id="visitanos" style="padding-top:0"><div class="wrap">
-  <div class="head reveal"><span class="eyebrow">Visítanos</span><h2>El punto de encuentro</h2></div>
-  <div class="sedes">
-    <div class="sede reveal"><div class="n">🕒</div><div><h3>Horario</h3><p>Lun a Jue · 5:00 pm – 12:00 am<br>Vie a Dom · 12:00 pm – 2:00 am</p></div></div>
-    <div class="sede reveal"><div class="n">📍</div><div><h3>Ubicación</h3><p>Carúpano, Estado Sucre</p></div></div>
-  </div>
-</div></section>
 
-<section class="block" style="padding-top:0"><div class="wrap">
-  <div class="quote reveal"><p>“El sitio ideal para reunirte, comer rico y pasar un buen rato en Carúpano.”</p><div class="who">— Nuestros clientes</div></div>
-</div></section>
-
-<footer><div class="wrap">
-  <div class="foot">
-    <div><a class="brand" href="#" style="margin-bottom:.8rem"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6M8 3v6M4 3v6a3 3 0 0 0 4 0V3M6 9v12"/><path d="M17 3c-2 2-3 5-3 8h5c0-3-1-6-2-8zM17 11v10"/></svg>Tiago</a>
-      <p>Comida, bar y buen ambiente en un solo lugar. Carúpano.</p></div>
-    <div><h4>Horario</h4><p>Lun a Jue · 5:00 pm – 12:00 am<br>Vie a Dom · 12:00 pm – 2:00 am</p></div>
-    <div><h4>Contacto</h4><p>Carúpano, Estado Sucre<br>✆ 0412-187-5215<br>📲 @tiagofastfood</p></div>
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="assist reveal">
+      <div>
+        <span class="eyebrow">Atiende solo · de día y de noche</span>
+        <h2>Un asistente que responde por ti</h2>
+        <p>Toma pedidos, cuenta del menú, coordina el delivery y avisa de la noche de karaoke — sin que dejes la cocina ni la barra.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Toma pedidos al instante</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Responde del menú, el bar y el karaoke</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Coordina el delivery de US$3</li>
+        </ul>
+        <a class="btn btn-red" href="#" data-open-chat>Probar el asistente →</a>
+      </div>
+      <div class="chat-demo">
+        <div class="cd-msg cd-me">¿Están abiertos hoy y hacen delivery?</div>
+        <div class="cd-msg cd-bot">🍔 ¡Sí! Abrimos de martes a domingo, 11:30 am a 11 pm, y hacemos delivery a domicilio por US$3. ¿Qué se te antoja?</div>
+        <div class="cd-msg cd-me">Una hamburguesa y saber del karaoke</div>
+        <div class="cd-msg cd-bot">🎤 ¡De una! Te tomo el pedido y esta noche hay música en vivo y karaoke. Te paso todo por aquí.</div>
+      </div>
+    </div>
   </div>
-  <p class="demo-note"><b>Sitio de demostración</b> creado para Tiago como propuesta. ¿Quieres una web así —con asistente que atiende solo— para tu negocio? Escríbeme.</p>
-</div></footer>
+</section>
 
-<button class="chat-fab" id="fab" aria-label="Abrir chat"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg><span class="dot">1</span></button>
-<div class="chat-panel" id="panel" role="dialog" aria-label="Asistente Tiago">
-  <div class="chat-head"><div class="av">T</div>
+<section class="block" id="momentos" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Un lugar, dos momentos</span>
+      <h2>De día y de noche</h2>
+      <p>El mismo Tiago cambia de ánimo según la hora.</p>
+    </div>
+    <div class="daynight">
+      <div class="dn day reveal">
+        <span class="tag">De día</span>
+        <h3>Almuerzo, comida rápida y fútbol</h3>
+        <p>Llega al mediodía por un buen almuerzo o pica algo rápido, quédate a ver el partido y cierra con un helado de la heladería.</p>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Menú del mediodía y platos del día</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Hamburguesas y comida rápida</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7l2.6 1.9-1 3.1H10.4l-1-3.1z"/><path d="M12 7V3.5M9.6 12l-3.3 1.1M14.4 12l3.3 1.1"/></svg> Transmisiones deportivas (fútbol)</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9a4 4 0 0 1 8 0"/><path d="M7.4 9h9.2L12 21z"/></svg> Heladería y postres</li>
+        </ul>
+        <span class="hours">Todos los días desde las 11:30 am (lunes cerrado)</span>
+        <a class="btn btn-ghost" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20pedir%20almuerzo%20o%20comida%20r%C3%A1pida" target="_blank" rel="noopener">Pedir de día →</a>
+      </div>
+      <div class="dn night reveal">
+        <span class="tag">De noche</span>
+        <h3>Bar, música en vivo y karaoke</h3>
+        <p>Cuando cae la noche, Tiago se enciende: cócteles, buena música en vivo y karaoke con artistas invitados.</p>
+        <ul>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14l-7 7z"/><path d="M12 12v7M8 21h8"/></svg> Cócteles, cervezas y bebidas</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v10"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg> Música en vivo</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8"/></svg> Karaoke con artistas invitados</li>
+        </ul>
+        <span class="hours">Hasta las 11:00 pm · el ambiente lo pones tú</span>
+        <a class="btn btn-red" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20info%20del%20bar%2C%20la%20m%C3%BAsica%20en%20vivo%20y%20el%20karaoke" target="_blank" rel="noopener">Vivir la noche →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="instagram" style="padding-top:0">
+  <div class="wrap">
+    <div class="social reveal">
+      <div class="num">
+        <b>14,7 mil</b>
+        <span>seguidores en Instagram</span>
+      </div>
+      <div class="txt">
+        <span class="handle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          @tiagofastfood
+        </span>
+        <p>Ahí publicamos los antojos del día, las noches de karaoke y a los artistas invitados. Si ya nos sigues, sabes de qué hablamos.</p>
+        <p class="bio">Restaurant · Fast Food · Bar · Karaoke</p>
+        <div style="margin-top:1.3rem">
+          <a class="btn btn-red" href="https://www.instagram.com/tiagofastfood/" target="_blank" rel="noopener">Síguenos en Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="visitanos" style="padding-top:0">
+  <div class="wrap">
+    <div class="visit reveal">
+      <div>
+        <span class="eyebrow">Visítanos o pide a domicilio</span>
+        <h2>Te esperamos en Carúpano</h2>
+        <div class="rows">
+          <div class="row">
+            <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <div><b>Martes a domingo · 11:30 am – 11:00 pm</b><span>Lunes cerrado</span></div>
+          </div>
+          <div class="row">
+            <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.2 12H7.2z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></span>
+            <div><b>Delivery a domicilio · US$3</b><span>Pídelo por WhatsApp</span></div>
+          </div>
+          <div class="row">
+            <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg></span>
+            <div><b>Sector Nueva Carúpano</b><span>Cerca de la Plaza Sucre · Carúpano, Edo. Sucre</span></div>
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn btn-red" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20un%20pedido%20a%20domicilio%20%28delivery%20US%243%29" target="_blank" rel="noopener">Pedir a domicilio</a>
+          <a class="btn btn-ghost" href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20%C2%BFme%20pasan%20la%20ubicaci%C3%B3n%20para%20llegar%3F" target="_blank" rel="noopener">¿Cómo llego?</a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>
+        <b>Sector Nueva Carúpano</b>
+        <span>Cerca de la Plaza Sucre · Escríbenos y te pasamos la ubicación exacta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#" style="margin-bottom:.9rem">
+          <span class="mark"><i>T</i></span>
+          <span class="wm">Tiago<small>Fast Food · Bar · Karaoke</small></span>
+        </a>
+        <p>El mejor ambiente de Carúpano. Comida rápida, almuerzos, heladería, bar y karaoke — con más de 10 años en la ciudad.</p>
+        <div class="social-ico">
+          <a href="https://www.instagram.com/tiagofastfood/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://www.facebook.com/tiagofastfoodcarupano" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V7a2 2 0 0 1 2-2h2V2h-3a4 4 0 0 0-4 4v3H8v3h3v8h3v-8h3l1-3z"/></svg></a>
+          <a href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Martes a domingo<br>11:30 am – 11:00 pm<br>Lunes cerrado</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>Sector Nueva Carúpano<br>Cerca de la Plaza Sucre · Carúpano, Edo. Sucre</p>
+        <p style="margin-top:.5rem"><a href="https://wa.me/584121875215?text=Hola%20Tiago%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">WhatsApp: +58 412 187 5215</a><br><a href="https://www.instagram.com/tiagofastfood/" target="_blank" rel="noopener">Instagram: @tiagofastfood</a><br><a href="https://www.facebook.com/tiagofastfoodcarupano" target="_blank" rel="noopener">Facebook: /tiagofastfoodcarupano</a></p>
+      </div>
+    </div>
+    <p class="demo-note"><b>Sitio de demostración</b> creado para Tiago Fast Food como propuesta. ¿Quieres una web así —con asistente que atiende solo— para tu negocio? Escríbeme: <b>+58 424 000 0000</b></p>
+  </div>
+</footer>
+
+<button class="chat-fab" id="fab" aria-label="Abrir chat">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+  <span class="dot">1</span>
+</button>
+
+<div class="chat-panel" id="panel" role="dialog" aria-label="Asistente Tiago Fast Food">
+  <div class="chat-head">
+    <div class="av">T</div>
     <div><div class="nm">Asistente Tiago</div><div class="st">en línea · responde al instante</div></div>
-    <button class="x" id="closeChat" aria-label="Cerrar">×</button></div>
+    <button class="x" id="closeChat" aria-label="Cerrar">×</button>
+  </div>
   <div class="chat-body" id="body"></div>
   <div class="quicks" id="quicks"></div>
-  <div class="chat-input"><input id="inp" placeholder="Escribe un mensaje…" autocomplete="off">
-    <button id="send" aria-label="Enviar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div>
-  <div class="chat-foot">Demo de asistente IA · Atiende 24/7</div>
+  <div class="chat-input">
+    <input id="inp" placeholder="Escribe un mensaje…" autocomplete="off">
+    <button id="send" aria-label="Enviar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+  </div>
+  <div class="chat-foot">Demo de asistente IA · Atiende de día y de noche</div>
 </div>
+
 <script>
 (function(){
-  var CONFIG={"welcome": "¡Hola! 🍔🍹 Soy el asistente de Tiago. Te tomo el pedido o te reservo mesa para la noche. ¿Qué quieres hacer?", "quicks": ["🍔 Pedir comida", "🍹 Reservar mesa", "📋 Ver la carta"], "starterq": "Quiero reservar una mesa", "rules": [{"k": ["hamburguesa", "perro", "salchipapa", "fast", "comida"], "r": "🍔 Tenemos hamburguesas, perros, sándwiches y salchipapas listos al momento. ¿Qué te provoca?"}, {"k": ["pizza", "picada", "tabla", "compartir"], "r": "🍕 Para compartir tenemos pizzas, picadas y tablas. Dime para cuántos y te recomiendo."}, {"k": ["bar", "coctel", "cóctel", "cerveza", "trago", "noche", "rumba"], "r": "🍹 De noche somos bar: cócteles, cervezas y buen ambiente. ¿Reservamos mesa para la noche?"}, {"k": ["reservar", "mesa", "reserva", "grupo", "cumple"], "r": "🍽️ ¡Con gusto! ¿Para cuántas personas y qué día? Te confirmo la mesa enseguida."}, {"k": ["precio", "cuesta", "cuanto", "menu", "carta"], "r": "📋 Dime qué quieres (comida, para compartir o bar) y te paso el precio del día."}, {"k": ["llevar", "delivery", "pedido"], "r": "🛵 Claro, dime tus platos y tu zona y te confirmo total y tiempo."}, {"k": ["horario", "abren", "hora"], "r": "🕒 Lun-Jue 5pm-12am y Vie-Dom 12pm-2am. ¿Te reservo o te preparo algo?"}, {"k": ["donde", "ubicad", "direccion"], "r": "📍 Estamos en Carúpano, Estado Sucre. Te paso la ubicación exacta por aquí."}, {"k": ["gracias", "listo", "ok"], "r": "¡Nos vemos en Tiago! 🍔🍹"}], "fallback": "¡Con gusto! ¿Quieres pedir comida, reservar mesa o conocer la carta del bar?"};
+  var CONFIG={
+    welcome:"¡Épale! 🍔🎤 Soy el asistente de Tiago Fast Food, el mejor ambiente de Carúpano. Te tomo el pedido, te cuento del bar y el karaoke, o te coordino el delivery ($3). ¿Qué quieres hacer?",
+    quicks:["🍔 Pedir comida","🎤 Bar & karaoke","🛵 Delivery $3"],
+    starterq:"Quiero hacer un pedido",
+    rules:[
+      {k:["hamburguesa","comida rapida","comida rápida","perro","salchipapa","sandwich","sándwich","fast","antojo"],r:"🍔 Tenemos hamburguesas y comida rápida lista al momento, más los almuerzos del mediodía. Dime qué se te antoja y te tomo el pedido por aquí."},
+      {k:["almuerzo","almorzar","mediodia","mediodía","plato del dia","plato del día","menu del dia"],r:"🍽️ Al mediodía servimos almuerzo y platos del día, estilo family. Escríbeme y te digo cuál es el almuerzo de hoy."},
+      {k:["helado","heladeria","heladería","postre","dulce"],r:"🍦 Sí, también somos heladería: helados y postres para cerrar con broche de oro. ¿Te preparo algo dulce?"},
+      {k:["bar","coctel","cóctel","trago","cerveza","bebida","cocteles"],r:"🍹 De noche somos bar: cócteles, cervezas y bebidas. El buen ambiente va por la casa."},
+      {k:["karaoke","cantar","microfono","micrófono","musica","música","vivo","artista","show"],r:"🎤 ¡De una! De noche hay música en vivo y karaoke, y de vez en cuando artistas invitados. Míralo en @tiagofastfood; trae tu voz que el micrófono lo ponemos nosotros."},
+      {k:["futbol","fútbol","partido","transmis","deporte","juego"],r:"⚽ ¡Claro que sí! Transmitimos los partidos. Vente a ver el fútbol con buena comida y mejor ambiente."},
+      {k:["delivery","domicilio","envio","envío","llevar","pedido a"],r:"🛵 Hacemos delivery a domicilio por US$3. Dime qué quieres y tu zona en Carúpano, y te confirmo todo por aquí."},
+      {k:["precio","cuesta","cuanto","cuánto","vale","carta","menu","menú"],r:"📋 Los precios te los paso al momento según lo que pidas — escríbeme por WhatsApp y te armo la cuenta sin compromiso."},
+      {k:["horario","abren","hora","abierto","lunes","cerrado","abre"],r:"🕒 Abrimos de martes a domingo, 11:30 am a 11:00 pm. Los lunes descansamos. ¿Te preparo algo?"},
+      {k:["donde","dónde","ubicad","direccion","dirección","llegar","queda","plaza","sucre"],r:"📍 Estamos en el sector Nueva Carúpano, cerquita de la Plaza Sucre (Carúpano, Edo. Sucre). Escríbeme y te paso la ubicación exacta."},
+      {k:["reservar","mesa","grupo","cumple","cumpleaños","evento","celebrar","reunion","reunión"],r:"🎉 ¡Perfecto para reunirse en familia o con la banda! Dime para cuántos y qué día, y coordinamos tu mesa, de día o de noche con karaoke."},
+      {k:["gracias","listo","ok","chao","perfecto","dale"],r:"¡Nos vemos en Tiago! 🍔🎤🍹 Aquí estoy cuando quieras pedir o pasar el rato."}
+    ],
+    fallback:"¡Con gusto! 🍔🍹 ¿Quieres pedir comida, ver la heladería, saber del bar y el karaoke, o hacer delivery ($3)?"
+  };
   var panel=document.getElementById('panel'),fab=document.getElementById('fab'),body=document.getElementById('body'),
       quicks=document.getElementById('quicks'),inp=document.getElementById('inp'),started=false;
   function scroll(){body.scrollTop=body.scrollHeight}
@@ -260,10 +515,10 @@
   document.getElementById('send').onclick=function(){var v=inp.value.trim();if(v){handle(v);inp.value=''}};
   inp.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=inp.value.trim();if(v){handle(v);inp.value=''}}});
   document.querySelectorAll('[data-open-chat]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();setTimeout(function(){handle(CONFIG.starterq||'Quiero hacer un pedido')},400)})});
+
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 })();
 </script>
-
 </body>
 </html>

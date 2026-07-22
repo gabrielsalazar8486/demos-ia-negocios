@@ -3,239 +3,537 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hotel Posada Mareca · Hospedaje en Carúpano</title>
-<meta name="description" content="Tu hogar lejos de casa en Carúpano. Comodidad, tranquilidad y atención cálida. Reserva por WhatsApp.">
+<title>Hotel Posada Mareca · Frente al mar en Playa Grande, Carúpano</title>
+<meta name="description" content="Posada playera familiar frente al mar en Playa Grande, Carúpano. Habitaciones y cabañas equipadas, piscinas con pase de día, restaurante criollo y excursiones a Paria. Reserva por WhatsApp.">
 </head>
 <body>
 <style>
   :root{
-    color-scheme:dark;
-    --char:#171009; --char-2:#20160D; --char-3:#2A1D11; --cream:#F5E9D6;
-    --dorado:#E8A22C; --dorado-2:#F5B94A; --rojo:#C0342B; --rojo-2:#E0473A;
-    --noche:#7B5CD6; --noche-2:#9B7CF0; --oliva:#9AA65B;
-    --muted:rgba(245,233,214,.62); --line:rgba(245,233,214,.14);
-    --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+    --bg:#EFFAF6; --ink:#093A34; --muted:#537B75; --card:#FFFFFF;
+    --soft:#DBF1EB; --line:rgba(9,58,52,.12);
+    --sea:#0EA69E; --sea-2:#0A7F78; --aqua:#3BC9BE;
+    --palm:#2FA265; --palm-2:#1E7C49; --sand:#E6B15C; --sand-2:#CE9838;
+    --wood:#A6733E; --deep:#0A3F39;
+    --shadow:0 30px 62px -36px rgba(9,58,52,.42);
     --sans:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    --wrap:1120px;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --wrap:1160px;
   }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#052220; --ink:#E6F6F1; --muted:#8FB6B0; --card:#0B2E2B; --soft:#0F3532;
+      --line:rgba(230,246,241,.12); --sea:#25BDB3; --sea-2:#5AD6CC; --aqua:#5AD8CE;
+      --palm:#3BBE7A; --palm-2:#2E9E63; --sand:#F0C070; --sand-2:#E0A94E; --wood:#C08A4F;
+      --deep:#04211F; --shadow:0 30px 62px -36px rgba(0,0,0,.72); }
+  }
+  :root[data-theme="light"]{ --bg:#EFFAF6;--ink:#093A34;--muted:#537B75;--card:#FFFFFF;--soft:#DBF1EB;--line:rgba(9,58,52,.12);--sea:#0EA69E;--sea-2:#0A7F78;--aqua:#3BC9BE;--palm:#2FA265;--palm-2:#1E7C49;--sand:#E6B15C;--sand-2:#CE9838;--wood:#A6733E;--deep:#0A3F39;--shadow:0 30px 62px -36px rgba(9,58,52,.42);}
+  :root[data-theme="dark"]{ --bg:#052220;--ink:#E6F6F1;--muted:#8FB6B0;--card:#0B2E2B;--soft:#0F3532;--line:rgba(230,246,241,.12);--sea:#25BDB3;--sea-2:#5AD6CC;--aqua:#5AD8CE;--palm:#3BBE7A;--palm-2:#2E9E63;--sand:#F0C070;--sand-2:#E0A94E;--wood:#C08A4F;--deep:#04211F;--shadow:0 30px 62px -36px rgba(0,0,0,.72);}
+
   *{box-sizing:border-box}
-  body{margin:0;background:var(--char);color:var(--cream);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.58;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  h1,h2,h3{margin:0;font-family:var(--serif);font-weight:600;line-height:1.02;text-wrap:balance}
+  h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.026em;line-height:1.06;text-wrap:balance}
   p{margin:0}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-  .eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--dorado-2)}
-  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:.95rem;padding:.85rem 1.6rem;border-radius:3px;border:1px solid transparent;cursor:pointer;letter-spacing:.02em;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
-  .btn-dorado{background:var(--dorado);color:#1e1305}
-  .btn-dorado:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(232,162,44,.6)}
-  .btn-rojo{background:var(--rojo);color:#fff}
-  .btn-rojo:hover{transform:translateY(-2px)}
-  .btn-ghost{background:transparent;border-color:var(--line);color:var(--cream)}
-  .btn-ghost:hover{border-color:var(--dorado);color:var(--dorado-2)}
-  :focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+  .eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--sea-2)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.94rem;padding:.82rem 1.5rem;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s,color .2s}
+  .btn-primary{background:var(--sea);color:#04302B}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(14,166,158,.6)}
+  .btn-green{background:var(--palm);color:#052A18}
+  .btn-green:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(47,162,101,.55)}
+  .btn-line{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-line:hover{border-color:var(--sea);color:var(--sea-2)}
+  .btn-ghost{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.14)}
+  :focus-visible{outline:2px solid var(--sea);outline-offset:3px;border-radius:6px}
 
-  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--char) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:12px}
-  .brand{display:flex;align-items:center;gap:.55rem;font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.01em}
-  .brand .mark{width:26px;height:26px;flex:none;color:var(--dorado)}
-  .nav-links{display:flex;gap:1.9rem;font-size:.9rem;color:var(--muted)}
-  .nav-links a:hover{color:var(--cream)}
-  @media (max-width:860px){.nav-links{display:none}}
+  .topbar{background:var(--deep);color:#EAFBF8;font-size:.8rem;text-align:center;padding:.5rem 16px;font-weight:600}
+  .topbar b{color:var(--sand)}
 
-  .hero{position:relative;min-height:84vh;display:flex;align-items:center;overflow:hidden;
-    background:radial-gradient(85% 75% at 80% 15%,#4a2810,transparent 60%),radial-gradient(70% 70% at 20% 90%,#3a1410,transparent 60%),linear-gradient(180deg,var(--char),#120b06)}
-  .hero .glow{position:absolute;right:-8%;top:-10%;width:56vw;height:56vw;max-width:680px;max-height:680px;border-radius:50%;background:radial-gradient(circle,rgba(245,185,74,.24),rgba(232,162,44,.06) 45%,transparent 66%);filter:blur(6px);animation:glow 6.5s ease-in-out infinite alternate;pointer-events:none}
-  @keyframes glow{from{opacity:.6;transform:scale(.95)}to{opacity:1;transform:scale(1.06)}}
-  .hero-inner{position:relative;padding:64px 0;max-width:40ch}
-  .hero .kick{display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem}
-  .hero .kick span:not(.eyebrow){height:1px;width:42px;background:var(--dorado)}
-  .hero h1{font-size:clamp(2.8rem,8vw,5.4rem);letter-spacing:-.01em;color:#fff}
-  .hero h1 em{font-style:italic;color:var(--dorado-2)}
-  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--dorado);margin-top:.4rem}
-  .hero p.lead{color:rgba(245,233,214,.82);font-size:1.08rem;max-width:38ch;margin:1.5rem 0 2.1rem}
-  .hero .actions{display:flex;gap:.9rem;flex-wrap:wrap}
-  .hero .info{display:flex;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
-  .hero .info b{color:var(--cream);display:block;font-family:var(--serif);font-size:1.05rem}
+  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
+  .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.12rem;letter-spacing:-.02em;line-height:1.05}
+  .brand .mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(150deg,var(--aqua),var(--palm));display:flex;align-items:center;justify-content:center;flex:none;color:#fff}
+  .brand small{display:block;font-size:.64rem;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+  .nav-links{display:flex;gap:1.7rem;font-size:.92rem;color:var(--muted);font-weight:500}
+  .nav-links a:hover{color:var(--ink)}
+  @media (max-width:900px){.nav-links{display:none}}
 
-  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .strip .cell{background:var(--char);padding:24px;display:flex;gap:14px;align-items:center}
-  .strip .ic{color:var(--dorado);flex:none}
-  .strip b{display:block;font-family:var(--serif);font-size:1.02rem;color:var(--cream)}
-  .strip small{color:var(--muted);font-size:.84rem}
-  @media (max-width:760px){.strip{grid-template-columns:1fr}}
+  .hero{padding:56px 0 42px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(58% 60% at 88% 4%,color-mix(in srgb,var(--aqua) 26%,transparent),transparent 70%),radial-gradient(46% 55% at 4% 92%,color-mix(in srgb,var(--palm) 16%,transparent),transparent 72%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center;position:relative}
+  .hero h1{font-size:clamp(2.4rem,5.6vw,4rem)}
+  .hero h1 .hl{color:var(--sea-2)}
+  .hero .sub{font-size:1rem;font-weight:700;color:var(--palm-2);margin-top:.7rem;letter-spacing:.01em}
+  .hero p.lead{color:var(--muted);font-size:1.08rem;margin:1.1rem 0 1.9rem;max-width:46ch}
+  .hero .actions{display:flex;gap:.8rem;flex-wrap:wrap}
+  .hero .info{display:flex;gap:1.5rem 1.9rem;margin-top:2.3rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
+  .hero .info b{color:var(--ink);display:block;font-size:1.02rem}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}}
 
-  section.block{padding:88px 0}
-  .head{text-align:center;max-width:54ch;margin:0 auto 46px}
-  .head h2{font-size:clamp(2rem,4.4vw,3rem);margin:.6rem 0 .6rem;color:#fff}
+  .postcard{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);aspect-ratio:4/3.3}
+  .postcard svg{display:block;width:100%;height:100%}
+  .postcard .pin{position:absolute;left:16px;bottom:16px;background:color-mix(in srgb,var(--card) 84%,transparent);backdrop-filter:blur(6px);border:1px solid var(--line);color:var(--ink);font-size:.82rem;font-weight:700;padding:.5rem .85rem;border-radius:999px;display:flex;align-items:center;gap:.4rem}
+  .postcard .pin svg{width:16px;height:16px;color:var(--palm-2)}
+
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .features .cell{background:var(--bg);padding:22px 20px;display:flex;gap:13px;align-items:center}
+  .features .ic{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--sea-2);flex:none;display:flex;align-items:center;justify-content:center}
+  .features b{display:block;font-size:.96rem}
+  .features small{color:var(--muted);font-size:.82rem}
+  @media (max-width:860px){.features{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.features{grid-template-columns:1fr}}
+
+  section.block{padding:64px 0}
+  .head{max-width:56ch;margin:0 auto 38px;text-align:center}
+  .head h2{font-size:clamp(1.85rem,3.8vw,2.6rem);margin:.5rem 0 .6rem}
   .head p{color:var(--muted)}
 
-  .menu{display:grid;grid-template-columns:1fr 1fr;gap:16px 60px}
-  @media (max-width:820px){.menu{grid-template-columns:1fr;gap:12px}}
-  .menu-cat{grid-column:1/-1;font-family:var(--serif);font-style:italic;color:var(--dorado-2);font-size:1.24rem;margin-top:24px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-  .menu-cat:first-child{margin-top:0}
-  .mi{display:flex;align-items:baseline;gap:.6rem}
-  .mi .nm{font-weight:600}
-  .mi .nm small{display:block;font-weight:400;font-size:.82rem;color:var(--muted);letter-spacing:0}
-  .mi .dots{flex:1;border-bottom:1px dotted rgba(245,233,214,.3);transform:translateY(-.28rem)}
-  .mi .pr{font-family:var(--sans);font-size:.82rem;color:var(--dorado-2);font-weight:600;white-space:nowrap}
+  .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media (max-width:940px){.rooms{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:600px){.rooms{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+  .room{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+  .room:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .rmedia{height:132px;position:relative;display:flex;align-items:center;justify-content:center}
+  .rmedia svg{width:56px;height:56px;color:#fff;opacity:.95}
+  .r1{background:linear-gradient(150deg,#12ADA5,#0B5F5B)}
+  .r2{background:linear-gradient(150deg,#37C9BE,#0E7D77)}
+  .r3{background:linear-gradient(150deg,#33A96B,#155E3A)}
+  .r4{background:linear-gradient(150deg,#E6B15C,#B07C2C)}
+  .r5{background:linear-gradient(150deg,#2FA9A0,#0A3F39)}
+  .r6{background:linear-gradient(150deg,#B98A4E,#6E4B26)}
+  .cap{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.92);color:#093A34;font-size:.7rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:.32rem .7rem;border-radius:999px}
+  .rbody{padding:18px;display:flex;flex-direction:column;gap:.8rem;flex:1}
+  .rbody h3{font-size:1.14rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.4rem}
+  .chips span{font-size:.76rem;font-weight:600;color:var(--muted);background:var(--soft);border:1px solid var(--line);padding:.26rem .6rem;border-radius:999px}
+  .rgo{margin-top:auto;font-weight:700;font-size:.86rem;color:var(--sea-2);display:inline-flex;align-items:center;gap:.35rem}
+  .rgo:hover{color:var(--sea)}
 
-  .star{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center;background:linear-gradient(150deg,var(--char-3),var(--char-2));border-radius:10px;padding:8px;border:1px solid var(--line);overflow:hidden}
-  .star .art{aspect-ratio:4/3;background:radial-gradient(120% 120% at 65% 25%,#e8a22c,#8a3d15 60%,#3a1608);border-radius:8px;display:flex;align-items:center;justify-content:center}
-  .star .art svg{width:52%;color:#fff2d9}
-  .star .txt{padding:20px 34px 20px 10px}
-  .star h2{font-size:clamp(1.8rem,3.6vw,2.5rem);color:#fff}
-  .star p{color:rgba(245,233,214,.82);margin:1rem 0 1.4rem}
-  .star .combo{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
-  .star .combo span{font-size:.8rem;background:rgba(245,233,214,.08);border:1px solid var(--line);padding:.35rem .7rem;border-radius:999px}
-  @media (max-width:820px){.star{grid-template-columns:1fr}.star .txt{padding:8px 22px 26px}}
+  .amen{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media (max-width:760px){.amen{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+  .acard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;gap:18px;align-items:flex-start;transition:transform .25s ease,border-color .25s ease}
+  .acard:hover{transform:translateY(-4px);border-color:var(--sea)}
+  .acard .ic{width:52px;height:52px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;color:#fff}
+  .a1 .ic{background:linear-gradient(150deg,#37C9BE,#0C8B86)}
+  .a2 .ic{background:linear-gradient(150deg,#E6B15C,#C67A18)}
+  .a3 .ic{background:linear-gradient(150deg,#B98A4E,#6E4B26)}
+  .a4 .ic{background:linear-gradient(150deg,#33A96B,#166039)}
+  .acard h3{font-size:1.18rem;margin-bottom:.35rem}
+  .acard p{color:var(--muted);font-size:.92rem}
+  .acard .tagline{display:inline-flex;align-items:center;gap:.4rem;margin-top:.7rem;font-size:.8rem;font-weight:700;color:var(--sand-2);background:color-mix(in srgb,var(--sand) 20%,transparent);border:1px solid color-mix(in srgb,var(--sand) 40%,transparent);padding:.28rem .7rem;border-radius:999px}
+  .acard .dish{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.8rem}
+  .acard .dish span{font-size:.78rem;font-weight:700;color:var(--sea-2);background:var(--soft);border:1px solid var(--line);padding:.28rem .68rem;border-radius:999px}
 
-  .daynight{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  @media (max-width:760px){.daynight{grid-template-columns:1fr}}
-  .dn{border-radius:14px;padding:34px;border:1px solid var(--line);position:relative;overflow:hidden}
-  .dn.day{background:linear-gradient(160deg,#3a2610,#20160D)}
-  .dn.night{background:linear-gradient(160deg,#2a2150,#171029)}
-  .dn .tag{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
-  .dn.day .tag{color:var(--dorado-2)}
-  .dn.night .tag{color:var(--noche-2)}
-  .dn h3{font-size:1.6rem;color:#fff;margin:.5rem 0 .6rem}
-  .dn p{color:rgba(245,233,214,.78);font-size:.95rem;margin-bottom:1.2rem}
-  .dn ul{list-style:none;padding:0;margin:0 0 1.4rem;display:flex;flex-direction:column;gap:.5rem;font-size:.92rem}
-  .dn li{display:flex;gap:.55rem;align-items:center}
-  .dn li svg{flex:none}
-  .dn.day li svg{color:var(--dorado)}
-  .dn.night li svg{color:var(--noche-2)}
-  .dn .hours{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:.9rem}
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:920px;margin:0 auto}
+  @media (max-width:760px){.quotes{grid-template-columns:1fr}}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:1rem}
+  .q .qm{font-size:2.4rem;line-height:.4;color:var(--aqua);font-weight:800}
+  .q p{font-size:1rem;line-height:1.55}
+  .q .who{font-size:.84rem;color:var(--muted);margin-top:auto}
+  .q .who b{color:var(--ink)}
 
-  .sedes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  @media (max-width:760px){.sedes{grid-template-columns:1fr}}
-  .sede{background:var(--char-2);border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;gap:16px;align-items:flex-start}
-  .sede .n{font-family:var(--serif);font-size:2rem;color:var(--dorado);line-height:1;flex:none}
-  .sede h3{font-size:1.2rem;color:#fff}
-  .sede p{color:var(--muted);font-size:.9rem;margin-top:.2rem}
+  .social .scard{max-width:860px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 32px;box-shadow:var(--shadow);display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .igmark{width:66px;height:66px;border-radius:20px;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(135deg,var(--aqua),var(--sea-2) 48%,var(--palm))}
+  .social .txt{flex:1;min-width:220px}
+  .social .handle{font-size:1.18rem;font-weight:800}
+  .social .desc{color:var(--muted);font-size:.9rem;margin-top:.2rem}
+  .social .nums{display:flex;gap:1.8rem;margin-top:.9rem}
+  .social .nums .v{font-weight:800;font-size:1.15rem;font-variant-numeric:tabular-nums}
+  .social .nums small{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-top:.1rem}
 
-  .quote{text-align:center;max-width:780px;margin:0 auto}
-  .quote p{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);font-style:italic;line-height:1.4;color:#fff;margin:0 0 1rem}
-  .quote .who{color:var(--muted);font-size:.9rem}
+  .visit{display:grid;grid-template-columns:1.08fr .92fr;gap:38px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:42px}
+  @media (max-width:820px){.visit{grid-template-columns:1fr;padding:30px 24px}}
+  .visit h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+  .visit .rows{display:flex;flex-direction:column;gap:1rem;margin:1.4rem 0 1.6rem}
+  .visit .row{display:flex;gap:.9rem;align-items:flex-start}
+  .visit .row .ic{width:40px;height:40px;border-radius:11px;background:var(--soft);color:var(--sea-2);flex:none;display:flex;align-items:center;justify-content:center}
+  .visit .row b{display:block;font-size:.95rem}
+  .visit .row span{font-size:.86rem;color:var(--muted)}
+  .visit .cta-row{display:flex;gap:.7rem;flex-wrap:wrap}
+  .mapbox{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line)}
+  .mapbox svg.scene{display:block;width:100%;height:100%}
+  .mapbox .lbl{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(0deg,rgba(3,33,31,.64),transparent);color:#fff;font-size:.86rem;font-weight:700;display:flex;align-items:center;gap:.4rem}
+  .mapbox .lbl svg{width:16px;height:16px}
 
-  footer{padding:60px 0 40px;border-top:1px solid var(--line)}
-  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
-  .foot h4{font-family:var(--serif);font-size:1.05rem;margin:0 0 .6rem;color:var(--cream)}
-  .foot p,.foot a{color:var(--muted);font-size:.9rem}
-  .foot a:hover{color:var(--dorado-2)}
+  .cta{background:linear-gradient(150deg,var(--sea-2),var(--deep));color:#EAFBF8;border-radius:26px;padding:60px 40px;text-align:center;position:relative;overflow:hidden}
+  .cta::after{content:"";position:absolute;inset:14px;border:1.5px dashed rgba(255,255,255,.24);border-radius:16px;pointer-events:none}
+  .cta h2{color:#fff;font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:.8rem;position:relative}
+  .cta p{color:rgba(234,251,248,.85);max-width:46ch;margin:0 auto 1.8rem;position:relative}
+  .cta .actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;position:relative}
+
+  footer{padding:52px 0 40px;border-top:3px solid var(--wood);margin-top:26px}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:28px}
   @media (max-width:720px){.foot{grid-template-columns:1fr}}
-  .demo-note{margin-top:30px;font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:20px;text-align:center}
-  .demo-note b{color:var(--dorado-2)}
+  .foot h4{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 .7rem}
+  .foot p,.foot a{color:var(--muted);font-size:.9rem}
+  .foot a:hover{color:var(--sea-2)}
+  .foot .lead{max-width:34ch;margin-top:.6rem}
+  .demo-note{margin-top:28px;font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:20px;text-align:center}
+  .demo-note b{color:var(--sea-2)}
 
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
-  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--dorado);color:#1e1305;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 34px -10px rgba(232,162,44,.7);transition:transform .25s ease}
+  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:20px;background:var(--sea);color:#04302B;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 34px -10px rgba(14,166,158,.6);transition:transform .25s ease}
   .chat-fab:hover{transform:scale(1.06)}
-  .chat-fab .dot{position:absolute;top:-3px;right:-3px;width:22px;height:22px;border-radius:50%;background:var(--rojo);color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--char)}
-  .chat-panel{position:fixed;right:22px;bottom:96px;z-index:61;width:min(374px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:var(--char-2);border:1px solid var(--line);border-radius:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.75);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+  .chat-fab .dot{position:absolute;top:-4px;right:-4px;width:22px;height:22px;border-radius:50%;background:var(--sand);color:#3A2606;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--bg)}
+  .chat-panel{position:fixed;right:22px;bottom:96px;z-index:61;width:min(374px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 40px 80px -30px rgba(9,58,52,.55);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
   .chat-panel.open{opacity:1;transform:none;pointer-events:auto}
-  .chat-head{background:linear-gradient(120deg,#8a3d15,#3a1608);color:var(--cream);padding:16px 18px;display:flex;align-items:center;gap:12px}
-  .chat-head .av{width:40px;height:40px;border-radius:50%;background:var(--dorado);flex:none;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;color:#1e1305}
-  .chat-head .nm{font-weight:600;font-size:.98rem;font-family:var(--serif)}
-  .chat-head .st{font-size:.75rem;color:#ffcf9e;display:flex;align-items:center;gap:.35rem}
-  .chat-head .st::before{content:"";width:7px;height:7px;border-radius:50%;background:#ffb26b;display:inline-block}
-  .chat-head .x{margin-left:auto;background:none;border:none;color:rgba(245,233,214,.7);cursor:pointer;font-size:1.3rem;line-height:1}
-  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--char)}
-  .msg{max-width:84%;padding:.62rem .85rem;border-radius:13px;font-size:.9rem;line-height:1.45;white-space:pre-line}
-  .msg.bot{background:var(--char-3);border-bottom-left-radius:4px;align-self:flex-start}
-  .msg.me{background:var(--dorado);color:#1e1305;border-bottom-right-radius:4px;align-self:flex-end}
-  .typing{align-self:flex-start;display:flex;gap:4px;padding:.7rem .9rem;background:var(--char-3);border-radius:13px}
+  .chat-head{background:linear-gradient(120deg,var(--sea-2),var(--deep));color:#fff;padding:15px 18px;display:flex;align-items:center;gap:12px}
+  .chat-head .av{width:40px;height:40px;border-radius:12px;background:var(--sand);color:#3A2606;flex:none;display:flex;align-items:center;justify-content:center;font-weight:800}
+  .chat-head .nm{font-weight:700;font-size:.95rem}
+  .chat-head .st{font-size:.75rem;color:#b8f2e9;display:flex;align-items:center;gap:.35rem}
+  .chat-head .st::before{content:"";width:7px;height:7px;border-radius:50%;background:#5fe6cf;display:inline-block}
+  .chat-head .x{margin-left:auto;background:none;border:none;color:rgba(255,255,255,.82);cursor:pointer;font-size:1.3rem;line-height:1}
+  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+  .msg{max-width:84%;padding:.62rem .85rem;border-radius:14px;font-size:.9rem;line-height:1.45;white-space:pre-line}
+  .msg.bot{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .msg.me{background:var(--sea);color:#04302B;border-bottom-right-radius:4px;align-self:flex-end}
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:.7rem .9rem;background:var(--card);border:1px solid var(--line);border-radius:14px}
   .typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite both}
   .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
   @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
-  .quicks{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:var(--char);border-top:1px solid var(--line)}
-  .quick{font-size:.8rem;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--dorado);color:var(--dorado-2);background:transparent;cursor:pointer}
-  .quick:hover{background:rgba(232,162,44,.14)}
-  .chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--char-2)}
-  .chat-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-family:var(--sans);font-size:.9rem;background:var(--char);color:var(--cream)}
-  .chat-input input:focus{outline:none;border-color:var(--dorado)}
-  .chat-input button{background:var(--dorado);border:none;color:#1e1305;width:40px;height:40px;border-radius:50%;cursor:pointer;flex:none}
-  .chat-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:6px;background:var(--char-2)}
+  .quicks{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:var(--bg);border-top:1px solid var(--line)}
+  .quick{font-size:.8rem;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--sea);color:var(--sea-2);background:transparent;cursor:pointer}
+  .quick:hover{background:color-mix(in srgb,var(--sea) 12%,transparent)}
+  .chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--card)}
+  .chat-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-family:var(--sans);font-size:.9rem;background:var(--bg);color:var(--ink)}
+  .chat-input input:focus{outline:none;border-color:var(--sea)}
+  .chat-input button{background:var(--sea);border:none;color:#04302B;width:40px;height:40px;border-radius:50%;cursor:pointer;flex:none}
+  .chat-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:6px;background:var(--card)}
 
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero .glow{animation:none}}
-
-  .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media (max-width:820px){.svc{grid-template-columns:1fr}}
-  .svc .it{background:var(--char-2);border:1px solid var(--line);border-radius:12px;padding:28px;transition:transform .25s ease,border-color .25s ease}
-  .svc .it:hover{transform:translateY(-4px);border-color:var(--dorado)}
-  .svc .it .ic{color:var(--dorado);font-size:1.7rem;margin-bottom:.5rem}
-  .svc .it h3{font-size:1.18rem;color:#fff;margin-bottom:.35rem}
-  .svc .it p{color:var(--muted);font-size:.92rem}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 
+<div class="topbar">🏝️ Frente al mar en Playa Grande, Carúpano · <b>pase de día a las piscinas desde $5</b></div>
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6M3 21h18"/></svg>Hotel Posada Mareca</a>
-    <nav class="nav-links"><a href="#servicios">Servicios</a><a href="#visitanos">Ubicación</a></nav>
-    <a class="btn btn-dorado" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca,%20quiero%20consultar%20disponibilidad" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    <a class="brand" href="#">
+      <span class="mark"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2"/><path d="M2 22c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2"/><circle cx="17.5" cy="6" r="2.5"/><path d="M11 13c0-3 2-5 5-5"/></svg></span>
+      <span>Hotel Posada Mareca<small>Playa Grande · Carúpano</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#alojamiento">Alojamiento</a>
+      <a href="#amenidades">Amenidades</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <a class="btn btn-primary" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20reservar%20frente%20al%20mar.%20%C2%BFMe%20confirman%20disponibilidad%20y%20tarifa%3F" target="_blank" rel="noopener">Reservar por WhatsApp</a>
   </div>
 </header>
 
 <section class="hero">
-  <div class="glow"></div>
-  <div class="wrap hero-inner">
-    <div class="kick"><span></span><span class="eyebrow">Posada · Hospedaje · Carúpano</span></div>
-    <h1>Descansa <em>como en casa.</em></h1>
-    <div class="sub">tu hogar lejos de casa en Carúpano</div>
-    <p class="lead">Habitaciones cómodas, buena ubicación y atención cálida para que tu estadía sea placentera.</p>
-    <div class="actions">
-      <a class="btn btn-dorado" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca,%20quiero%20consultar%20disponibilidad" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Posada frente al mar · Carúpano</span>
+      <h1>Tus vacaciones <span class="hl">frente al mar,</span> en familia.</h1>
+      <div class="sub">Playa Grande, Carúpano — brisa, piscina y sabor criollo</div>
+      <p class="lead">Habitaciones y cabañas equipadas para dos o para toda la familia, piscinas a un paso de la arena y restaurante criollo de la casa. Escríbenos y reserva sin complicaciones.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20reservar%20frente%20al%20mar.%20%C2%BFMe%20confirman%20disponibilidad%20y%20tarifa%3F" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+        <a class="btn btn-line" href="#alojamiento">Ver alojamiento</a>
+      </div>
+      <div class="info">
+        <div><b>Frente al mar</b>Playa Grande</div>
+        <div><b>6 tipos</b>de alojamiento</div>
+        <div><b>Hasta 13</b>huéspedes por cabaña</div>
+        <div><b>+6 mil</b>en Instagram</div>
+      </div>
     </div>
-    <div class="info"><div><b>6.4 mil</b>seguidores</div><div><b>Atención</b>cálida</div><div><b>Buena</b>ubicación</div></div>
+    <div class="postcard reveal">
+      <svg viewBox="0 0 400 330" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustración de una playa tropical con palapa frente al mar">
+        <defs>
+          <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9E8DF"/><stop offset="1" stop-color="#EAF9F1"/></linearGradient>
+          <linearGradient id="hsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13ADA4"/><stop offset="1" stop-color="#0A5F5B"/></linearGradient>
+        </defs>
+        <rect width="400" height="330" fill="url(#hsky)"/>
+        <circle cx="316" cy="80" r="72" fill="#E7B65C" opacity=".12"/>
+        <circle cx="316" cy="80" r="54" fill="#E7B65C" opacity=".22"/>
+        <circle cx="316" cy="80" r="38" fill="#E9B85E"/>
+        <path d="M0 186 H400 V300 H0 Z" fill="url(#hsea)"/>
+        <path d="M0 186 Q100 176 200 186 T400 186 V204 H0 Z" fill="#3BC9BE" opacity=".55"/>
+        <g stroke="#EAFBF8" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".7">
+          <path d="M44 214 q14 -8 28 0 t28 0"/>
+          <path d="M224 230 q14 -8 28 0 t28 0"/>
+          <path d="M120 252 q14 -8 28 0 t28 0"/>
+        </g>
+        <path d="M0 284 Q130 268 270 290 T400 284 V330 H0 Z" fill="#F2DCA9"/>
+        <path d="M0 298 Q150 286 300 306 T400 300 V330 H0 Z" fill="#E9C888"/>
+        <g stroke="#7C5A2E" stroke-width="6" fill="none" stroke-linecap="round">
+          <path d="M60 296 q-9 -70 -3 -104"/>
+        </g>
+        <g fill="#2E9E63">
+          <path d="M57 190 q-44 -18 -62 5 q42 -6 62 8 Z"/>
+          <path d="M57 190 q44 -18 64 3 q-44 -4 -64 12 Z"/>
+          <path d="M57 192 q-30 22 -30 54 q26 -32 32 -48 Z"/>
+          <path d="M57 192 q31 22 31 56 q-25 -32 -33 -50 Z"/>
+        </g>
+        <g stroke="#8A5A2E" stroke-width="7" stroke-linecap="round"><path d="M250 296 V232"/><path d="M330 296 V232"/></g>
+        <path d="M232 234 L348 234 L322 202 L258 202 Z" fill="#D8A559"/>
+        <g stroke="#A6733E" stroke-width="2" opacity=".6" fill="none"><path d="M244 234 L268 202"/><path d="M268 234 L286 202"/><path d="M292 234 L304 202"/><path d="M316 234 L322 202"/></g>
+        <path d="M232 234 L348 234 L342 242 L238 242 Z" fill="#B98A4E"/>
+      </svg>
+      <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Playa Grande · Carúpano</span>
+    </div>
   </div>
 </section>
 
-<div class="strip"><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6h13a3 3 0 0 1 3 3v3M3 12V7M21 18v-3"/></svg></span><div><b>Habitaciones cómodas</b><small>Para una estadía placentera</small></div></div><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg></span><div><b>Reserva por WhatsApp</b><small>Directo y fácil</small></div></div><div class="cell"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C5 15 3 12 3 8.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 9 2.5C21 12 19 15 12 21z"/></svg></span><div><b>Trato cálido</b><small>Como en casa</small></div></div></div>
+<div class="features reveal">
+  <div class="cell"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2"/><path d="M2 21c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2"/><path d="M12 12V4M12 4l3 2M12 4 9 6"/></svg></span><div><b>Frente al mar</b><small>A un paso de Playa Grande</small></div></div>
+  <div class="cell"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"/><path d="M2 20c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"/><path d="M7 14V6a2 2 0 0 1 4 0M13 14V6a2 2 0 0 1 4 0"/></svg></span><div><b>Piscinas</b><small>Pase de día desde $5</small></div></div>
+  <div class="cell"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span><div><b>Cabañas equipadas</b><small>Cocina, nevera y A/C</small></div></div>
+  <div class="cell"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M16 3c-1.5 0-2.5 2-2.5 5s1 4 2.5 4 2.5 0 2.5 0v9"/></svg></span><div><b>Restaurante criollo</b><small>Sabor de la casa</small></div></div>
+</div>
 
-<section class="block" id="servicios">
+<section class="block" id="alojamiento">
   <div class="wrap">
-    <div class="head reveal"><span class="eyebrow">Servicios</span><h2>Una estadía tranquila</h2><p>Todo lo que necesitas para descansar.</p></div>
-    <div class="svc"><div class="it reveal"><div class="ic">🛏️</div><h3>Habitaciones cómodas</h3><p>Espacios acogedores para una estadía placentera.</p></div><div class="it reveal"><div class="ic">📍</div><h3>Buena ubicación</h3><p>Cerca de los puntos clave de la ciudad.</p></div><div class="it reveal"><div class="ic">🤝</div><h3>Atención cálida</h3><p>Trato cercano para que te sientas como en casa.</p></div></div>
+    <div class="head reveal">
+      <span class="eyebrow">Dónde te quedas</span>
+      <h2>Habitaciones y cabañas para cada plan</h2>
+      <p>Desde una escapada en pareja hasta la familia completa. Consulta la tarifa y disponibilidad por WhatsApp.</p>
+    </div>
+    <div class="rooms">
+      <article class="room reveal">
+        <div class="rmedia r1"><span class="cap">2 personas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6h13a3 3 0 0 1 3 3v3M3 12V8M21 18v-3"/><path d="M3 18v2M21 18v2"/></svg></div>
+        <div class="rbody">
+          <h3>Habitación matrimonial</h3>
+          <div class="chips"><span>Cama matrimonial</span><span>Baño privado</span><span>A/C</span><span>DirecTV</span><span>Mini-nevera</span></div>
+          <a class="rgo" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20consultar%20tarifa%20y%20disponibilidad%20de%20la%20Habitaci%C3%B3n%20matrimonial." target="_blank" rel="noopener">Consulta tarifa por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="room reveal">
+        <div class="rmedia r2"><span class="cap">2 personas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-5h7v5M14 18v-5h7v5M3 13v-3M21 13v-3M3 18v2M21 18v2"/></svg></div>
+        <div class="rbody">
+          <h3>Habitación doble</h3>
+          <div class="chips"><span>2 camas individuales</span><span>Baño</span><span>A/C</span><span>DirecTV</span><span>Mini-nevera</span></div>
+          <a class="rgo" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20consultar%20tarifa%20y%20disponibilidad%20de%20la%20Habitaci%C3%B3n%20doble." target="_blank" rel="noopener">Consulta tarifa por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="room reveal">
+        <div class="rmedia r3"><span class="cap">2 personas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 5l8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-4h4v4"/><path d="M3 11h18"/></svg></div>
+        <div class="rbody">
+          <h3>Cabaña matrimonial</h3>
+          <div class="chips"><span>Cama matrimonial</span><span>Cocina</span><span>Nevera</span><span>Baño</span><span>A/C</span><span>DirecTV</span></div>
+          <a class="rgo" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20consultar%20tarifa%20y%20disponibilidad%20de%20la%20Caba%C3%B1a%20matrimonial%20para%202%20personas." target="_blank" rel="noopener">Consulta tarifa por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="room reveal">
+        <div class="rmedia r4"><span class="cap">4 personas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 5l8 6"/><path d="M6 10v9h12v-9"/><path d="M9 19v-3M15 19v-3M9 16h6"/><path d="M3 11h18"/></svg></div>
+        <div class="rbody">
+          <h3>Cabaña estudio</h3>
+          <div class="chips"><span>Hasta 4 personas</span><span>Cocina</span><span>Nevera</span><span>Baño</span><span>A/C</span><span>DirecTV</span></div>
+          <a class="rgo" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20consultar%20tarifa%20y%20disponibilidad%20de%20la%20Caba%C3%B1a%20estudio%20para%204%20personas." target="_blank" rel="noopener">Consulta tarifa por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="room reveal">
+        <div class="rmedia r5"><span class="cap">6 personas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 5l9 6"/><path d="M5 10v9h14v-9"/><path d="M9 19v-4h6v4"/><path d="M12 15v4M2 11h20"/></svg></div>
+        <div class="rbody">
+          <h3>Cabaña familiar</h3>
+          <div class="chips"><span>Hasta 6 personas</span><span>Cocina</span><span>Nevera</span><span>Baño</span><span>A/C</span><span>DirecTV</span></div>
+          <a class="rgo" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20consultar%20tarifa%20y%20disponibilidad%20de%20la%20Caba%C3%B1a%20familiar%20para%206%20personas." target="_blank" rel="noopener">Consulta tarifa por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="room reveal">
+        <div class="rmedia r6"><span class="cap">Hasta 13</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 11 8 6l6 5M10 11 16 6l6 5"/><path d="M4 10v9h16v-9"/><path d="M8 19v-4h3v4M14 19v-4h3v4"/><path d="M1 11h22"/></svg></div>
+        <div class="rbody">
+          <h3>Cabaña familiar grande</h3>
+          <div class="chips"><span>Hasta 13 personas</span><span>Cocina</span><span>Nevera</span><span>A/C</span><span>Ideal grupos</span></div>
+          <a class="rgo" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20consultar%20tarifa%20y%20disponibilidad%20de%20la%20Caba%C3%B1a%20familiar%20grande%20para%20hasta%2013%20personas." target="_blank" rel="noopener">Consulta tarifa por WhatsApp →</a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
-<section class="block" id="visitanos" style="padding-top:0"><div class="wrap">
-  <div class="head reveal"><span class="eyebrow">Visítanos</span><h2>En Carúpano</h2></div>
-  <div class="sedes">
-    <div class="sede reveal"><div class="n">🕒</div><div><h3>Horario</h3><p>Recepción 24 h · Check-in 1:00 pm · Check-out 11:00 am</p></div></div>
-    <div class="sede reveal"><div class="n">📍</div><div><h3>Ubicación</h3><p>Carúpano, Estado Sucre</p></div></div>
+
+<section class="block" id="amenidades" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Para disfrutar sin salir</span>
+      <h2>Todo lo que hace la estadía</h2>
+      <p>Piscina de día, sabor criollo al mediodía y tasca de noche — y la aventura de Paria a la vuelta de la esquina.</p>
+    </div>
+    <div class="amen">
+      <div class="acard a1 reveal">
+        <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"/><path d="M2 19c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"/><path d="M7 13V5a2 2 0 0 1 4 0M13 13V5a2 2 0 0 1 4 0"/></svg></span>
+        <div><h3>Piscinas</h3><p>Refréscate frente al mar en nuestras piscinas. ¿No te quedas? También hay pase de día para visitantes.</p>
+          <span class="tagline">🏊 Entrada desde $5 · consulta promociones</span>
+        </div>
+      </div>
+      <div class="acard a2 reveal">
+        <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 10v11"/><path d="M16 3c-1.5 0-2.5 2-2.5 5s1 4 2.5 4 2.5 0 2.5 0v9"/></svg></span>
+        <div><h3>Restaurante criollo</h3><p>Gastronomía criolla hecha en casa, con nuestros platos estrella.</p>
+          <div class="dish"><span>Parrilla Mareca</span><span>Mar y Tierra</span></div>
+        </div>
+      </div>
+      <div class="acard a3 reveal">
+        <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg></span>
+        <div><h3>Tasca-bar</h3><p>Bebidas regionales, música, karaoke y pista de baile para rematar la noche.</p></div>
+      </div>
+      <div class="acard a4 reveal">
+        <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 8.5 6 1.5-1.5 6-6-1.5z"/></svg></span>
+        <div><h3>Excursiones a Paria</h3><p>Organizamos excursiones y tours para descubrir lo mejor de la región de Paria.</p></div>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="block" style="padding-top:0"><div class="wrap">
-  <div class="quote reveal"><p>“Comodidad, tranquilidad y una atención que te hace sentir como en casa.”</p><div class="who">— Nuestros huéspedes</div></div>
-</div></section>
-
-<footer><div class="wrap">
-  <div class="foot">
-    <div><a class="brand" href="#" style="margin-bottom:.8rem"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6M3 21h18"/></svg>Hotel Posada Mareca</a>
-      <p>Tu hogar lejos de casa en Carúpano. Comodidad y atención cálida.</p></div>
-    <div><h4>Horario</h4><p>Recepción 24 h · Check-in 1:00 pm · Check-out 11:00 am</p></div>
-    <div><h4>Contacto</h4><p>Carúpano, Estado Sucre<br>✆ 0424-837-0551<br>📲 @posadamareca</p></div>
+<section class="block" id="opiniones" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Lo que cuentan</span>
+      <h2>Huéspedes que vuelven</h2>
+    </div>
+    <div class="quotes">
+      <div class="q reveal">
+        <div class="qm">“</div>
+        <p>Las instalaciones muy buenas, todo limpio, tienen buena atención al cliente, me encanta.</p>
+        <div class="who"><b>Huésped de la posada</b></div>
+      </div>
+      <div class="q reveal">
+        <div class="qm">“</div>
+        <p>Excelente atención, felicidades a todos, pronto volveremos desde Higuerote a Mareca Carúpano.</p>
+        <div class="who"><b>Huésped desde Higuerote</b></div>
+      </div>
+    </div>
   </div>
-  <p class="demo-note"><b>Sitio de demostración</b> creado para Hotel Posada Mareca como propuesta. ¿Quieres una web así —con asistente que atiende solo— para tu negocio? Escríbeme.</p>
-</div></footer>
+</section>
 
-<button class="chat-fab" id="fab" aria-label="Abrir chat"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg><span class="dot">1</span></button>
+<section class="block social" style="padding-top:0">
+  <div class="wrap">
+    <div class="scard reveal">
+      <span class="igmark"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+      <div class="txt">
+        <div class="handle">@posadamareca</div>
+        <div class="desc">Míranos por dentro: piscinas, cabañas y atardeceres frente al mar.</div>
+        <div class="nums">
+          <div><div class="v">6.383</div><small>Seguidores</small></div>
+          <div><div class="v">454</div><small>Publicaciones</small></div>
+        </div>
+      </div>
+      <a class="btn btn-green" href="https://www.instagram.com/posadamareca/" target="_blank" rel="noopener">Seguir en Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ubicacion" style="padding-top:0">
+  <div class="wrap">
+    <div class="visit reveal">
+      <div>
+        <span class="eyebrow">Cómo llegar y contactarnos</span>
+        <h2>Frente al mar, en Playa Grande</h2>
+        <div class="rows">
+          <div class="row"><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Av. Luis Mariano Rivera</b><span>Urb. La Restinga de Playa Grande, sector Playa Copey · Carúpano, estado Sucre</span></div></div>
+          <div class="row"><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b>Recepción · 0424-837.05.51</b><span>Reserva y atención directa por WhatsApp</span></div></div>
+          <div class="row"><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>posadamareca@gmail.com</b><span>Escríbenos para grupos y eventos</span></div></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20reservar%20frente%20al%20mar.%20%C2%BFMe%20confirman%20disponibilidad%20y%20tarifa%3F" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+          <a class="btn btn-line" href="https://www.instagram.com/posadamareca/" target="_blank" rel="noopener">Síguenos · @posadamareca</a>
+        </div>
+      </div>
+      <div class="mapbox">
+        <svg class="scene" viewBox="0 0 320 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mapa ilustrado de Playa Grande, Carúpano">
+          <defs>
+            <linearGradient id="msky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9DE8DF"/><stop offset="1" stop-color="#E3F7EE"/></linearGradient>
+            <linearGradient id="msea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12A5A0"/><stop offset="1" stop-color="#0A5F5C"/></linearGradient>
+          </defs>
+          <rect width="320" height="260" fill="url(#msky)"/>
+          <circle cx="256" cy="56" r="26" fill="#E9B85E"/>
+          <path d="M0 120 H320 V260 H0 Z" fill="url(#msea)"/>
+          <g stroke="#EAFBF8" stroke-width="2" fill="none" stroke-linecap="round" opacity=".65">
+            <path d="M24 150 q12 -7 24 0 t24 0"/><path d="M200 168 q12 -7 24 0 t24 0"/><path d="M96 190 q12 -7 24 0 t24 0"/>
+          </g>
+          <path d="M0 118 Q160 100 320 118 V134 Q160 116 0 134 Z" fill="#F2DCA9"/>
+          <path d="M118 92 l0 -30" stroke="#1E7C49" stroke-width="3"/>
+          <path d="M118 62 a11 11 0 1 1 .1 0" fill="#2FA265"/>
+        </svg>
+        <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 0 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Playa Grande · Carúpano, Sucre</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow" style="color:var(--sand)">¿Nos vemos en la playa?</span>
+      <h2>Tu escapada frente al mar te espera</h2>
+      <p>Cuéntanos tus fechas y cuántos vienen. Te confirmamos disponibilidad y tarifa al instante por WhatsApp.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20reservar%20mi%20escapada%20frente%20al%20mar.%20%C2%BFMe%20ayudan%20con%20las%20fechas%3F" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+        <a class="btn btn-ghost" href="#" data-open-chat>Pregúntale al asistente</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#" style="margin-bottom:.4rem">
+          <span class="mark"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2"/><path d="M2 22c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2"/><circle cx="17.5" cy="6" r="2.5"/><path d="M11 13c0-3 2-5 5-5"/></svg></span>
+          <span>Hotel Posada Mareca<small>Playa Grande · Carúpano</small></span>
+        </a>
+        <p class="lead">Posada playera familiar frente al mar en Playa Grande, Carúpano. Habitaciones, cabañas, piscinas, restaurante criollo y excursiones a Paria.</p>
+      </div>
+      <div>
+        <h4>Ubicación</h4>
+        <p>Av. Luis Mariano Rivera<br>Urb. La Restinga de Playa Grande<br>Sector Playa Copey · Carúpano, Sucre</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p><a href="https://wa.me/584248370551?text=Hola%20Posada%20Mareca%2C%20quiero%20reservar%20frente%20al%20mar." target="_blank" rel="noopener">WhatsApp · 0424-837.05.51</a><br>posadamareca@gmail.com<br><a href="https://www.instagram.com/posadamareca/" target="_blank" rel="noopener">Instagram · @posadamareca</a><br><a href="https://www.facebook.com/search/top?q=Hotel%20Posada%20Mareca" target="_blank" rel="noopener">Facebook · Hotel Posada Mareca</a></p>
+      </div>
+    </div>
+    <p class="demo-note"><b>Sitio de demostración</b> creado para Hotel Posada Mareca como propuesta. ¿Quieres una web así —con asistente que atiende solo— para tu negocio? Escríbeme: <b>+58 424 000 0000</b></p>
+  </div>
+</footer>
+
+<button class="chat-fab" id="fab" aria-label="Abrir chat">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+  <span class="dot">1</span>
+</button>
+
 <div class="chat-panel" id="panel" role="dialog" aria-label="Asistente Hotel Posada Mareca">
-  <div class="chat-head"><div class="av">H</div>
-    <div><div class="nm">Asistente Hotel Posada Mareca</div><div class="st">en línea · responde al instante</div></div>
-    <button class="x" id="closeChat" aria-label="Cerrar">×</button></div>
+  <div class="chat-head">
+    <div class="av">M</div>
+    <div><div class="nm">Asistente Posada Mareca</div><div class="st">en línea · responde al instante</div></div>
+    <button class="x" id="closeChat" aria-label="Cerrar">×</button>
+  </div>
   <div class="chat-body" id="body"></div>
   <div class="quicks" id="quicks"></div>
-  <div class="chat-input"><input id="inp" placeholder="Escribe un mensaje…" autocomplete="off">
-    <button id="send" aria-label="Enviar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button></div>
-  <div class="chat-foot">Demo de asistente IA · Atiende 24/7</div>
+  <div class="chat-input">
+    <input id="inp" placeholder="Escribe un mensaje…" autocomplete="off">
+    <button id="send" aria-label="Enviar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+  </div>
+  <div class="chat-foot">Demo de asistente IA · Reserva frente al mar 24/7</div>
 </div>
+
 <script>
 (function(){
-  var CONFIG={"welcome": "¡Hola! 🏡 Soy el asistente de Hotel Posada Mareca. Te ayudo con disponibilidad y reservas. ¿Qué necesitas?", "quicks": ["🛏️ Habitaciones", "📅 Reservar", "📍 Ubicación"], "starterq": "Quiero consultar disponibilidad", "rules": [{"k": ["habitacion", "habitación", "cuarto", "cama"], "r": "🛏️ Tenemos habitaciones cómodas y acogedoras. ¿Para cuántas personas y qué fechas?"}, {"k": ["precio", "tarifa", "cuesta", "cuanto", "noche"], "r": "💬 Las tarifas dependen de la fecha. Dime tus fechas y te paso el precio."}, {"k": ["reservar", "reserva", "disponib", "fecha"], "r": "📅 ¡Con gusto! Dime fechas y número de huéspedes y confirmo disponibilidad."}, {"k": ["check", "entrada", "salida", "horario"], "r": "🕒 Recepción 24 h. Check-in 1:00 pm y check-out 11:00 am."}, {"k": ["donde", "ubicad", "direccion", "llegar"], "r": "📍 Estamos en Carúpano, Estado Sucre. Te paso la ubicación exacta por WhatsApp."}, {"k": ["gracias", "listo", "ok"], "r": "¡Será un placer recibirte! 🏡"}], "fallback": "¡Con gusto! ¿Quieres ver habitaciones, consultar tarifas o reservar?"};
+  var CONFIG={
+    welcome:"¡Hola! 🌊 Soy el asistente de Hotel Posada Mareca, tu posada frente al mar en Playa Grande, Carúpano. Te ayudo con alojamiento, amenidades y reservas. ¿Qué buscas?",
+    quicks:["🛏️ Ver alojamiento","🏊 Pase de día","📅 Reservar"],
+    rules:[
+      {k:["reservar","reserva","disponib","fecha","cupo","agendar"],r:"📅 ¡Con gusto! Dime las fechas de entrada y salida y cuántos huéspedes vienen, y te confirmamos disponibilidad y tarifa al momento por WhatsApp. ¿Para qué fechas sería?"},
+      {k:["habitacion","habitación","cuarto","matrimonial","doble","pareja"],r:"🛏️ Tenemos dos habitaciones:\n• Matrimonial (2 pers) — cama matrimonial, baño privado, A/C, DirecTV y mini-nevera\n• Doble (2 pers) — 2 camas individuales, baño, A/C, DirecTV y mini-nevera\n¿Te reservo alguna?"},
+      {k:["cabana","cabaña","cabin","cocina","equipada"],r:"🏡 Cabañas equipadas con cocina, nevera, A/C y DirecTV:\n• Matrimonial — 2 personas\n• Estudio — hasta 4\n• Familiar — hasta 6\n• Familiar grande — hasta 13\n¿Para cuántas personas vienen?"},
+      {k:["capacidad","personas","cuantos","cuántos","grupo","familia","grande","gente"],r:"👨‍👩‍👧‍👦 Alojamos desde parejas hasta grupos grandes: la cabaña familiar grande recibe hasta 13 personas. Dime cuántos vienen y te recomiendo la mejor opción."},
+      {k:["precio","tarifa","cuesta","cuanto","cuánto","noche","vale","costo"],r:"💬 La tarifa de alojamiento varía según el tipo y las fechas. Dime qué habitación o cabaña te interesa y para cuándo, y te paso el precio exacto por WhatsApp."},
+      {k:["piscina","piscinas","nadar","pool","pase","dia","día","refrescar","visitante"],r:"🏊 Tenemos piscinas frente al mar. Si no te hospedas, hay pase de día para visitantes desde $5 — y de vez en cuando corren promociones. ¿Vienes de paseo o quieres hospedarte?"},
+      {k:["restaurante","comida","comer","criollo","parrilla","mar y tierra","plato","cena","almuerzo"],r:"🍤 Nuestro restaurante es de gastronomía criolla, con dos platos estrella: la Parrilla Mareca y el Mar y Tierra. Comes rico sin salir de la posada."},
+      {k:["bar","tasca","karaoke","musica","música","fiesta","trago","bebida","noche","baile"],r:"🎤 De noche te espera la tasca-bar: bebidas regionales, música, karaoke y pista de baile. Buen remate después de la playa."},
+      {k:["excursion","excursión","tour","paria","paseo","aventura"],r:"🧭 Organizamos excursiones y tours por la región de Paria para que descubras lo mejor de la zona. Coordínalo con nosotros al reservar."},
+      {k:["ubicacion","ubicación","donde","dónde","direccion","dirección","llegar","playa grande","copey"],r:"📍 Estamos frente al mar en la Av. Luis Mariano Rivera, Urb. La Restinga de Playa Grande, sector Playa Copey, Carúpano (Sucre). Te paso la ubicación exacta por WhatsApp."},
+      {k:["instagram","seguidor","redes","foto","facebook"],r:"📸 Míranos por dentro en Instagram: @posadamareca, con más de 6 mil seguidores. Ahí ves piscinas, cabañas y los atardeceres frente al mar."},
+      {k:["contacto","telefono","teléfono","correo","email","recepcion","recepción","whatsapp"],r:"📞 Recepción: 0424-837.05.51 (WhatsApp) y correo posadamareca@gmail.com. Escríbenos por WhatsApp y te atendemos al instante."},
+      {k:["check","entrada","salida","horario","hora"],r:"🕒 El horario de entrada y salida te lo confirmamos por WhatsApp según tu reserva. ¿Te ayudo con las fechas?"},
+      {k:["gracias","listo","ok","perfecto","dale"],r:"¡Será un placer recibirte frente al mar! 🌴 Escríbenos por WhatsApp cuando quieras y dejamos todo listo."}
+    ],
+    fallback:"¡Con gusto te ayudo! 🌴 ¿Quieres ver el alojamiento (habitaciones y cabañas), conocer las amenidades, el pase de día o reservar tus fechas?"
+  };
   var panel=document.getElementById('panel'),fab=document.getElementById('fab'),body=document.getElementById('body'),
       quicks=document.getElementById('quicks'),inp=document.getElementById('inp'),started=false;
   function scroll(){body.scrollTop=body.scrollHeight}
@@ -251,11 +549,11 @@
   fab.onclick=open;document.getElementById('closeChat').onclick=close;
   document.getElementById('send').onclick=function(){var v=inp.value.trim();if(v){handle(v);inp.value=''}};
   inp.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=inp.value.trim();if(v){handle(v);inp.value=''}}});
-  document.querySelectorAll('[data-open-chat]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();setTimeout(function(){handle(CONFIG.starterq||'Quiero hacer un pedido')},400)})});
+  document.querySelectorAll('[data-open-chat]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();setTimeout(function(){handle('Quiero reservar frente al mar')},400)})});
+
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 })();
 </script>
-
 </body>
 </html>
