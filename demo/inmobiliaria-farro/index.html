@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inmobiliaria Farro · Carúpano · Más que casas vendemos futuro</title>
+<meta name="description" content="Venta, alquiler y asesoría de inmuebles en Carúpano: casas, apartamentos, terrenos, locales y casas de playa en Playa Copey. Con Yuraima Reyes y el respaldo de Farro, +40 años de trayectoria. Escríbenos por WhatsApp.">
+</head>
+<body>
+<style>
+  :root{
+    --paper:#F4F0E7; --ink:#0E2038; --muted:#5A6A7D;
+    --navy:#0B2447; --navy-2:#123258; --cream:#F3EEE1;
+    --gold:#A8791E; --gold-soft:#C6A25A; --sand:#E7DFCD;
+    --card:#FFFFFF; --line:rgba(14,32,56,.12);
+    --shadow:24px 40px 80px -48px rgba(11,36,71,.5);
+    --serif:ui-serif,"New York",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --wrap:1140px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --paper:#081426; --ink:#E8EEF7; --muted:#93A5BE; --card:#0E2039;
+      --line:rgba(232,238,247,.13); --gold:#CBA35A; --gold-soft:#D9BD80;
+      --navy:#102A4E; --navy-2:#16345F; --cream:#ECE6D7; --sand:#1B2E4C;
+      --shadow:24px 40px 80px -50px rgba(0,0,0,.72); }
+  }
+  :root[data-theme="light"]{ --paper:#F4F0E7; --ink:#0E2038; --muted:#5A6A7D; --card:#FFFFFF;
+    --line:rgba(14,32,56,.12); --gold:#A8791E; --gold-soft:#C6A25A; --sand:#E7DFCD;
+    --navy:#0B2447; --navy-2:#123258; --cream:#F3EEE1; --shadow:24px 40px 80px -48px rgba(11,36,71,.5); }
+  :root[data-theme="dark"]{ --paper:#081426; --ink:#E8EEF7; --muted:#93A5BE; --card:#0E2039;
+    --line:rgba(232,238,247,.13); --gold:#CBA35A; --gold-soft:#D9BD80; --sand:#1B2E4C;
+    --navy:#102A4E; --navy-2:#16345F; --cream:#ECE6D7; --shadow:24px 40px 80px -50px rgba(0,0,0,.72); }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.06;text-wrap:balance;margin:0}
+  p{margin:0}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;
+    font-size:.95rem;padding:.85rem 1.5rem;border-radius:999px;border:1px solid transparent;cursor:pointer;
+    transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+  .btn-primary{background:var(--gold);color:#1a1206}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(168,121,30,.6)}
+  .btn-ghost{background:transparent;border-color:currentColor;color:var(--cream)}
+  .btn-ghost:hover{background:rgba(243,238,225,.1)}
+  .btn-line{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-line:hover{border-color:var(--gold);color:var(--gold)}
+  .wa{display:inline-flex;align-items:center;gap:.5rem}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+
+  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 86%,transparent);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .brand{display:flex;align-items:center;gap:.65rem;font-family:var(--serif);font-size:1.3rem;font-weight:600;letter-spacing:-.01em;line-height:1}
+  .brand .mark{width:38px;height:38px;flex:none;color:var(--gold)}
+  .brand small{display:block;font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);margin-top:.28rem}
+  .nav-links{display:flex;gap:2rem;font-size:.92rem;color:var(--muted);font-weight:500}
+  .nav-links a:hover{color:var(--ink)}
+  @media (max-width:900px){.nav-links{display:none}}
+
+  .hero{background:radial-gradient(120% 120% at 85% 0%,var(--navy-2),var(--navy));color:var(--cream);
+    border-radius:0 0 34px 34px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(42% 52% at 88% 88%,rgba(198,162,90,.18),transparent 70%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:74px 0 82px}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4.1rem);letter-spacing:-.02em;color:#fff}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero p.lead{margin:1.4rem 0 2rem;color:rgba(243,238,225,.84);font-size:1.08rem;max-width:42ch}
+  .hero .actions{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+  .hero .ask{margin-top:1.1rem;font-size:.9rem;color:rgba(243,238,225,.7)}
+  .hero .ask button{background:none;border:none;color:var(--gold-soft);font:inherit;cursor:pointer;
+    font-weight:600;padding:0;text-decoration:underline;text-underline-offset:3px}
+  .hero .chips{display:flex;gap:1.9rem;margin-top:2.6rem;flex-wrap:wrap}
+  .hero .chips .n{font-family:var(--serif);font-size:1.35rem;color:#fff;line-height:1}
+  .hero .chips .l{font-size:.78rem;color:rgba(243,238,225,.62);letter-spacing:.03em;margin-top:.25rem}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:38px;padding:52px 0 58px}}
+
+  .prop{background:var(--card);color:var(--ink);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);
+    transform:rotate(-1.2deg);transition:transform .4s ease}
+  .prop:hover{transform:rotate(0deg) translateY(-4px)}
+  .prop .media{aspect-ratio:16/10;background:linear-gradient(155deg,#155E63,#0B3140 60%,#0B2447);
+    display:flex;align-items:center;justify-content:center;position:relative}
+  .prop .media svg{width:66%;opacity:.95}
+  .prop .tag{position:absolute;top:14px;left:14px;background:var(--gold);color:#1a1206;font-size:.7rem;
+    font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .7rem;border-radius:999px}
+  .prop .body{padding:20px}
+  .prop h3{font-size:1.28rem;margin-bottom:.2rem}
+  .prop .loc{font-size:.86rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+  .prop .desc{font-size:.9rem;color:var(--muted);margin:.7rem 0 .2rem}
+  .prop .price{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    border-top:1px solid var(--line);padding-top:.9rem;margin-top:.9rem;flex-wrap:wrap}
+  .prop .price .lbl{font-size:.8rem;color:var(--muted)}
+  .prop .price .amt{font-family:var(--sans);font-weight:700;font-size:.92rem;color:var(--gold)}
+
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:42px 0;border-bottom:1px solid var(--line)}
+  .strip .item{display:flex;gap:.85rem;align-items:flex-start}
+  .strip .item .ic{width:42px;height:42px;border-radius:12px;background:var(--sand);color:var(--gold);
+    flex:none;display:flex;align-items:center;justify-content:center}
+  .strip .item b{font-family:var(--serif);font-size:1.14rem;display:block;line-height:1.1}
+  .strip .item span{font-size:.82rem;color:var(--muted);display:block;margin-top:.15rem}
+  @media (max-width:760px){.strip{grid-template-columns:repeat(2,1fr);gap:26px 18px}}
+
+  section.block{padding:82px 0}
+  .head{max-width:54ch;margin-bottom:42px}
+  .head h2{font-size:clamp(1.9rem,3.8vw,2.6rem);letter-spacing:-.01em;margin:.6rem 0 .8rem}
+  .head p{color:var(--muted);font-size:1.05rem}
+
+  .types{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media (max-width:900px){.types{grid-template-columns:1fr 1fr}}
+  @media (max-width:600px){.types{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
+  .tcard{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+  .tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .tcard .media{height:132px;display:flex;align-items:center;justify-content:center;position:relative}
+  .tcard .media svg{width:56px;height:56px}
+  .tcard .tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.92);color:#0E2038;
+    font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .6rem;border-radius:999px}
+  .t1{background:linear-gradient(150deg,#123258,#0B2447)}
+  .t2{background:linear-gradient(150deg,#1C3A5E,#0E2038)}
+  .t3{background:linear-gradient(150deg,#15656A,#0B3140)}
+  .t4{background:linear-gradient(150deg,#20456E,#102A4A)}
+  .t5{background:linear-gradient(150deg,#8A6D2F,#3E2E0E)}
+  .t6{background:linear-gradient(150deg,#3C4C6E,#1C2440)}
+  .tcard .body{padding:20px;display:flex;flex-direction:column;gap:.5rem;flex:1}
+  .tcard h3{font-size:1.16rem}
+  .tcard p{font-size:.9rem;color:var(--muted)}
+  .tcard .ex{font-size:.82rem;color:var(--muted);font-style:italic}
+  .tcard .go{margin-top:auto;padding-top:.9rem;font-size:.85rem;font-weight:600;color:var(--gold);
+    display:inline-flex;gap:.35rem;align-items:center}
+
+  .zones{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:52px 44px;position:relative;overflow:hidden}
+  .zones::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle,rgba(198,162,90,.16),transparent 70%);pointer-events:none}
+  .zones .head{margin-bottom:30px}
+  .zgrid{display:flex;flex-wrap:wrap;gap:12px;position:relative}
+  .zone{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.1rem;border-radius:999px;
+    border:1px solid var(--line);background:var(--paper);font-size:.92rem;font-weight:500;
+    transition:transform .2s ease,border-color .2s ease,color .2s ease}
+  .zone svg{color:var(--gold)}
+  .zone:hover{transform:translateY(-2px);border-color:var(--gold);color:var(--gold)}
+  .zones .znote{margin-top:26px;font-size:.92rem;color:var(--muted);display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+
+  .process{background:radial-gradient(120% 130% at 12% 0%,var(--navy-2),var(--navy));color:var(--cream);
+    border-radius:30px;padding:64px 48px}
+  .process .head h2{color:#fff}
+  .process .head p{color:rgba(243,238,225,.74)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin:8px 0 34px}
+  .step .num{font-family:var(--serif);font-size:2.4rem;color:var(--gold-soft);line-height:1}
+  .step h3{color:#fff;font-size:1.2rem;margin:.6rem 0 .4rem}
+  .step p{color:rgba(243,238,225,.74);font-size:.95rem}
+  @media (max-width:820px){.process{padding:44px 26px}.steps{grid-template-columns:1fr;gap:26px}}
+
+  .advisor{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:26px;padding:48px 44px}
+  @media (max-width:820px){.advisor{grid-template-columns:1fr;padding:34px 26px;text-align:center}}
+  .advisor .face{aspect-ratio:1;max-width:300px;width:100%;margin:0 auto;border-radius:24px;
+    background:radial-gradient(120% 120% at 30% 20%,var(--navy-2),var(--navy));
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;position:relative;overflow:hidden}
+  .advisor .face .mono{font-family:var(--serif);font-size:4.4rem;color:var(--gold-soft);line-height:1}
+  .advisor .face .badge{font-family:var(--sans);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;color:var(--cream);border:1px solid rgba(243,238,225,.4);padding:.35rem .8rem;border-radius:999px}
+  .advisor .face .ring{position:absolute;inset:16px;border:1.5px dashed rgba(198,162,90,.4);border-radius:18px;pointer-events:none}
+  .advisor h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin:.4rem 0 .3rem}
+  .advisor .role{font-size:.92rem;color:var(--gold);font-weight:600;letter-spacing:.02em}
+  .advisor p{color:var(--muted);margin:1.1rem 0 1.6rem;font-size:1.02rem}
+  .advisor .actions{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:inherit}
+
+  .cta{background:radial-gradient(120% 140% at 85% 0%,var(--navy-2),var(--navy));color:var(--cream);
+    border-radius:30px;padding:70px 40px;text-align:center}
+  .cta h2{color:#fff;font-size:clamp(2rem,4vw,2.9rem);margin-bottom:1rem}
+  .cta p{color:rgba(243,238,225,.8);max-width:46ch;margin:0 auto 2rem}
+
+  footer{padding:56px 0 40px;border-top:1px solid var(--line);margin-top:20px}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+  .foot .muted{color:var(--muted);font-size:.9rem;max-width:34ch}
+  .demo-note{margin-top:26px;font-size:.82rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:18px}
+  .demo-note b{color:var(--gold)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;
+    background:var(--gold);color:#1a1206;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 16px 34px -10px rgba(168,121,30,.7);transition:transform .25s ease}
+  .chat-fab:hover{transform:scale(1.06)}
+  .chat-fab .dot{position:absolute;top:-3px;right:-3px;width:22px;height:22px;border-radius:50%;background:#2AA15A;
+    color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--paper)}
+  .chat-panel{position:fixed;right:22px;bottom:96px;z-index:61;width:min(374px,calc(100vw - 32px));
+    height:min(566px,calc(100vh - 130px));background:var(--card);border:1px solid var(--line);border-radius:20px;
+    box-shadow:0 40px 80px -30px rgba(11,36,71,.6);display:flex;flex-direction:column;overflow:hidden;
+    opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+  .chat-panel.open{opacity:1;transform:none;pointer-events:auto}
+  .chat-head{background:var(--navy);color:var(--cream);padding:16px 18px;display:flex;align-items:center;gap:12px}
+  .chat-head .av{width:40px;height:40px;border-radius:50%;background:var(--gold);flex:none;display:flex;
+    align-items:center;justify-content:center;color:#1a1206;font-weight:700;font-family:var(--serif)}
+  .chat-head .nm{font-weight:600;font-size:.98rem}
+  .chat-head .st{font-size:.75rem;color:#8fe0b0;display:flex;align-items:center;gap:.35rem}
+  .chat-head .st::before{content:"";width:7px;height:7px;border-radius:50%;background:#3ad07f;display:inline-block}
+  .chat-head .x{margin-left:auto;background:none;border:none;color:rgba(243,238,225,.7);cursor:pointer;font-size:1.3rem;line-height:1}
+  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--paper)}
+  .msg{max-width:84%;padding:.65rem .85rem;border-radius:14px;font-size:.9rem;line-height:1.45;white-space:pre-line}
+  .msg.bot{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+  .msg.me{background:var(--gold);color:#1a1206;border-bottom-right-radius:4px;align-self:flex-end}
+  .typing{align-self:flex-start;display:flex;gap:4px;padding:.7rem .9rem;background:var(--card);border:1px solid var(--line);border-radius:14px}
+  .typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite both}
+  .typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+  .quicks{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:var(--paper);border-top:1px solid var(--line)}
+  .quick{font-size:.8rem;padding:.4rem .8rem;border-radius:999px;border:1px solid var(--gold);color:var(--gold);
+    background:transparent;cursor:pointer;transition:background .2s}
+  .quick:hover{background:color-mix(in srgb,var(--gold) 12%,transparent)}
+  .chat-input{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line);background:var(--card)}
+  .chat-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:.6rem .9rem;font-family:var(--sans);
+    font-size:.9rem;background:var(--paper);color:var(--ink)}
+  .chat-input input:focus{outline:none;border-color:var(--gold)}
+  .chat-input button{background:var(--gold);border:none;color:#1a1206;width:40px;height:40px;border-radius:50%;cursor:pointer;flex:none}
+  .chat-foot{font-size:.68rem;color:var(--muted);text-align:center;padding:6px;background:var(--card)}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 19 L20 8.5 L32 19"/>
+        <path d="M11.5 16.5 V28 H28.5 V16.5"/>
+        <path d="M17 28 V22 H23 V28"/>
+        <path d="M6.5 33.4 q3.4 -2.6 6.8 0 t6.8 0 t6.8 0"/>
+      </svg>
+      <span>Farro<small>Inmobiliaria · Carúpano</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#tipos">Propiedades</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#asesora">Tu asesora</a>
+      <a href="#proceso">Cómo funciona</a>
+    </nav>
+    <a class="btn btn-primary wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20propiedad%20en%20Car%C3%BApano" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.32-1.95 1.37-.53.05-1.02.24-3.43-.72-2.9-1.14-4.73-4.11-4.87-4.3-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.61.76 1.89.9.28.14.46.21.53.33.07.12.07.66-.17 1.34Z"/></svg>
+      Escribir por WhatsApp
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--gold-soft)">Inmobiliaria Farro · Carúpano, estado Sucre</span>
+      <h1>Más que casas <em>vendemos futuro</em></h1>
+      <p class="lead">Encuentra tu inmueble ideal en Carúpano: casas, apartamentos, terrenos, locales y casas de playa frente al mar. Con la asesoría cercana de Yuraima Reyes y el respaldo de Farro, +40 años de trayectoria.</p>
+      <div class="actions">
+        <a class="btn btn-primary wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20solicitar%20informaci%C3%B3n%20de%20Inmobiliaria%20Farro%20en%20Car%C3%BApano" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.32-1.95 1.37-.53.05-1.02.24-3.43-.72-2.9-1.14-4.73-4.11-4.87-4.3-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.61.76 1.89.9.28.14.46.21.53.33.07.12.07.66-.17 1.34Z"/></svg>
+          Solicitar información por WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#tipos">Ver propiedades</a>
+      </div>
+      <p class="ask">¿Prefieres preguntar primero? <button type="button" data-open-chat>Chatea con nuestro asistente</button></p>
+      <div class="chips">
+        <div><div class="n">+40 años</div><div class="l">de respaldo · franquicia Farro</div></div>
+        <div><div class="n">Venta · Alquiler</div><div class="l">y asesoría de inmuebles</div></div>
+        <div><div class="n">Frente al mar</div><div class="l">casas de playa en Playa Copey</div></div>
+      </div>
+    </div>
+    <div class="prop reveal">
+      <div class="media">
+        <span class="tag">Frente al mar</span>
+        <svg viewBox="0 0 100 78" fill="none" stroke="var(--gold-soft)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="78" cy="19" r="7.5"/>
+          <path d="M18 44 L40 25 L62 44"/>
+          <path d="M23 41 V60 H57 V41"/>
+          <rect x="35" y="48" width="10" height="12"/>
+          <path d="M28 46 h6 M28 51 h6"/>
+          <path d="M8 66 q6 -4.5 12 0 t12 0 t12 0 t12 0 t12 0"/>
+          <path d="M8 71.5 q6 -4.5 12 0 t12 0 t12 0 t12 0 t12 0"/>
+        </svg>
+      </div>
+      <div class="body">
+        <h3>Casa de playa en Playa Copey</h3>
+        <div class="loc">◍ Playa Copey, Carúpano</div>
+        <p class="desc">Frente al mar, ideal para vivir la costa o invertir. Consulta disponibilidad y condiciones.</p>
+        <div class="price">
+          <span class="lbl">Disponibilidad</span>
+          <a class="amt wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20informaci%C3%B3n%20de%20casas%20de%20playa%20en%20Playa%20Copey" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="strip reveal">
+    <div class="item">
+      <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <div><b>+40 años</b><span>de trayectoria de la franquicia Farro</span></div>
+    </div>
+    <div class="item">
+      <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></span>
+      <div><b>Venta y alquiler</b><span>casas, apartamentos, terrenos y locales</span></div>
+    </div>
+    <div class="item">
+      <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="6" r="2.5"/><path d="M3 15q3 -2.5 6 0 t6 0 t6 0"/><path d="M3 19q3 -2.5 6 0 t6 0 t6 0"/></svg></span>
+      <div><b>Casas de playa</b><span>en Playa Copey, frente al mar</span></div>
+    </div>
+    <div class="item">
+      <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></span>
+      <div><b>Asesoría cercana</b><span>Yuraima Reyes, tu asesora en Carúpano</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="block" id="tipos">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Lo que ofrecemos</span>
+      <h2>Un inmueble para cada proyecto</h2>
+      <p>Te acompañamos en la compra, la venta y el alquiler. Elige el tipo de propiedad y Yuraima te comparte las opciones disponibles por WhatsApp, sin precios inventados: cada inmueble tiene su valor según zona y condiciones.</p>
+    </div>
+    <div class="types">
+      <article class="tcard reveal">
+        <div class="media t1"><span class="tag">En venta</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EBDFC4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg>
+        </div>
+        <div class="body">
+          <h3>Casas en venta</h3>
+          <p>Casas familiares en las mejores zonas de Carúpano, listas para tu próximo capítulo.</p>
+          <a class="go wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20busco%20una%20casa%20en%20venta%20en%20Car%C3%BApano" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="tcard reveal">
+        <div class="media t2"><span class="tag">En alquiler</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#DFE6EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 3v13h-6"/><path d="M4 20V9l10-5v16H4z"/><path d="M8 11v2M8 16v2"/></svg>
+        </div>
+        <div class="body">
+          <h3>En alquiler</h3>
+          <p>Casas, apartamentos y habitaciones en alquiler para vivir o invertir.</p>
+          <a class="go wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20busco%20una%20propiedad%20en%20alquiler%20en%20Car%C3%BApano" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="tcard reveal">
+        <div class="media t3"><span class="tag">Frente al mar</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#DBEBEA" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="7" r="2.5"/><path d="M4 12l5-4 5 4"/><path d="M6 11v4h8v-4"/><path d="M3 19q3 -2 5 0 t5 0 t5 0 t5 0"/></svg>
+        </div>
+        <div class="body">
+          <h3>Casas de playa</h3>
+          <p>En Playa Copey, frente al mar. Para vacacionar todo el año o poner a rentar.</p>
+          <a class="go wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20informaci%C3%B3n%20de%20casas%20de%20playa%20en%20Playa%20Copey" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="tcard reveal">
+        <div class="media t4"><span class="tag">Disponible</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#DFE6EE" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg>
+        </div>
+        <div class="body">
+          <h3>Apartamentos</h3>
+          <p>Cómodos y bien ubicados en la ciudad.</p>
+          <p class="ex">Ej.: apartamento en el Centro · 2 hab / 2 baños.</p>
+          <a class="go wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20me%20interesa%20el%20apartamento%20en%20el%20Centro%20%282%20hab%20%2F%202%20ba%C3%B1os%29" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="tcard reveal">
+        <div class="media t5"><span class="tag">Para construir</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F0E6C9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9l7-4 7 4v11"/><path d="M12 5v15"/></svg>
+        </div>
+        <div class="body">
+          <h3>Terrenos</h3>
+          <p>Parcelas para construir tu proyecto o invertir a futuro.</p>
+          <a class="go wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20me%20interesan%20los%20terrenos%20en%20Car%C3%BApano" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+      <article class="tcard reveal">
+        <div class="media t6"><span class="tag">Comercial</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E6E9F2" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1-4h14l1 4"/><path d="M4 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0"/><path d="M5 9v11h14V9"/><path d="M10 20v-6h4v6"/></svg>
+        </div>
+        <div class="body">
+          <h3>Locales comerciales</h3>
+          <p>Espacios para montar o mudar tu negocio en Carúpano.</p>
+          <a class="go wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20busco%20un%20local%20comercial%20en%20Car%C3%BApano" target="_blank" rel="noopener">Consulta por WhatsApp →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="zonas" style="padding-top:0">
+  <div class="wrap">
+    <div class="zones reveal">
+      <div class="head">
+        <span class="eyebrow">Dónde te acompañamos</span>
+        <h2>Zonas que cubrimos en Carúpano</h2>
+        <p>Conocemos la ciudad de punta a punta. Toca tu zona y te mostramos lo que hay disponible por WhatsApp.</p>
+      </div>
+      <div class="zgrid">
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20el%20Centro%20de%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>Centro</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20El%20Muco%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>El Muco</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20Bello%20Monte%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>Bello Monte</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20Canchunch%C3%BA%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>Canchunchú</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20Playa%20Copey%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>Playa Copey</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20la%20Calle%20Acosta%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>Calle Acosta</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20la%20Calle%20Libertad%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>Calle Libertad</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20Guayac%C3%A1n%20de%20las%20Flores%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>Guayacán de las Flores</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20la%20Av.%20Universitaria%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>Av. Universitaria</a>
+        <a class="zone" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20La%20Llanada%2C%20Car%C3%BApano" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/></svg>La Llanada</a>
+      </div>
+      <div class="znote">
+        <span>¿No ves tu zona? Cuéntanos qué buscas y la conseguimos.</span>
+        <a class="btn btn-line" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20ver%20propiedades%20en%20mi%20zona%20de%20Car%C3%BApano" target="_blank" rel="noopener">Pregúntale a Yuraima</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="proceso" style="padding-top:0">
+  <div class="wrap">
+    <div class="process reveal">
+      <div class="head">
+        <span class="eyebrow" style="color:var(--gold-soft)">Sin vueltas</span>
+        <h2>Agenda tu visita en 3 pasos</h2>
+        <p>Todo empieza con un mensaje. Yuraima te guía desde el primer "hola" hasta la entrega de llaves.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Escríbenos por WhatsApp</h3><p>Cuéntale a Yuraima qué buscas: tipo de inmueble, zona y si es para comprar o alquilar.</p></div>
+        <div class="step"><div class="num">2</div><h3>Recibe opciones a tu medida</h3><p>Te comparte propiedades que encajan con lo que necesitas, sin que salgas de casa.</p></div>
+        <div class="step"><div class="num">3</div><h3>Agenda y visita</h3><p>Coordinas el día, Yuraima te acompaña en la visita y en todo el proceso.</p></div>
+      </div>
+      <a class="btn btn-primary wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20agendar%20una%20visita%20a%20una%20propiedad%20en%20Car%C3%BApano" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.32-1.95 1.37-.53.05-1.02.24-3.43-.72-2.9-1.14-4.73-4.11-4.87-4.3-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.61.76 1.89.9.28.14.46.21.53.33.07.12.07.66-.17 1.34Z"/></svg>
+        Agendar mi visita por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="asesora" style="padding-top:0">
+  <div class="wrap">
+    <div class="advisor reveal">
+      <div class="face">
+        <div class="ring"></div>
+        <div class="mono">YR</div>
+        <div class="badge">Farro · Carúpano</div>
+      </div>
+      <div>
+        <span class="eyebrow">Tu asesora en Carúpano</span>
+        <h2>Yuraima Reyes</h2>
+        <div class="role">Asesora inmobiliaria · Inmobiliaria Farro Carúpano</div>
+        <p>Yuraima es tu contacto directo en Carúpano: te escucha, entiende lo que buscas y te acompaña en cada paso de la compra, venta o alquiler. Detrás está el respaldo de Farro, una franquicia con más de 40 años de trayectoria en el mercado inmobiliario.</p>
+        <div class="actions">
+          <a class="btn btn-primary wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20que%20me%20asesores%20para%20comprar%20o%20alquilar%20en%20Car%C3%BApano" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.32-1.95 1.37-.53.05-1.02.24-3.43-.72-2.9-1.14-4.73-4.11-4.87-4.3-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.61.76 1.89.9.28.14.46.21.53.33.07.12.07.66-.17 1.34Z"/></svg>
+            Escríbele a Yuraima
+          </a>
+          <a class="btn btn-line" href="#tipos">Ver propiedades</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow" style="color:var(--gold-soft)">Más que casas vendemos futuro</span>
+      <h2>Tu próximo inmueble te está esperando</h2>
+      <p>Escríbele a Yuraima por WhatsApp y da el primer paso hacia tu nuevo hogar o tu próxima inversión en Carúpano. Sin compromiso.</p>
+      <a class="btn btn-primary wa" href="https://wa.me/584141883490?text=Hola%20Yuraima%2C%20quiero%20solicitar%20informaci%C3%B3n%20de%20Inmobiliaria%20Farro%20en%20Car%C3%BApano" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.32-1.95 1.37-.53.05-1.02.24-3.43-.72-2.9-1.14-4.73-4.11-4.87-4.3-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.16-.29.37-.42.49-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.19-.28.37-.23.62-.14.25.09 1.61.76 1.89.9.28.14.46.21.53.33.07.12.07.66-.17 1.34Z"/></svg>
+        Solicitar información por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#" style="margin-bottom:.7rem">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 19 L20 8.5 L32 19"/>
+            <path d="M11.5 16.5 V28 H28.5 V16.5"/>
+            <path d="M17 28 V22 H23 V28"/>
+            <path d="M6.5 33.4 q3.4 -2.6 6.8 0 t6.8 0 t6.8 0"/>
+          </svg>
+          <span>Farro<small>Inmobiliaria · Carúpano</small></span>
+        </a>
+        <p class="muted">Venta, alquiler y asesoría de inmuebles en Carúpano: casas, apartamentos, terrenos, locales y casas de playa. Más que casas vendemos futuro.</p>
+      </div>
+      <div class="muted">◍ Carúpano, estado Sucre<br>✆ WhatsApp: +58 414 188 3490<br>👩‍💼 Yuraima Reyes · asesora inmobiliaria</div>
+    </div>
+    <p class="demo-note"><b>Sitio de demostracion</b> creado para Inmobiliaria Farro Carúpano como propuesta. ¿Quieres una web asi para tu negocio? Escribeme: <b>+58 424 000 0000</b></p>
+  </div>
+</footer>
+
+<button class="chat-fab" id="fab" aria-label="Abrir chat">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+  <span class="dot">1</span>
+</button>
+
+<div class="chat-panel" id="panel" role="dialog" aria-label="Asistente Inmobiliaria Farro">
+  <div class="chat-head">
+    <div class="av">F</div>
+    <div><div class="nm">Asistente Farro</div><div class="st">en línea · te responde al instante</div></div>
+    <button class="x" id="closeChat" aria-label="Cerrar">×</button>
+  </div>
+  <div class="chat-body" id="body"></div>
+  <div class="quicks" id="quicks"></div>
+  <div class="chat-input">
+    <input id="inp" placeholder="Escribe un mensaje…" autocomplete="off">
+    <button id="send" aria-label="Enviar">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+    </button>
+  </div>
+  <div class="chat-foot">Demo de asistente IA · Te orienta y te conecta con Yuraima 24/7</div>
+</div>
+
+<script>
+(function(){
+  var CONFIG={
+    welcome:"¡Hola! 👋 Soy el asistente de Inmobiliaria Farro en Carúpano. Te ayudo a encontrar tu inmueble ideal —casas, apartamentos, terrenos, locales o casas de playa— y coordino tu visita con Yuraima por WhatsApp. ¿Qué estás buscando?",
+    quicks:["🏠 Tipos de propiedad","📍 Zonas en Carúpano","📅 Agendar visita"],
+    rules:[
+      {k:["casa","casas","vivienda","familiar","hogar"],r:"🏠 Manejamos casas en venta y en alquiler en las mejores zonas de Carúpano. Dime en qué zona te gustaría y si es para comprar o alquilar, y Yuraima te pasa las opciones por WhatsApp (+58 414 188 3490)."},
+      {k:["playa","copey","mar","frente al mar","vacacion","vacación","invertir"],r:"🌊 Tenemos casas de playa en Playa Copey, frente al mar —ideales para vivir la costa o invertir. Yuraima te comparte la disponibilidad por WhatsApp. ¿Te la paso?"},
+      {k:["apart","apartamento","apto","aparta","edificio"],r:"🏢 Sí, tenemos apartamentos. Por ejemplo, en el Centro (2 hab / 2 baños). Cuéntame cuántas habitaciones necesitas y en qué zona, y Yuraima te envía opciones."},
+      {k:["terreno","lote","parcela","construir","construccion","construcción"],r:"🏞️ Contamos con terrenos para construir o invertir en Carúpano. Dime la zona que te interesa y Yuraima te comparte las opciones disponibles."},
+      {k:["local","comercial","negocio","oficina","tienda"],r:"🏪 Tenemos locales comerciales para tu negocio en Carúpano. ¿En qué zona lo estás buscando?"},
+      {k:["alquiler","alquilar","arrendar","rentar","renta","habitacion","habitación","cuarto"],r:"🔑 Trabajamos alquiler de casas, apartamentos y habitaciones. Cuéntame qué buscas y tu zona, y Yuraima te pasa las opciones por WhatsApp."},
+      {k:["venta","comprar","compra","vender","adquirir"],r:"🏡 Te acompañamos en la compra y venta de inmuebles en Carúpano. Dime qué tipo de propiedad buscas y en qué zona para orientarte mejor."},
+      {k:["zona","zonas","donde","dónde","sector","ubicacion","ubicación","area"],r:"📍 Cubrimos Centro, El Muco, Bello Monte, Canchunchú, Playa Copey, Calle Acosta, Calle Libertad, Guayacán de las Flores, Av. Universitaria y La Llanada. ¿En cuál te gustaría buscar?"},
+      {k:["precio","precios","cuesta","vale","costo","cuanto","cuánto","presupuesto","valor"],r:"Los precios varían según la propiedad, la zona y si es compra o alquiler, así que no te doy cifras al azar. Para valores exactos y actualizados, Yuraima te atiende directo por WhatsApp: +58 414 188 3490. ¿Te comparto el enlace?"},
+      {k:["visita","agendar","cita","conocer","ver la propiedad","ver la casa"],r:"📅 Con gusto agendamos tu visita. Escríbele a Yuraima por WhatsApp (+58 414 188 3490) con el inmueble y la zona que te interesan, y coordinan el día. ¿Te ayudo con algo más?"},
+      {k:["asesor","yuraima","humano","persona","hablar","contacto","whatsapp","telefono","teléfono"],r:"👩‍💼 Yuraima Reyes es tu asesora de Farro en Carúpano, con el respaldo de la franquicia (+40 años de trayectoria). Escríbele directo por WhatsApp: +58 414 188 3490."},
+      {k:["gracias","ok","listo","perfecto","genial","buenisimo","buenísimo"],r:"¡A la orden! 🏠 Cuando quieras, Yuraima te atiende por WhatsApp. Encuentra tu inmueble ideal con Inmobiliaria Farro."}
+    ],
+    fallback:"Con gusto te ayudo 🙂 ¿Buscas casa, apartamento, terreno, local o casa de playa? Dime el tipo y la zona, y coordinamos con Yuraima por WhatsApp (+58 414 188 3490)."
+  };
+  var panel=document.getElementById('panel'),fab=document.getElementById('fab'),body=document.getElementById('body'),
+      quicks=document.getElementById('quicks'),inp=document.getElementById('inp'),started=false;
+  function scroll(){body.scrollTop=body.scrollHeight}
+  function add(text,who){var d=document.createElement('div');d.className='msg '+who;d.textContent=text;body.appendChild(d);scroll()}
+  function typing(){var t=document.createElement('div');t.className='typing';t.innerHTML='<span></span><span></span><span></span>';body.appendChild(t);scroll();return t}
+  function reply(text){var t=typing();setTimeout(function(){t.remove();add(text,'bot')},900+Math.min(text.length*8,1400))}
+  function answer(q){q=q.toLowerCase();for(var i=0;i<CONFIG.rules.length;i++){for(var j=0;j<CONFIG.rules[i].k.length;j++){if(q.indexOf(CONFIG.rules[i].k[j])>=0)return CONFIG.rules[i].r}}return CONFIG.fallback}
+  function renderQuicks(){quicks.innerHTML='';CONFIG.quicks.forEach(function(q){var b=document.createElement('button');b.className='quick';b.textContent=q;b.onclick=function(){handle(q)};quicks.appendChild(b)})}
+  function handle(text){add(text,'me');reply(answer(text))}
+  function start(){if(started)return;started=true;reply(CONFIG.welcome);renderQuicks()}
+  function open(){panel.classList.add('open');fab.style.display='none';start();setTimeout(function(){inp.focus()},300)}
+  function close(){panel.classList.remove('open');fab.style.display='flex'}
+  fab.onclick=open;document.getElementById('closeChat').onclick=close;
+  document.getElementById('send').onclick=function(){var v=inp.value.trim();if(v){handle(v);inp.value=''}};
+  inp.addEventListener('keydown',function(e){if(e.key==='Enter'){var v=inp.value.trim();if(v){handle(v);inp.value=''}}});
+  document.querySelectorAll('[data-open-chat]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();open();setTimeout(function(){handle('Quiero encontrar un inmueble en Carúpano')},400)})});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
