@@ -1,8 +1,18 @@
 # Landings de demostración — Reto "Tu primer cobro con IA"
 
-Tres landings genéricas, autocontenidas y listas para mostrar en tus demos.
+Tres landings genéricas + una página "hub" que las presenta juntas.
 Cada una es **un solo archivo `index.html`** sin dependencias externas: se abre
 con doble clic, se despliega arrastrando la carpeta y funciona sin internet.
+
+## 🌐 En vivo (GitHub Pages)
+
+- **Portafolio (hub):** https://gabrielsalazar8486.github.io/demos-ia-negocios/
+- **Servicio:** https://gabrielsalazar8486.github.io/demos-ia-negocios/servicio/
+- **Tienda:** https://gabrielsalazar8486.github.io/demos-ia-negocios/tienda/
+- **Restaurante:** https://gabrielsalazar8486.github.io/demos-ia-negocios/restaurante/
+
+Para actualizar el sitio: edita, `git commit` y `git push`. Pages redespliega solo
+en ~1 min.
 
 | Carpeta | Rubro | Negocio de ejemplo | El chat demuestra… |
 |---|---|---|---|
@@ -20,9 +30,9 @@ cliente lo pruebe.
 
 Abre el `index.html` con cualquier editor y reemplaza:
 
-1. **Tu número de WhatsApp** — busca `584240000000` y cámbialo por el tuyo en
+1. **Tu número de WhatsApp** — busca `584121156645` y cámbialo por el tuyo en
    formato internacional sin `+` ni `0` inicial:
-   `0424 000 0000` → `584240000000`.
+   `0412 115 6645` → `584121156645`.
    Aparece en los botones y en la nota de pie ("Sitio de demostración…").
 
 2. **Nombre del negocio** — busca `Terramar` / `Voltta` / `Brasa` y ponle el
